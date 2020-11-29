@@ -7,7 +7,7 @@ using System.Drawing;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    public  class CoordinateRoutines
+    public class CoordinateRoutines
     {
 
         public static Point[] CalculateSquareCoordinatesByTwoPoints(Point Point1, Point Point2)
@@ -35,7 +35,7 @@ namespace Geometry_Vector_Graphics_Editor
             arrPoints[2] = Point3;
             arrPoints[3] = Point4;
 
-            Array.Sort(arrPoints);
+          //  Array.Sort(arrPoints);
             return arrPoints;
         }
 
