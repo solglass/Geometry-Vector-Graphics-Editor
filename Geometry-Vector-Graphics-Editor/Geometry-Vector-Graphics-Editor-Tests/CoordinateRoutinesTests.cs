@@ -10,7 +10,6 @@ namespace Geometry_Vector_Graphics_Editor_Tests
         [TestCase(1, 1)]
         [TestCase(2, 2)]
         [TestCase(3, 3)]
-        [TestCase(4, 4)]
         public void CalculateSquareCoordinatesByTwoPoints(int actualMockNumber, int expectedMockNumber)
         {
             Point[] actual = GetActualSquareCoordinatesByTwoPoints(actualMockNumber);
@@ -27,12 +26,13 @@ namespace Geometry_Vector_Graphics_Editor_Tests
                     return
                         new Point[] { new Point(100, 100), new Point(200, 200), new Point(300, 100), new Point(200, 0) };
                 case 2:
-                    return new Point[] { new Point(100, 100) };
+                    return new Point[] { new Point(300, 0), new Point(0, 300), new Point(-300, 0), new Point(0, -300) };
                 case 3:
                     return
-                        new Point[] { new Point(100, 100) };
-                case 4:
-                    return new Point[] { new Point(100, 100) };
+                        new Point[] { new Point(-100, -100), new Point(200, 200) };
+            //TODO more tests
+            //    case 4:
+            //        return new Point[] { new Point(100, 100) };
 
                 default:
                     throw new Exception();
@@ -48,13 +48,13 @@ namespace Geometry_Vector_Graphics_Editor_Tests
                        Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(100, 100), new Point(200, 200));
                 case 2:
                     return
-                        Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(100, 100), new Point(200, 200));
+                        Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(300, 0), new Point(0, 300));
                 case 3:
                     return
-                     Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(100, 100), new Point(200, 200));
-
-                case 4:
-                    return Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(100, 100), new Point(200, 200));
+                     Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(200, 200), new Point(100, 100));
+                //TODO more tests
+                // case 4:
+                //     return Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(800, 800), new Point(200, 200));
 
                 default:
                     throw new Exception();
