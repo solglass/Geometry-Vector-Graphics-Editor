@@ -47,20 +47,20 @@ namespace Geometry_Vector_Graphics_Editor
         public static Point[] CalculateSquareCoordinatesByTwoOppositePoints(Point pt1, Point pt2)
         {
             Point[] arrPoints = new Point[4];
-            Point pt3 = new Point(); 
+            Point pt3 = new Point();
             Point pt4 = new Point();
-            int x1 = pt1.X; 
-            int y1 = pt1.Y ;    // First diagonal point
-            int x2 = pt2.Y  ; 
-            int y2 = pt2.Y ;
+            int x1 = pt1.X;
+            int y1 = pt1.Y;    // First diagonal point
+            int x2 = pt2.Y;
+            int y2 = pt2.Y;
             int xc = (x1 + x2) / 2;
             int yc = (y1 + y2) / 2;    // Center point
-            int xd = (x1 - x2) / 2; 
+            int xd = (x1 - x2) / 2;
             int yd = (y1 - y2) / 2;    // Half-diagonal
 
-            int x3 = xc - yd; 
+            int x3 = xc - yd;
             int y3 = yc + xd;    // Third corner
-            int x4 = xc + yd; 
+            int x4 = xc + yd;
             int y4 = yc - xd;    // Fourth corner
             pt3.X = x3;
             pt3.Y = y3;
@@ -76,26 +76,43 @@ namespace Geometry_Vector_Graphics_Editor
         }
 
 
-        public static Point[] CalculateRectangleCoordinatesByTwoPoints(Point bottomLeft, Point topRight)
-            {
-                Point[] arrPoints = new Point[4];
-                Point topLeft = new Point(bottomLeft.X, topRight.Y);
-                Point bottomRight = new Point(topRight.X, bottomLeft.Y);
-                arrPoints[0] = bottomLeft;
-                arrPoints[1] = topLeft;
-                arrPoints[2] = topRight;
-                arrPoints[3] = bottomRight;
-               // Rectangle.FromLTRB(0, 0, dist, dist);
-                return arrPoints;
-            }
-
-            public static Point[] CalculateRectangularTriangleCoordinatesByTwoPoints(Point bottomLeft, Point topRight)
-            {
-                Point[] arrPoints = new Point[4];
-            //TODO implement
-                return arrPoints;
-            }
+        public static Point[] CalculateRectangleCoordinatesByTwoPointsTopLeftBottomRight(Point topLeft, Point bottomRight)
+        {
+            Point[] arrPoints = new Point[4];
+            Point bottomLeft = new Point(topLeft.X, bottomRight.Y);
+            Point topRight = new Point(bottomRight.X, topLeft.Y);
+            arrPoints[0] = bottomLeft;
+            arrPoints[1] = topLeft;
+            arrPoints[2] = topRight;
+            arrPoints[3] = bottomRight;
+            // Rectangle.FromLTRB(0, 0, dist, dist);
+            return arrPoints;
         }
+
+        public static Point[] CalculateRectangularTriangleCoordinatesByTwoPoints(Point topLeft, Point bottomRight)
+        {
+            Point[] arrPoints = new Point[3];
+            Point ThirdPoint = new Point(topLeft.X, bottomRight.Y);
+            arrPoints[0] = topLeft;
+            arrPoints[1] = bottomRight;
+            arrPoints[2] = ThirdPoint;
+            return arrPoints;
+        }
+
+        public static Point[] CalculateIsoscelesTriangleCoordinatesByTwoPoints(Point topLeft, Point bottomRight)
+        {
+            Point[] arrPoints = new Point[3];
+            int delta = 2*(bottomRight.X - topLeft.X);
+            Point ThirdPoint = new Point(bottomRight.X - delta, bottomRight.Y);
+            return arrPoints;
+        }
+
+
+
+
+
     }
+
+}
 
 
