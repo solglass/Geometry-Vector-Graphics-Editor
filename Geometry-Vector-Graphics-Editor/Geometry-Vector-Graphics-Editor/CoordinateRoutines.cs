@@ -10,7 +10,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     public class CoordinateRoutines
     {
-
+        //For future use, not in currnet version
         public static Point[] CalculateSquareCoordinatesByTwoAdjacentPoints(Point pt1, Point pt2)
         {
             Point[] arrPoints = new Point[4];
@@ -76,34 +76,73 @@ namespace Geometry_Vector_Graphics_Editor
         }
 
 
-        public static Point[] CalculateRectangleCoordinatesByTwoPointsTopLeftBottomRight(Point topLeft, Point bottomRight)
+        public static Point[] CalculateRectangleCoordinatesByTwoOppositePoints(Point LeftPt, Point RightPt)
         {
             Point[] arrPoints = new Point[4];
-            Point bottomLeft = new Point(topLeft.X, bottomRight.Y);
-            Point topRight = new Point(bottomRight.X, topLeft.Y);
+            Point topLeft = new Point();
+            Point bottomRight= new Point();
+            Point bottomLeft = new Point();
+            Point topRight = new Point();
+            if (LeftPt.X > RightPt.X) 
+            {
+                topLeft = LeftPt;
+                bottomRight = RightPt;
+                bottomLeft = new Point(topLeft.X, bottomRight.Y);
+                topRight = new Point(bottomRight.X, topLeft.Y);
+            }
+            else if(LeftPt.X < RightPt.X)
+                {
+                bottomLeft = LeftPt;
+                topRight = RightPt;
+                topLeft = new Point(bottomLeft.X, topRight.Y);
+                bottomRight = new Point(topRight.X, topLeft.Y);
+                }
+            else { }
+            
+
             arrPoints[0] = bottomLeft;
             arrPoints[1] = topLeft;
             arrPoints[2] = topRight;
             arrPoints[3] = bottomRight;
-            // Rectangle.FromLTRB(0, 0, dist, dist);
             return arrPoints;
         }
 
-        public static Point[] CalculateRectangularTriangleCoordinatesByTwoPoints(Point topLeft, Point bottomRight)
+        public static Point[] CalculateRectangularTriangleCoordinatesByTwoPoints(Point LeftPt, Point RightPt)
         {
             Point[] arrPoints = new Point[3];
-            Point ThirdPoint = new Point(topLeft.X, bottomRight.Y);
-            arrPoints[0] = topLeft;
-            arrPoints[1] = bottomRight;
+            Point ThirdPoint = new Point();
+            if (LeftPt.Y > RightPt.Y)
+            {
+                ThirdPoint = new Point(LeftPt.X, RightPt.Y);
+            }
+            else if (LeftPt.Y < RightPt.Y)
+            { ThirdPoint = new Point(RightPt.X, LeftPt.Y); }
+            else { }
+            arrPoints[0] = LeftPt;
+            arrPoints[1] = RightPt;
             arrPoints[2] = ThirdPoint;
             return arrPoints;
         }
 
-        public static Point[] CalculateIsoscelesTriangleCoordinatesByTwoPoints(Point topLeft, Point bottomRight)
+        public static Point[] CalculateIsoscelesTriangleCoordinatesByTwoPoints(Point LeftPt, Point RightPt)
         {
             Point[] arrPoints = new Point[3];
-            int delta = 2*(bottomRight.X - topLeft.X);
-            Point ThirdPoint = new Point(bottomRight.X - delta, bottomRight.Y);
+            int delta = 2 * (RightPt.X - LeftPt.X);
+            Point ThirdPoint = new Point();
+            if (LeftPt.Y > RightPt.Y) 
+            {
+                ThirdPoint = new Point(RightPt.X - delta, RightPt.Y);
+            }
+            else if (LeftPt.Y < RightPt.Y)
+            {
+                ThirdPoint = new Point(LeftPt.X + delta, LeftPt.Y);
+            }
+            else { }
+
+            arrPoints[0] = LeftPt;
+            arrPoints[1] = RightPt;
+            arrPoints[2] = ThirdPoint;
+
             return arrPoints;
         }
 
