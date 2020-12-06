@@ -8,7 +8,7 @@ using System.Drawing.Drawing2D;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    public class CoordinateRoutines
+    public static class CoordinateRoutines
     {
         //For future use, not in currnet version
         public static Point[] CalculateSquareCoordinatesByTwoAdjacentPoints(Point pt1, Point pt2)
