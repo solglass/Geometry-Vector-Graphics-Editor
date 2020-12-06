@@ -15,6 +15,7 @@ namespace Geometry_Vector_Graphics_Editor
         Bitmap _btm;
         Graphics _graphics;
         Pen _pen;
+        IFigure _curFigure;
         public Form1()
         {
             InitializeComponent();
