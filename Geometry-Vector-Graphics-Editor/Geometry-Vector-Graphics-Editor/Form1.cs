@@ -16,6 +16,7 @@ namespace Geometry_Vector_Graphics_Editor
         Graphics _graphics;
         Pen _pen;
         IFigure _curFigure;
+        Point startPoint;
         public Form1()
         {
             InitializeComponent();
@@ -23,8 +24,8 @@ namespace Geometry_Vector_Graphics_Editor
 
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
-            Rectangle rect = new Rectangle();
-            _graphics.DrawEllipse(_pen, rect);
+          //  Rectangle rect = new Rectangle();
+          //  _graphics.DrawEllipse(_pen, rect);
         }
 
         private void Form1_Load(object sender, EventArgs e)
