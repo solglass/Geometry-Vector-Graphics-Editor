@@ -8,12 +8,12 @@ using System.Drawing;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-  public  class Line
+  public  class LineFigure
     {
         Bitmap tmpBitmap;
         public ArrayList Points { get; private set; }
 
-        public Line(Point startPoint, Point stopPoint)
+        public LineFigure(Point startPoint, Point stopPoint)
         {
             Points = new ArrayList();
             Points.Add(startPoint);

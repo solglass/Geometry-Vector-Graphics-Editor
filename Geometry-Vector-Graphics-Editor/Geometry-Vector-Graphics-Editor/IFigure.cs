@@ -12,10 +12,10 @@ namespace Geometry_Vector_Graphics_Editor
     {
         ArrayList Points { get; set; }
 
-        Bitmap Draw(Bitmap curBitmap);
-        Bitmap Move(Bitmap curBitmap);
-        Bitmap Remove(Bitmap curBitmap);
-        Bitmap Rotate(Bitmap curBitmap);
-        Bitmap Scale(Bitmap bitmap);  
+        Bitmap Draw(Bitmap curBitmap, Graphics graphics, Pen pen);
+        Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen);
+        Bitmap Remove(Bitmap curBitmap, Graphics graphics, Pen pen);
+        Bitmap Rotate(Bitmap curBitmap, Graphics graphics, Pen pen);
+        Bitmap Scale(Bitmap curbitmap, Graphics graphics, Pen pen);  
     }
 }
