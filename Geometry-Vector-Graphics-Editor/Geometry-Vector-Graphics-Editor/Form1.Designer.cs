@@ -52,7 +52,7 @@
             // 
             // Clear
             // 
-            this.Clear.Location = new System.Drawing.Point(686, 12);
+            this.Clear.Location = new System.Drawing.Point(686, 6);
             this.Clear.Name = "Clear";
             this.Clear.Size = new System.Drawing.Size(75, 23);
             this.Clear.TabIndex = 0;

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using graphics;
+
 
 namespace Geometry_Vector_Graphics_Editor
 {
