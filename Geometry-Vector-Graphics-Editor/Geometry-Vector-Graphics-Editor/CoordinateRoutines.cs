@@ -146,6 +146,29 @@ namespace Geometry_Vector_Graphics_Editor
             return arrPoints;
         }
 
+<<<<<<< HEAD
+        public static Point[] CalculateCirclePointBySquare(Point squareLUPoint, Point squareOppositePoint)
+        {
+
+            int circleCenterX = (squareOppositePoint.X + squareLUPoint.X) / 2;
+            int circleCenterY = (squareOppositePoint.Y + squareLUPoint.Y) / 2;
+            Point circleCenter = new Point(circleCenterX, circleCenterY);
+            Point circleRadius = new Point(circleCenterX, squareLUPoint.Y);
+            return new Point[] { circleCenter, circleRadius };
+        }
+
+        public static Point[] CalculateEllipseByRectangle(Point rectLUPoint, Point rectOppositePoint)
+        {
+            int ellipseCenterX = ((rectOppositePoint.X + rectLUPoint.X) / 2);
+            int ellipseCenterY = ((rectOppositePoint.Y + rectLUPoint.Y) / 2);
+            Point ellipseCenter = new Point(ellipseCenterX, ellipseCenterY);
+            Point ellipseRadiusHeight = new Point(rectLUPoint.X, ellipseCenterY);
+            Point ellipseRadiusWeight = new Point(ellipseCenterX, rectLUPoint.Y);
+            return new Point[] { ellipseCenter, ellipseRadiusHeight, ellipseRadiusWeight };
+        }
+
+=======
+>>>>>>> DrawEllipse
 
 
 
