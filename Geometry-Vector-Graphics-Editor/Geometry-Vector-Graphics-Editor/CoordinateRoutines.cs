@@ -146,7 +146,7 @@ namespace Geometry_Vector_Graphics_Editor
             return arrPoints;
         }
 
-<<<<<<< HEAD
+
         public static Point[] CalculateCirclePointBySquare(Point squareLUPoint, Point squareOppositePoint)
         {
 
@@ -167,8 +167,6 @@ namespace Geometry_Vector_Graphics_Editor
             return new Point[] { ellipseCenter, ellipseRadiusHeight, ellipseRadiusWeight };
         }
 
-=======
->>>>>>> DrawEllipse
 
 
 

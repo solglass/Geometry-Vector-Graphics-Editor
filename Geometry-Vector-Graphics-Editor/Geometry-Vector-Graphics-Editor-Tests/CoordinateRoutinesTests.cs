@@ -181,7 +181,7 @@ namespace Geometry_Vector_Graphics_Editor_Tests
             Assert.AreEqual(expected, actual);
         }
 
-<<<<<<< HEAD
+
         [Test, TestCaseSource(typeof(GetCicleBySquareMock))]
 
         public void CalculateCirclePointBySquareTest(Point squareLUPoint, Point squareOppositePoint, Point[] expected)
@@ -223,10 +223,6 @@ namespace Geometry_Vector_Graphics_Editor_Tests
             yield return new object[] { new Point(2, 2), new Point(0, 0), new Point[] { new Point(1, 1), new Point(1, 2) } };
             yield return new object[] { new Point(0, 0), new Point(0, 0), new Point[] { new Point(0, 0), new Point(0, 0) } };
         }
-=======
-
-
->>>>>>> DrawEllipse
 
     }
 
