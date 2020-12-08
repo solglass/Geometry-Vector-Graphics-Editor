@@ -181,8 +181,52 @@ namespace Geometry_Vector_Graphics_Editor_Tests
             Assert.AreEqual(expected, actual);
         }
 
+<<<<<<< HEAD
+        [Test, TestCaseSource(typeof(GetCicleBySquareMock))]
+
+        public void CalculateCirclePointBySquareTest(Point squareLUPoint, Point squareOppositePoint, Point[] expected)
+        {
+            Point[] actual;
+            actual = Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateCirclePointBySquare(squareLUPoint, squareOppositePoint);
+            Assert.AreEqual(expected, actual);
+        }
+
+        [Test, TestCaseSource(typeof(GetEllipseByRectangle))]
+
+        public void CalculateEllipsePointByRectangleTest(Point squareLUPoint, Point squareOppositePoint, Point[] expected)
+        {
+            Point[] actual;
+            actual = Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateEllipseByRectangle(squareLUPoint, squareOppositePoint);
+            Assert.AreEqual(expected, actual);
+        }
 
 
+
+    }
+
+    public class GetEllipseByRectangle : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new Point(0, 0), new Point(8, 10), new Point[] { new Point(4, 5), new Point(0, 5), new Point(4, 0) } };
+            yield return new object[] { new Point(1, 1), new Point(5, 11), new Point[] { new Point(3, 6), new Point(1, 6), new Point(3, 1) } };
+            yield return new object[] { new Point(0, 0), new Point(6, 6), new Point[] { new Point(3, 3), new Point(0, 3), new Point(3, 0) } };
+        }
+
+    }
+
+    public class GetCicleBySquareMock : IEnumerable
+    {
+        public IEnumerator GetEnumerator()
+        {
+            yield return new object[] { new Point(5, 5), new Point(9, 9), new Point[] { new Point(7, 7), new Point(7, 5) } };
+            yield return new object[] { new Point(2, 2), new Point(0, 0), new Point[] { new Point(1, 1), new Point(1, 2) } };
+            yield return new object[] { new Point(0, 0), new Point(0, 0), new Point[] { new Point(0, 0), new Point(0, 0) } };
+        }
+=======
+
+
+>>>>>>> DrawEllipse
 
     }
 
