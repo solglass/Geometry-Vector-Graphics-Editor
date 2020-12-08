@@ -14,7 +14,9 @@ namespace Geometry_Vector_Graphics_Editor
     {
         Bitmap _btm;
         Graphics _graphics;
-        Pen pen;
+        Pen _pen;
+        IFigure _curFigure;
+        Point startPoint;
         public Form1()
         {
             InitializeComponent();
@@ -22,15 +24,15 @@ namespace Geometry_Vector_Graphics_Editor
 
         private void Form1_MouseEnter(object sender, EventArgs e)
         {
-            Rectangle rect = new Rectangle();
-            _graphics.DrawEllipse(pen, rect);
+          //  Rectangle rect = new Rectangle();
+          //  _graphics.DrawEllipse(_pen, rect);
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             _btm = new Bitmap(pictureBox1.Width, pictureBox1.Width);
             _graphics = Graphics.FromImage(_btm);
-            pen = new Pen(Color.Black, 3);
+            _pen = new Pen(Color.Black, 3);
         }
     }
 }
