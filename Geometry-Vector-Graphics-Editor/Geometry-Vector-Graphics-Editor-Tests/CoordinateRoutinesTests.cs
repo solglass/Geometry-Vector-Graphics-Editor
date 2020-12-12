@@ -213,7 +213,7 @@ namespace Geometry_Vector_Graphics_Editor_Tests
             yield return new object[] { new Point(0, 0), new Point(6, 6), new Point[] { new Point(3, 3), new Point(0, 3), new Point(3, 0) } };
         }
 
-    }
+    } 
 
     public class GetCicleBySquareMock : IEnumerable
     {

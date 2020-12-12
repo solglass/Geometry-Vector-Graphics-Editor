@@ -10,7 +10,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     interface IFigure
     {
-        ArrayList Points { get; set; }
+        List<PointF> Points { get; set; }
 
         Bitmap Draw(Bitmap curBitmap, Graphics graphics, Pen pen);
         Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen);
