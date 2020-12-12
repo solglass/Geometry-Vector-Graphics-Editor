@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    interface IFigure
+    interface IFigure2points
     {
         List<PointF> Points { get; set; }
 
@@ -16,8 +16,9 @@ namespace Geometry_Vector_Graphics_Editor
         Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen);
         Bitmap Remove(Bitmap curBitmap, Graphics graphics, Pen pen);
         Bitmap Rotate(Bitmap curBitmap, Graphics graphics, Pen pen);
-        Bitmap Scale(Bitmap curbitmap, Graphics graphics, Pen pen);  
+        Bitmap Scale(Bitmap curbitmap, Graphics graphics, Pen pen);
 
+        void Update(PointF left, PointF right);
 
     }
 }

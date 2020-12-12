@@ -44,24 +44,24 @@ namespace Geometry_Vector_Graphics_Editor
             return arrPoints;
         }
 
-        public static Point[] CalculateSquareCoordinatesByTwoOppositePoints(Point pt1, Point pt2)
+        public static PointF[] CalculateSquareCoordinatesByTwoOppositePoints(PointF pt1, PointF pt2)
         {
-            Point[] arrPoints = new Point[4];
-            Point pt3 = new Point();
-            Point pt4 = new Point();
-            int x1 = pt1.X;
-            int y1 = pt1.Y;    // First diagonal point
-            int x2 = pt2.Y;
-            int y2 = pt2.Y;
-            int xc = (x1 + x2) / 2;
-            int yc = (y1 + y2) / 2;    // Center point
-            int xd = (x1 - x2) / 2;
-            int yd = (y1 - y2) / 2;    // Half-diagonal
+            PointF[] arrPoints = new PointF[4];
+            PointF pt3 = new PointF();
+            PointF pt4 = new PointF();
+            float x1 = pt1.X;
+            float y1 = pt1.Y;    // First diagonal point
+            float x2 = pt2.Y;
+            float y2 = pt2.Y;
+            float xc = (x1 + x2) / 2;
+            float yc = (y1 + y2) / 2;    // Center point
+            float xd = (x1 - x2) / 2;
+            float yd = (y1 - y2) / 2;    // Half-diagonal
 
-            int x3 = xc - yd;
-            int y3 = yc + xd;    // Third corner
-            int x4 = xc + yd;
-            int y4 = yc - xd;    // Fourth corner
+            float x3 = xc - yd;
+            float y3 = yc + xd;    // Third corner
+            float x4 = xc + yd;
+            float y4 = yc - xd;    // Fourth corner
             pt3.X = x3;
             pt3.Y = y3;
             pt4.X = x4;
@@ -76,26 +76,26 @@ namespace Geometry_Vector_Graphics_Editor
         }
 
 
-        public static Point[] CalculateRectangleCoordinatesByTwoOppositePoints(Point LeftPt, Point RightPt)
+        public static PointF[] CalculateRectangleCoordinatesByTwoOppositePoints(PointF LeftPt, PointF RightPt)
         {
-            Point[] arrPoints = new Point[4];
-            Point topLeft = new Point();
-            Point bottomRight= new Point();
-            Point bottomLeft = new Point();
-            Point topRight = new Point();
+            PointF[] arrPoints = new PointF[4];
+            PointF topLeft = new PointF();
+            PointF bottomRight= new PointF();
+            PointF bottomLeft = new PointF();
+            PointF topRight = new PointF();
             if (LeftPt.X > RightPt.X) 
             {
                 topLeft = LeftPt;
                 bottomRight = RightPt;
-                bottomLeft = new Point(topLeft.X, bottomRight.Y);
-                topRight = new Point(bottomRight.X, topLeft.Y);
+                bottomLeft = new PointF(topLeft.X, bottomRight.Y);
+                topRight = new PointF(bottomRight.X, topLeft.Y);
             }
             else if(LeftPt.X < RightPt.X)
                 {
                 bottomLeft = LeftPt;
                 topRight = RightPt;
-                topLeft = new Point(bottomLeft.X, topRight.Y);
-                bottomRight = new Point(topRight.X, topLeft.Y);
+                topLeft = new PointF(bottomLeft.X, topRight.Y);
+                bottomRight = new PointF(topRight.X, bottomLeft.Y);
                 }
             else { }
             
