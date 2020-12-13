@@ -61,7 +61,7 @@
             this.Clear.TabIndex = 0;
             this.Clear.Text = "Очистить\r\n";
             this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.button1_Click);
+            this.Clear.Click += new System.EventHandler(this.Clear_Click);
             // 
             // button2
             // 

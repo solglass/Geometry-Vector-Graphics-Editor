@@ -22,6 +22,7 @@ namespace graphics
         List<IFigure2points> figures;
         IFigureFactory2points factory2points;
         IFigure2points currentFigure2points;
+        float accuracy = 10; 
         string mode = "Draw";
 
         public Form1()
@@ -40,10 +41,12 @@ namespace graphics
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
             mainBm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Image = mainBm;
+            figures = new List<IFigure2points>();
+            currentFigure2points = null;
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -69,22 +72,25 @@ namespace graphics
                     // currentFigure2points.Width = (int)pen.Width;
                     break;
                 case "Move":
-                    currentFigure2points = null;
-                    /*foreach (IFigure figure in figures)
+                    //currentFigure2points = null;
+                    foreach (IFigure2points figure in figures)
                     {
-                        if (figure.Contains(e.Location))
-                        {
-                            currentFigure2points = figure;
+                       // if (figure.Contains(figure.Points[0], figure.Points[3],
+                       //     new PointF(e.Location.X, e.Location.Y), accuracy))
+                       // {
+                           // figure.Remove(mainBm, graphics, pen);
+                           // currentFigure2points = figure;
                             figures.Remove(currentFigure2points);
                             DrawAll();
 
-                            pen.Color = figure.Color;
-                            pen.Width = figure.Width;
 
+                            //pen.Color = figure.Color;
+                            //pen.Width = figure.Width;
+                           
                             break;
-                        }
+                      //  }
                     }
-                    */
+                   
                     break;
                     
             }
@@ -108,7 +114,7 @@ namespace graphics
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (md && factory2points != null)
+            if (md && currentFigure2points != null)
             {
                 tmpBm = (Bitmap)mainBm.Clone();
                 graphics = Graphics.FromImage(tmpBm);
@@ -179,6 +185,21 @@ namespace graphics
         private void buttonMove_Click(object sender, EventArgs e)
         {
             mode = "Move";
+        }
+
+        private void DrawAll()
+        {
+            mainBm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            graphics = Graphics.FromImage(mainBm);
+
+            foreach (IFigure2points figure in figures)
+            {
+                /*pen.Color = figure.Color;
+                pen.Width = figure.Width;
+                */
+                graphics.DrawPolygon(pen, figure.Points.ToArray());
+            }
+
         }
     }
 }

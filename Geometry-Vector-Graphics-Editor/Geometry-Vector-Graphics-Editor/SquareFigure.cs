@@ -58,5 +58,15 @@ namespace Geometry_Vector_Graphics_Editor
             Points = new List<PointF>(CoordinateRoutines.CalculateSquareCoordinatesByTwoOppositePoints(left, right));
 
         }
+
+        public bool CheckInside(double x, double a, double b, double accuracy)
+        {
+            return CoordinateRoutines.CheckInside(x, a, b, accuracy);
+        }
+
+        public bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy)
+        {
+            return CoordinateRoutines.Contains(start, end, checkPoint, accuracy);
+        }
     }
 }

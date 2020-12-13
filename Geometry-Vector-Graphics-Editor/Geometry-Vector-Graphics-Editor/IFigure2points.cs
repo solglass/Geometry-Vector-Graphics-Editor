@@ -19,6 +19,7 @@ namespace Geometry_Vector_Graphics_Editor
         Bitmap Scale(Bitmap curbitmap, Graphics graphics, Pen pen);
 
         void Update(PointF left, PointF right);
+        bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy);
 
     }
 }

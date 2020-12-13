@@ -34,5 +34,7 @@ namespace Geometry_Vector_Graphics_Editor
                 return Math.Abs((x - x1) * (y2 - y1) - (y - y1) * (x2 - x1)) < accuracy / 2 * Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
             else return false;
         }
+
+  
     }
 }
