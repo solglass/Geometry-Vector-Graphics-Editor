@@ -10,7 +10,7 @@ namespace Geometry_Vector_Graphics_Editor
     class SquareFactory : IFigureFactory2points
     {
 
-        public IFigure2points CreateFigure(Point left, Point right)
+        public IFigure2points CreateFigure(PointF left, PointF right)
         {
             SquareFigure Square = new SquareFigure(left, right);
             return (IFigure2points) Square;

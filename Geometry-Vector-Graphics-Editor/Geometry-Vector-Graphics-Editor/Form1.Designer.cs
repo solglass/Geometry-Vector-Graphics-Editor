@@ -46,6 +46,7 @@
             this.button10 = new System.Windows.Forms.Button();
             this.button11 = new System.Windows.Forms.Button();
             this.buttonDraw = new System.Windows.Forms.Button();
+            this.buttonMove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
@@ -269,11 +270,23 @@
             this.buttonDraw.UseVisualStyleBackColor = true;
             this.buttonDraw.Click += new System.EventHandler(this.buttonDraw_Click);
             // 
+            // buttonMove
+            // 
+            this.buttonMove.Location = new System.Drawing.Point(699, 8);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMove.Name = "buttonMove";
+            this.buttonMove.Size = new System.Drawing.Size(100, 28);
+            this.buttonMove.TabIndex = 18;
+            this.buttonMove.Text = "Двигать";
+            this.buttonMove.UseVisualStyleBackColor = true;
+            this.buttonMove.Click += new System.EventHandler(this.buttonMove_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.buttonMove);
             this.Controls.Add(this.buttonDraw);
             this.Controls.Add(this.button11);
             this.Controls.Add(this.button10);
@@ -324,6 +337,7 @@
         private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button buttonDraw;
+        private System.Windows.Forms.Button buttonMove;
     }
 }
 

@@ -14,6 +14,8 @@ namespace Geometry_Vector_Graphics_Editor
         public SquareFigure()
         {  }
 
+
+
         public SquareFigure(PointF left, PointF right)
         { Points = new List<PointF>(CoordinateRoutines.CalculateSquareCoordinatesByTwoOppositePoints(left, right)); }
 

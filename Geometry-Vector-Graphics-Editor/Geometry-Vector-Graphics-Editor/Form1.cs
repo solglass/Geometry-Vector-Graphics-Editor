@@ -21,7 +21,7 @@ namespace graphics
         Point prevPoint;
         List<IFigure> figures;
         IFigureFactory2points factory2points;
-        IFigure2points currentFigure;
+        IFigure2points currentFigure2points;
 
         public Form1()
         {
@@ -60,24 +60,37 @@ namespace graphics
         {
             md = true;
             prevPoint = e.Location;
+            if (factory2points is SquareFactory)
+            {
+                prevPoint.Y = prevPoint.X;
+                currentFigure2points = factory2points.CreateFigure(prevPoint,
+                new PointF(prevPoint.X+75*(float)Math.Sqrt(2), prevPoint.Y+75*(float)Math.Sqrt(2)));
+                tmpBm = (Bitmap)mainBm.Clone();
+                graphics = Graphics.FromImage(tmpBm);
+                graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
+                pictureBox1.Image = tmpBm;
+                GC.Collect();
+                md = false;
+            }
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (md)
+            if (md && factory2points != null)
             {
                 tmpBm = (Bitmap)mainBm.Clone();
                 graphics = Graphics.FromImage(tmpBm);
-                currentFigure = factory2points.CreateFigure(prevPoint,new Point(e.X,e.Y));
-               //2DO support 
+                currentFigure2points = factory2points.CreateFigure(prevPoint, new Point(e.X, e.Y));
+
+                //2DO support 
                 /*currentFigure.Color = pen.Color;
                 currentFigure.Width = (int)pen.Width; 
                 */
-                currentFigure.Update(prevPoint, e.Location);
-              
+                currentFigure2points.Update(prevPoint, e.Location);
+
                 //2DO -- move to object
                 //currentFigure.Draw(tmpBm, graphics, pen);
-                graphics.DrawPolygon(pen, currentFigure.Points.ToArray());
+                graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
                 pictureBox1.Image = tmpBm;
                 GC.Collect();
             }
@@ -86,10 +99,13 @@ namespace graphics
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            md = false;
-            graphics.DrawPolygon(pen, currentFigure.Points.ToArray());
-            pictureBox1.Image = tmpBm;
-            GC.Collect();
+            if (md && currentFigure2points!=null)
+            {
+                md = false;
+                graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
+                pictureBox1.Image = tmpBm;
+                GC.Collect();
+            }
 
         }
 
@@ -104,14 +120,21 @@ namespace graphics
 
         }
 
+        private void SquareButton_Click(object sender, EventArgs e)
+        {
+            factory2points = new SquareFactory();
+        }
+
+
         private void buttonDraw_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void SquareButton_Click(object sender, EventArgs e)
+
+        private void buttonMove_Click(object sender, EventArgs e)
         {
-            factory2points = new SquareFactory();
+
         }
     }
 }
