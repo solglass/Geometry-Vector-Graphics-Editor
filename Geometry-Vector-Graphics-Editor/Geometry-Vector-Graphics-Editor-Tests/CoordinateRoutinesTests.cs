@@ -26,7 +26,7 @@ namespace Geometry_Vector_Graphics_Editor_Tests
         public void CalculateSquareCoordinatesByTwoOppositePoints(int actualMockNumber, int expectedMockNumber)
         {
             PointF[] actual = GetActualMockSquareCoordinatesByTwoOppositePoints(actualMockNumber);
-            Point[] expected = GetExpectedMockSquareCoordinatesByTwoOppositePoints(expectedMockNumber);
+            PointF[] expected = GetExpectedMockSquareCoordinatesByTwoOppositePoints(expectedMockNumber);
             Assert.AreEqual(expected, actual);
 
         }
@@ -44,39 +44,31 @@ namespace Geometry_Vector_Graphics_Editor_Tests
                 case 3:
                     return new Point[4] { new Point(300, 0), new Point(0, 300), new Point(300, 600), new Point(600, 300) };
 
-                //TODO more tests
-                //    case 4:
-                //        return new Point[] { new Point(100, 100) };
-
                 default:
                     throw new Exception();
             }
         }
 
-        public Point[] GetExpectedMockSquareCoordinatesByTwoOppositePoints(int n)
+        public PointF[] GetExpectedMockSquareCoordinatesByTwoOppositePoints(int n)
         {
             switch (n)
             {
                 case 1:
                     return
-                        new Point[4] { new Point(100, 100), new Point(200, 100), new Point(200, 200), new Point(100, 200) };
+                        new PointF[4] { new PointF(100, 100), new PointF(200, 100), new PointF(200, 200), new PointF(100, 200) };
                 case 2:
                     return
-                        new Point[4] { new Point(200, 200), new Point(100, 200), new Point(100, 100), new Point(200, 100) };
+                        new PointF[4] { new PointF(200, 200), new PointF(100, 200), new PointF(100, 100), new PointF(200, 100) };
                 case 3:
                     return
-                        new Point[4] { new Point(0, 0), new Point(300, 0), new Point(300, 300), new Point(0, 300) };
-
-                //TODO more tests
-                //    case 4:
-                //        return new Point[] { new Point(100, 100) };
+                        new PointF[4] { new PointF(0, 0), new PointF(300, 0), new PointF(300, 300), new PointF(0, 300) };
 
                 default:
                     throw new Exception();
             }
         }
 
-        public Point[] GetExpectedMockSquareRectangleCoordinatesByTwoPoints(int n)
+        public Point[] GetExpectedMockRectangleCoordinatesByTwoPoints(int n)
         {
             switch (n)
             {
@@ -90,9 +82,6 @@ namespace Geometry_Vector_Graphics_Editor_Tests
                     return
                         new Point[4] { new Point(0, 0), new Point(0, 300), new Point(300, 300), new Point(300, 0) };
 
-                //TODO more tests
-                //    case 4:
-                //        return new Point[] { new Point(100, 100) };
 
                 default:
                     throw new Exception();
@@ -112,9 +101,6 @@ namespace Geometry_Vector_Graphics_Editor_Tests
                 case 3:
                     return
                        Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoAdjacentPoints(new Point(300, 0), new Point(0, 300));
-                //TODO more tests
-                // case 4:
-                //     return Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new Point(800, 800), new Point(200, 200));
 
                 default:
                     throw new Exception();
@@ -134,9 +120,6 @@ namespace Geometry_Vector_Graphics_Editor_Tests
                 case 3:
                     return
                        Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoOppositePoints(new PointF(0, 0), new PointF(300, 300));
-                //TODO more tests
-                // case 4:
-                //     return Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new PointF(800, 800), new PointF(200, 200));
 
                 default:
                     throw new Exception();
@@ -157,9 +140,6 @@ namespace Geometry_Vector_Graphics_Editor_Tests
                     return
                        Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateRectangleCoordinatesByTwoOppositePoints(new PointF(0, 300), new PointF(300, 0));
                */
-                //TODO more tests
-                // case 4:
-                //     return Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateSquareCoordinatesByTwoPoints(new PointF(800, 800), new PointF(200, 200));
 
                 default:
                     throw new Exception();
@@ -247,5 +227,3 @@ namespace Geometry_Vector_Graphics_Editor_Tests
         }
     }
 }
-
-//TODO more tests + negative tests

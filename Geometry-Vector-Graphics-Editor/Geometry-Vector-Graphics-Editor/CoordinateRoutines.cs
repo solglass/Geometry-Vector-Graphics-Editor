@@ -51,7 +51,7 @@ namespace Geometry_Vector_Graphics_Editor
             PointF pt4 = new PointF();
             float x1 = pt1.X;
             float y1 = pt1.Y;    // First diagonal point
-            float x2 = pt2.Y;
+            float x2 = pt2.X;
             float y2 = pt2.Y;
             float xc = (x1 + x2) / 2;
             float yc = (y1 + y2) / 2;    // Center point
@@ -62,6 +62,8 @@ namespace Geometry_Vector_Graphics_Editor
             float y3 = yc + xd;    // Third corner
             float x4 = xc + yd;
             float y4 = yc - xd;    // Fourth corner
+
+
             pt3.X = x3;
             pt3.Y = y3;
             pt4.X = x4;

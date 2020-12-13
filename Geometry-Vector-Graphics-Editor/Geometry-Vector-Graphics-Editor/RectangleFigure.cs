@@ -23,7 +23,7 @@ namespace Geometry_Vector_Graphics_Editor
             return curBitmap;
         }
 
-        public Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen)
+        public Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen, PointF delta)
         {
             throw new NotImplementedException();
         }

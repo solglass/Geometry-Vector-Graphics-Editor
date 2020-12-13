@@ -21,15 +21,21 @@ namespace Geometry_Vector_Graphics_Editor
 
         public Bitmap Draw(Bitmap curBitmap, Graphics graphics, Pen pen)
         {
-            
+
             graphics.DrawPolygon(pen, this.Points.ToArray());
             return curBitmap;
 
         }
 
-        public Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen)
+        public Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen, PointF delta)
         {
-            throw new NotImplementedException();
+            for (int i = 0; i < Points.Count(); i++)
+            {
+                PointF p = Points[i];
+                Points[i] = new PointF(p.X + delta.X, p.Y + delta.Y);
+            }
+            graphics.DrawPolygon(pen, this.Points.ToArray());
+            return curBitmap;
         }
 
         public Bitmap Remove(Bitmap curBitmap, Graphics graphics, Pen pen)

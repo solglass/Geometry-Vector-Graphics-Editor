@@ -13,7 +13,7 @@ namespace Geometry_Vector_Graphics_Editor
         List<PointF> Points { get; set; }
 
         Bitmap Draw(Bitmap curBitmap, Graphics graphics, Pen pen);
-        Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen);
+        Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen, PointF delta);
         Bitmap Remove(Bitmap curBitmap, Graphics graphics, Pen pen);
         Bitmap Rotate(Bitmap curBitmap, Graphics graphics, Pen pen);
         Bitmap Scale(Bitmap curbitmap, Graphics graphics, Pen pen);
