@@ -216,5 +216,20 @@ namespace graphics
             }
 
         }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RectangularTriangleButton_Click(object sender, EventArgs e)
+        {
+            factory2points = new RectangularTriangleFactory();
+        }
+
+        private void IsoscelesTriangleButton_Click(object sender, EventArgs e)
+        {
+            factory2points = new IsoscelesTriangleFactory();
+        }
     }
 }

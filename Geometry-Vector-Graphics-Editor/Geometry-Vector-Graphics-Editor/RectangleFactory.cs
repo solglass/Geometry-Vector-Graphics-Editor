@@ -16,9 +16,7 @@ namespace Geometry_Vector_Graphics_Editor
         }
         public bool CheckInside(double x, double a, double b, double accuracy)
         {
-            if ((x > a - accuracy && x < b + accuracy) || (x > b - accuracy && x < a + accuracy))
-                return true;
-            else return false;
+            return CoordinateRoutines.CheckInside(x, a, b, accuracy);
         }
 
         public bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy)
