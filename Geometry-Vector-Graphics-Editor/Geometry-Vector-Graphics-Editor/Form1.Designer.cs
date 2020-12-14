@@ -80,6 +80,7 @@
             this.button3.TabIndex = 2;
             this.button3.Text = "Линия";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // button4
             // 
@@ -199,7 +200,6 @@
             this.textBox1.Size = new System.Drawing.Size(110, 35);
             this.textBox1.TabIndex = 12;
             this.textBox1.Text = "Толщина";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // textBox2
             // 
