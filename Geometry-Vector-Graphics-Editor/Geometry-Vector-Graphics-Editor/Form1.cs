@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Geometry_Vector_Graphics_Editor.Figures;
 
 namespace graphics
 {
@@ -16,8 +17,8 @@ namespace graphics
         Graphics graphics;
         Pen pen;
         bool md = false;
-        Point p;
-
+        PointF prevPoint;
+        List<IFigure> figures = new List<IFigure>();
         public Form1()
         {
             InitializeComponent();
@@ -26,8 +27,9 @@ namespace graphics
         private void Form1_Load(object sender, EventArgs e)
         {
             mainBm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
+            graphics = Graphics.FromImage(mainBm);
             pen = new Pen(Color.Black, (int)numericUpDown1.Value);
-
+            prevPoint = new PointF(0, 0);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -49,7 +51,7 @@ namespace graphics
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
             md = true;
-            p = e.Location;
+            prevPoint = e.Location;
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
@@ -66,14 +68,20 @@ namespace graphics
             md = false;
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+ 
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button12_Click(object sender, EventArgs e)
         {
-
+            if(colorDialog1.ShowDialog()!=System.Windows.Forms.DialogResult.Cancel)
+            {
+                textBox2.Text = "";
+                textBox2.BackColor = colorDialog1.Color;
+                pen.Color = colorDialog1.Color;
+            }
         }
     }
 }

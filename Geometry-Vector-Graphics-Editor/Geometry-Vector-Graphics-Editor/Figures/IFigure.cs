@@ -8,9 +8,15 @@ using System.Drawing;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    interface IFigure
+   public interface IFigure
     {
         List<PointF> Points { get; set; }
+        Color Color { get; set; }
+        int Width { get; set; }
+        void UpdatePoints();
+        bool Contain(Point start, Point end, Point checkPoint, double accuracy);
+        bool CheckInside(double x, double a, double b, double accuracy);
+
 
         Bitmap Draw(Bitmap curBitmap, Graphics graphics, Pen pen);
         Bitmap Move(Bitmap curBitmap, Graphics graphics, Pen pen);
