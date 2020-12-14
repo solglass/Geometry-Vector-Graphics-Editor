@@ -68,5 +68,27 @@ namespace Geometry_Vector_Graphics_Editor
         {
             return CoordinateRoutines.Contains(start, end, checkPoint, accuracy);
         }
+
+        public bool IsSelected(PointF point, int accuracy)
+        {
+            PointF prevP = Points[0];
+            foreach (PointF p in Points)
+            {
+                if (Contains(prevP, p, point, accuracy))
+                {
+                    return true;
+                }
+                prevP = p;
+            }
+            return false; 
+        }
+
+        public bool IsCorrect()
+        {
+            if (Points == null)
+            { return false; }
+            return true;
+        }
+
     }
 }

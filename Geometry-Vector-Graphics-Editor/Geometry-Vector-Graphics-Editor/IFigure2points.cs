@@ -21,5 +21,9 @@ namespace Geometry_Vector_Graphics_Editor
         void Update(PointF left, PointF right);
         bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy);
 
+        bool IsSelected(PointF point, int accuracy);
+
+        bool IsCorrect();
+
     }
 }

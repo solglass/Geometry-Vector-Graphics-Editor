@@ -22,7 +22,7 @@ namespace graphics
         List<IFigure2points> figures;
         IFigureFactory2points factory2points;
         IFigure2points currentFigure2points;
-        float accuracy = 10; 
+        int accuracy = 30; 
         string mode = "Draw";
 
         public Form1()
@@ -68,27 +68,27 @@ namespace graphics
                 case "Draw":
                     currentFigure2points = factory2points.CreateFigure(prevPoint, new Point(e.X, e.Y));
                     figures.Add(currentFigure2points);
+                    //2DO support
                     // currentFigure2points.Color = pen.Color;
                     // currentFigure2points.Width = (int)pen.Width;
                     break;
                 case "Move":
-                    //currentFigure2points = null;
+                    currentFigure2points = null;
                     foreach (IFigure2points figure in figures)
                     {
-                       // if (figure.Contains(figure.Points[0], figure.Points[3],
-                       //     new PointF(e.Location.X, e.Location.Y), accuracy))
-                       // {
-                           // figure.Remove(mainBm, graphics, pen);
-                           // currentFigure2points = figure;
+                        if (figure.IsSelected(
+                            new PointF(e.Location.X, e.Location.Y), accuracy))
+                       {
+                            currentFigure2points = figure;
                             figures.Remove(currentFigure2points);
                             DrawAll();
 
-
+                            //2DO support
                             //pen.Color = figure.Color;
                             //pen.Width = figure.Width;
-                           
+
                             break;
-                      //  }
+                        }
                     }
                    
                     break;
@@ -147,15 +147,29 @@ namespace graphics
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            if (md && currentFigure2points!=null)
+            if (md && currentFigure2points != null && currentFigure2points.IsCorrect())
             {
-                md = false;
-                graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
+                switch (mode)
+                {
+                    case "Draw":
+                        md = false;
+                        graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
 
-                pictureBox1.Image = tmpBm;
-                GC.Collect();
-                mainBm = tmpBm;
+                        pictureBox1.Image = tmpBm;
+                        GC.Collect();
+                        mainBm = tmpBm;
+                        break;
+                    case "Move":
+                        md = false;
+                        mainBm = tmpBm;
+                        if (currentFigure2points != null && currentFigure2points.IsCorrect())
+                        {
+                            figures.Add(currentFigure2points);
+                        }
+                        break;
+                }
             }
+
 
         }
 
@@ -194,6 +208,7 @@ namespace graphics
 
             foreach (IFigure2points figure in figures)
             {
+                //2DO support
                 /*pen.Color = figure.Color;
                 pen.Width = figure.Width;
                 */
