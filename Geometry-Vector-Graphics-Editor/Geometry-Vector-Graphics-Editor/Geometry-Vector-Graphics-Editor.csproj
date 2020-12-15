@@ -46,6 +46,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Ellipse\EllipseFigure.cs" />
+    <Compile Include="Ellipse\EllipseFactory.cs" />
     <Compile Include="IFigure2points.cs" />
     <Compile Include="IFigureFactory2points.cs" />
     <Compile Include="RectangleFactory.cs" />
