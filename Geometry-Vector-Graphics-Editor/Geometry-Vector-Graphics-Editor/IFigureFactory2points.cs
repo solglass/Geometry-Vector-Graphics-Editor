@@ -7,14 +7,14 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    interface IFigureFactory
+    interface IFigureFactory2points
     {
         bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy);
 
 
         bool CheckInside(double x, double a, double b, double accuracy);
 
-        IFigure CreateFigure();
-
+        IFigure2points CreateFigure();
+    
     }
 }

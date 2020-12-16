@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Geometry_Vector_Graphics_Editor;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,17 +14,17 @@ namespace graphics
     public partial class Form1 : Form
     {
         Bitmap mainBm;
-        Bitmap tmpBM;
-        
+        Bitmap tmpBm;
         Graphics graphics;
         Pen pen;
         bool md = false;
-        PointF prevPoint;
-        string mode = "";
-        string figure = "";
-        List<Geometry_Vector_Graphics_Editor.IFigure> figures;
-        Geometry_Vector_Graphics_Editor.IFigure curFigure;
-        //List<IFigure> figures = new List<IFigure>();
+        Point prevPoint;
+        List<IFigure2points> figures;
+        IFigureFactory2points factory2points;
+        IFigure2points currentFigure2points;
+        int accuracy = 30; 
+        string mode = "Draw";
+
         public Form1()
         {
             InitializeComponent();
@@ -33,16 +34,19 @@ namespace graphics
         {
             mainBm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             graphics = Graphics.FromImage(mainBm);
-            pen = new Pen(Color.Black, (int)numericUpDown1.Value);
-            prevPoint = new PointF(0, 0);
-            figures = new List<Geometry_Vector_Graphics_Editor.IFigure>();
+            pen = new Pen(Color.Black, 5);
+            prevPoint= new Point(0, 0);
+            figures = new List<IFigure2points>();
+           
+
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void Clear_Click(object sender, EventArgs e)
         {
             mainBm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             pictureBox1.Image = mainBm;
-            curFigure = null;
+            figures = new List<IFigure2points>();
+            currentFigure2points = null;
         }
 
        
@@ -55,68 +59,122 @@ namespace graphics
          
         private void pictureBox1_MouseDown(object sender, MouseEventArgs e)
         {
-            if(mode.Equals("draw"))
+
+            switch (mode)
             {
-            curFigure = new Geometry_Vector_Graphics_Editor.LineFigure();
-            
-            curFigure.Color = pen.Color;
-            curFigure.Width = (int)pen.Width;
-            }
-            else if(mode.Equals("move"))
-            {
-                curFigure = null;
-               // foreach(Geometry_Vector_Graphics_Editor.IFigure figure in figures)
-                for (int i=0; i<figures.Count();i++)
-                {
-                    if (figures[i].IsChosen(e.Location))
+                case "Draw":
+                    if (factory2points != null)
                     {
-                        pen.Color = figures[i].Color;
-                        pen.Width = figures[i].Width;
-                        curFigure = figures[i];
-                        figures.Remove(curFigure);
-                        DrawAll();
+                        currentFigure2points = factory2points.CreateFigure();
+                        currentFigure2points.Update(prevPoint, new Point(e.X, e.Y));
+                        figures.Add(currentFigure2points);
+                        //2DO support
+                        // currentFigure2points.Color = pen.Color;
+                        // currentFigure2points.Width = (int)pen.Width;
+                       
                     }
-                }
+
+
+                    break;
+                case "Move":
+                    currentFigure2points = null;
+                    foreach (IFigure2points figure in figures)
+                    {
+                        if (figure.IsSelected(
+                            new PointF(e.Location.X, e.Location.Y), accuracy))
+                       {
+                            currentFigure2points = figure;
+                            figures.Remove(currentFigure2points);
+                            DrawAll();
+
+                            //2DO support
+                            //pen.Color = figure.Color;
+                            //pen.Width = figure.Width;
+
+                            break;
+                        }
+                    }
+                   
+                    break;
+                    
             }
+
             md = true;
             prevPoint = e.Location;
+            //debug
+            /*if (factory2points is SquareFactory)
+            {
+                currentFigure2points = factory2points.CreateFigure(prevPoint,
+                new PointF(prevPoint.X+75*(float)Math.Sqrt(2), prevPoint.Y+75*(float)Math.Sqrt(2)));
+                tmpBm = (Bitmap)mainBm.Clone();
+                graphics = Graphics.FromImage(tmpBm);
+                graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
+                pictureBox1.Image = tmpBm;
+                GC.Collect();
+                md = false;
+            }
+            */
         }
 
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {
-           
-            if (md && curFigure!=null)
+            if (md && currentFigure2points != null)
             {
-                tmpBM = (Bitmap)mainBm.Clone();
-                graphics = Graphics.FromImage(tmpBM);
+                tmpBm = (Bitmap)mainBm.Clone();
+                graphics = Graphics.FromImage(tmpBm);
+
+                //2DO support 
+                /*currentFigure2points.Color = pen.Color;
+                currentFigure2points.Width = (int)pen.Width; 
+                */
+
 
                 switch (mode)
                 {
-                    case "draw":
-                        curFigure.UpdatePoints(prevPoint, e.Location);
-                       
-                       //tmpBM= curFigure.Draw(tmpBM);
+                    case "Draw":
+                        currentFigure2points.Update(prevPoint, e.Location);
+                        tmpBm = currentFigure2points.Draw(tmpBm, graphics, pen);
                         break;
-                    case "move":
-                        PointF delta = new PointF(e.X - prevPoint.X, e.Y - prevPoint.Y);
-                        curFigure.Move(delta);
+                    case "Move":
+                        PointF delta = new PointF (e.X - prevPoint.X, e.Y - prevPoint.Y);
+                        currentFigure2points.Move(tmpBm, graphics, pen, delta);
                         prevPoint = e.Location;
                         break;
                 }
-                graphics.DrawLine(pen, curFigure.Points.First(), curFigure.Points.Last());
-                pictureBox1.Image = tmpBM;
+                
+
+                pictureBox1.Image = tmpBm;
+                GC.Collect();
             }
             
         }
 
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            md = false;
-            mainBm = tmpBM;
-            if(curFigure!=null && curFigure.IsCompleted())
+            if (md && currentFigure2points != null && currentFigure2points.IsCorrect())
             {
-                figures.Add(curFigure);
+                switch (mode)
+                {
+                    case "Draw":
+                        md = false;
+                        graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
+
+                        pictureBox1.Image = tmpBm;
+                        GC.Collect();
+                        mainBm = tmpBm;
+                        break;
+                    case "Move":
+                        md = false;
+                        mainBm = tmpBm;
+                        if (currentFigure2points != null && currentFigure2points.IsCorrect())
+                        {
+                            figures.Add(currentFigure2points);
+                        }
+                        break;
+                }
             }
+
+
         }
 
  
@@ -125,15 +183,9 @@ namespace graphics
 
         }
 
-        private void button12_Click(object sender, EventArgs e)
+        private void RectangleButton_Click(object sender, EventArgs e)
         {
-            if(colorDialog1.ShowDialog()!=System.Windows.Forms.DialogResult.Cancel)
-            {
-                textBox2.Text = "";
-                textBox2.BackColor = colorDialog1.Color;
-                pen.Color = colorDialog1.Color;
-            }
-        }
+            factory2points = new RectangleFactory(); 
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -143,9 +195,21 @@ namespace graphics
             mode = "draw";
         }
 
-        private void button13_Click(object sender, EventArgs e)
+        private void SquareButton_Click(object sender, EventArgs e)
         {
-            mode = "move";
+            factory2points = new SquareFactory();
+        }
+
+
+        private void buttonDraw_Click(object sender, EventArgs e)
+        {
+            mode = "Draw";
+        }
+
+
+        private void buttonMove_Click(object sender, EventArgs e)
+        {
+            mode = "Move";
         }
 
         private void DrawAll()
@@ -153,13 +217,30 @@ namespace graphics
             mainBm = new Bitmap(pictureBox1.Width, pictureBox1.Height);
             graphics = Graphics.FromImage(mainBm);
 
-            foreach (Geometry_Vector_Graphics_Editor.IFigure figure in figures)
+            foreach (IFigure2points figure in figures)
             {
-                pen.Color = figure.Color;
+                //2DO support
+                /*pen.Color = figure.Color;
                 pen.Width = figure.Width;
-                graphics.DrawLine(pen, figure.Points[0], figure.Points[1]);
+                */
+                graphics.DrawPolygon(pen, figure.Points.ToArray());
             }
 
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RectangularTriangleButton_Click(object sender, EventArgs e)
+        {
+            factory2points = new RectangularTriangleFactory();
+        }
+
+        private void IsoscelesTriangleButton_Click(object sender, EventArgs e)
+        {
+            factory2points = new IsoscelesTriangleFactory();
         }
     }
 }
