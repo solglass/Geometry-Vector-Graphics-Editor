@@ -22,7 +22,7 @@ namespace graphics
         List<IFigure2points> figures;
         IFigureFactory2points factory2points;
         IFigure2points currentFigure2points;
-        int accuracy = 30; 
+        int accuracy = 50; 
         string mode = "Draw";
 
         public Form1()
@@ -160,8 +160,6 @@ namespace graphics
                 {
                     case "Draw":
                         md = false;
-                        graphics.DrawPolygon(pen, currentFigure2points.Points.ToArray());
-
                         pictureBox1.Image = tmpBm;
                         GC.Collect();
                         mainBm = tmpBm;
@@ -222,6 +220,16 @@ namespace graphics
                 graphics.DrawPolygon(pen, figure.Points.ToArray());
             }
 
+        }
+
+        private void Circle_Click(object sender, EventArgs e)
+        {
+            factory2points = new CircleFactory();
+        }
+
+        private void Ellipse_Click(object sender, EventArgs e)
+        {
+            factory2points = new EllipseFactory();
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)
