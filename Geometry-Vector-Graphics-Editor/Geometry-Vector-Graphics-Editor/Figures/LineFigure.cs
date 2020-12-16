@@ -51,14 +51,9 @@ namespace Geometry_Vector_Graphics_Editor
                 return true;
             else return false;
         }
-        //public LineFigure(Point startPoint, Point stopPoint)
-        //{
+       
 
-        //    Points.Add(startPoint);
-        //    Points.Add(stopPoint);
-        //}
-
-        public bool IsComplited()
+        public bool IsCompleted()
         {
             if (Points != null && Points.Count() == 2) return true;
             else return false;
@@ -71,10 +66,10 @@ namespace Geometry_Vector_Graphics_Editor
                 stop
             };
         }
-        public Bitmap Draw(Bitmap curBitmap, PointF start, Point mousePoint)
+        public Bitmap Draw(Bitmap curBitmap/*, PointF start, Point mousePoint*/)
         {
 
-            this.UpdatePoints(start, mousePoint);
+           // this.UpdatePoints(start, mousePoint);
             pen = new Pen(this.Color, this.Width);
             graphics = Graphics.FromImage(curBitmap);
             graphics.DrawLine(pen, this.Points[0], this.Points[1]);
@@ -82,5 +77,12 @@ namespace Geometry_Vector_Graphics_Editor
             return curBitmap;
         }
 
+        public void Move(PointF delta)
+        {
+            PointF start = this.Points.First();
+            this.Points[0] = new PointF(start.X + delta.X, start.Y+delta.Y);
+            PointF end = this.Points.Last();
+            this.Points[1] = new PointF(end.X + delta.X, end.Y + delta.Y);
+        }
     }
 }
