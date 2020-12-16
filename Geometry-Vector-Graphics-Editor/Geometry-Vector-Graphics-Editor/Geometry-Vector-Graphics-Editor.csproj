@@ -54,8 +54,12 @@
     <Compile Include="EllipseFactory.cs" />
     <Compile Include="IFigure2points.cs" />
     <Compile Include="IFigureFactory2points.cs" />
+    <Compile Include="IsoscelesTriangleFactory.cs" />
+    <Compile Include="IsoscelesTriangleFigure.cs" />
     <Compile Include="RectangleFactory.cs" />
     <Compile Include="RectangleFigure.cs" />
+    <Compile Include="RectangularTriangleFactory.cs" />
+    <Compile Include="RectangularTriangleFigure.cs" />
     <Compile Include="SquareFigure.cs" />
     <Compile Include="CoordinateRoutines.cs" />
     <Compile Include="Form1.cs">

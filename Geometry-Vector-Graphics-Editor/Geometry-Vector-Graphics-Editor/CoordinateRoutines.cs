@@ -109,16 +109,16 @@ namespace Geometry_Vector_Graphics_Editor
             return arrPoints;
         }
 
-        public static Point[] CalculateRectangularTriangleCoordinatesByTwoPoints(Point LeftPt, Point RightPt)
+        public static PointF[] CalculateRectangularTriangleCoordinatesByTwoPoints(PointF LeftPt, PointF RightPt)
         {
-            Point[] arrPoints = new Point[3];
-            Point ThirdPoint = new Point();
+            PointF[] arrPoints = new PointF[3];
+            PointF ThirdPoint = new PointF();
             if (LeftPt.Y > RightPt.Y)
             {
-                ThirdPoint = new Point(LeftPt.X, RightPt.Y);
+                ThirdPoint = new PointF(LeftPt.X, RightPt.Y);
             }
             else if (LeftPt.Y < RightPt.Y)
-            { ThirdPoint = new Point(RightPt.X, LeftPt.Y); }
+            { ThirdPoint = new PointF(RightPt.X, LeftPt.Y); }
             else { }
             arrPoints[0] = LeftPt;
             arrPoints[1] = RightPt;
@@ -126,18 +126,18 @@ namespace Geometry_Vector_Graphics_Editor
             return arrPoints;
         }
 
-        public static Point[] CalculateIsoscelesTriangleCoordinatesByTwoPoints(Point LeftPt, Point RightPt)
+        public static PointF[] CalculateIsoscelesTriangleCoordinatesByTwoPoints(PointF LeftPt, PointF RightPt)
         {
-            Point[] arrPoints = new Point[3];
-            int delta = 2 * (RightPt.X - LeftPt.X);
-            Point ThirdPoint = new Point();
+            PointF[] arrPoints = new PointF[3];
+            float delta =  2 * (RightPt.X - LeftPt.X);
+            PointF ThirdPoint = new PointF();
             if (LeftPt.Y > RightPt.Y) 
             {
-                ThirdPoint = new Point(RightPt.X - delta, RightPt.Y);
+                ThirdPoint = new PointF(RightPt.X - delta, RightPt.Y);
             }
             else if (LeftPt.Y < RightPt.Y)
             {
-                ThirdPoint = new Point(LeftPt.X + delta, LeftPt.Y);
+                ThirdPoint = new PointF(LeftPt.X + delta, LeftPt.Y);
             }
             else { }
 

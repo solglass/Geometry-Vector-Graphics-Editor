@@ -66,11 +66,18 @@ namespace graphics
             switch (mode)
             {
                 case "Draw":
-                    currentFigure2points = factory2points.CreateFigure(prevPoint, new Point(e.X, e.Y));
-                    figures.Add(currentFigure2points);
-                    //2DO support
-                    // currentFigure2points.Color = pen.Color;
-                    // currentFigure2points.Width = (int)pen.Width;
+                    if (factory2points != null)
+                    {
+                        currentFigure2points = factory2points.CreateFigure();
+                        currentFigure2points.Update(prevPoint, new Point(e.X, e.Y));
+                        figures.Add(currentFigure2points);
+                        //2DO support
+                        // currentFigure2points.Color = pen.Color;
+                        // currentFigure2points.Width = (int)pen.Width;
+                       
+                    }
+
+
                     break;
                 case "Move":
                     currentFigure2points = null;
@@ -223,6 +230,21 @@ namespace graphics
         private void Ellipse_Click(object sender, EventArgs e)
         {
             factory2points = new EllipseFactory();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RectangularTriangleButton_Click(object sender, EventArgs e)
+        {
+            factory2points = new RectangularTriangleFactory();
+        }
+
+        private void IsoscelesTriangleButton_Click(object sender, EventArgs e)
+        {
+            factory2points = new IsoscelesTriangleFactory();
         }
     }
 }
