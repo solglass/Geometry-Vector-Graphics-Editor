@@ -7,14 +7,8 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    class RectangleFactory : IFigureFactory2points
+    class RectangularTriangleFactory : IFigureFactory2points
     {
-       
-        public IFigure2points CreateFigure()
-        {
-           
-            return (IFigure2points) new RectangleFigure();
-        }
         public bool CheckInside(double x, double a, double b, double accuracy)
         {
             return CoordinateRoutines.CheckInside(x, a, b, accuracy);
@@ -25,6 +19,9 @@ namespace Geometry_Vector_Graphics_Editor
             return CoordinateRoutines.Contains(start, end, checkPoint, accuracy);
         }
 
-  
+        public IFigure2points CreateFigure()
+        {
+            return (IFigure2points)new RectangularTriangleFigure();
+        }
     }
 }

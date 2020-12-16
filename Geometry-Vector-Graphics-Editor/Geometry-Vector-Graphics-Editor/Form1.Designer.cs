@@ -35,8 +35,8 @@
             this.RectangleButton = new System.Windows.Forms.Button();
             this.button6 = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.RectangularTriangleButton = new System.Windows.Forms.Button();
+            this.IsoscelesTriangleButton = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
@@ -123,29 +123,33 @@
             this.pictureBox1.Size = new System.Drawing.Size(859, 368);
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // button1
+            // RectangularTriangleButton
             // 
-            this.button1.Location = new System.Drawing.Point(16, 214);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(132, 28);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Прямоуг. Треуг.";
-            this.button1.UseVisualStyleBackColor = true;
+            this.RectangularTriangleButton.Cursor = System.Windows.Forms.Cursors.Default;
+            this.RectangularTriangleButton.Location = new System.Drawing.Point(16, 214);
+            this.RectangularTriangleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.RectangularTriangleButton.Name = "RectangularTriangleButton";
+            this.RectangularTriangleButton.Size = new System.Drawing.Size(132, 28);
+            this.RectangularTriangleButton.TabIndex = 7;
+            this.RectangularTriangleButton.Text = "Прямоуг. Треуг.";
+            this.RectangularTriangleButton.UseVisualStyleBackColor = true;
+            this.RectangularTriangleButton.Click += new System.EventHandler(this.RectangularTriangleButton_Click);
             // 
-            // button7
+            // IsoscelesTriangleButton
             // 
-            this.button7.Location = new System.Drawing.Point(16, 250);
-            this.button7.Margin = new System.Windows.Forms.Padding(4);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(132, 28);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Равнобедр. Треуг.";
-            this.button7.UseVisualStyleBackColor = true;
+            this.IsoscelesTriangleButton.Location = new System.Drawing.Point(16, 250);
+            this.IsoscelesTriangleButton.Margin = new System.Windows.Forms.Padding(4);
+            this.IsoscelesTriangleButton.Name = "IsoscelesTriangleButton";
+            this.IsoscelesTriangleButton.Size = new System.Drawing.Size(132, 28);
+            this.IsoscelesTriangleButton.TabIndex = 8;
+            this.IsoscelesTriangleButton.Text = "Равнобедр. Треуг.";
+            this.IsoscelesTriangleButton.UseVisualStyleBackColor = true;
+            this.IsoscelesTriangleButton.Click += new System.EventHandler(this.IsoscelesTriangleButton_Click);
             // 
             // button8
             // 
@@ -296,8 +300,8 @@
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.button9);
             this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.IsoscelesTriangleButton);
+            this.Controls.Add(this.RectangularTriangleButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.button6);
             this.Controls.Add(this.RectangleButton);
@@ -326,8 +330,8 @@
         private System.Windows.Forms.Button RectangleButton;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button RectangularTriangleButton;
+        private System.Windows.Forms.Button IsoscelesTriangleButton;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
