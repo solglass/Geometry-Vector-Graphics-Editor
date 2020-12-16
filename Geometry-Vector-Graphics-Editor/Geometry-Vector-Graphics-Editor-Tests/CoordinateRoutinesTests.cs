@@ -155,9 +155,9 @@ namespace Geometry_Vector_Graphics_Editor_Tests
         }
 
         [Test, TestCaseSource(typeof(GetIsoscelesTriangleMock))]
-        public void CalculateIsoscelesTriangleCoordinatesByTwoPoints(Point p1, Point p2, Point[] expected)
+        public void CalculateIsoscelesTriangleCoordinatesByTwoPoints(Point p1, PointF p2, PointF[] expected)
         {
-            Point[] actual;
+            PointF[] actual;
             actual = Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateIsoscelesTriangleCoordinatesByTwoPoints(p1, p2);
             Assert.AreEqual(expected, actual);
         }
