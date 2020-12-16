@@ -11,8 +11,8 @@ namespace Geometry_Vector_Graphics_Editor
     {
         public List<PointF> Points { get; set; }
 
-        public IsoscelesTriangleFigure(PointF left, PointF right)
-        { Points = new List<PointF>(CoordinateRoutines.CalculateIsoscelesTriangleCoordinatesByTwoPoints(left, right)); }
+        public IsoscelesTriangleFigure()
+        { Points = new List<PointF>(); }
 
 
         public bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy)

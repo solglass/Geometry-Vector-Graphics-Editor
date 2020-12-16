@@ -68,7 +68,8 @@ namespace graphics
                 case "Draw":
                     if (factory2points != null)
                     {
-                        currentFigure2points = factory2points.CreateFigure(prevPoint, new Point(e.X, e.Y));
+                        currentFigure2points = factory2points.CreateFigure();
+                        currentFigure2points.Update(prevPoint, new Point(e.X, e.Y));
                         figures.Add(currentFigure2points);
                         //2DO support
                         // currentFigure2points.Color = pen.Color;

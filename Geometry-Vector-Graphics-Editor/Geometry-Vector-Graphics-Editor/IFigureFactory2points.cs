@@ -14,7 +14,7 @@ namespace Geometry_Vector_Graphics_Editor
 
         bool CheckInside(double x, double a, double b, double accuracy);
 
-        IFigure2points CreateFigure(PointF left, PointF right);
+        IFigure2points CreateFigure();
     
     }
 }

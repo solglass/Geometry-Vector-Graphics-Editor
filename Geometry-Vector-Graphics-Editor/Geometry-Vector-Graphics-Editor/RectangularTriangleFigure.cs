@@ -12,8 +12,8 @@ namespace Geometry_Vector_Graphics_Editor
         public List<PointF> Points { get ; set ; }
 
 
-        public RectangularTriangleFigure (PointF left, PointF right)
-        { Points = new List<PointF>(CoordinateRoutines.CalculateRectangularTriangleCoordinatesByTwoPoints(left, right)); }
+        public RectangularTriangleFigure ()
+        { Points = new List<PointF>(); }
 
         public bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy)
         {

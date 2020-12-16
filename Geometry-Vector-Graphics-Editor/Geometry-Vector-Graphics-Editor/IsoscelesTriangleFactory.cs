@@ -21,9 +21,9 @@ namespace Geometry_Vector_Graphics_Editor
             return CoordinateRoutines.Contains(start, end, checkPoint, accuracy);
         }
 
-        public IFigure2points CreateFigure(PointF left, PointF right)
+        public IFigure2points CreateFigure()
         {
-            return (IFigure2points)new IsoscelesTriangleFigure(left, right);
+            return (IFigure2points)new IsoscelesTriangleFigure();
         }
     }
 }
