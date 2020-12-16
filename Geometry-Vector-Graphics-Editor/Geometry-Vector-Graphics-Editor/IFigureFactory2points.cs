@@ -9,7 +9,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     interface IFigureFactory2points
     {
-        IFigure2points CreateFigure(PointF left, PointF right);
+        IFigure2points CreateFigure();
     
     }
 }

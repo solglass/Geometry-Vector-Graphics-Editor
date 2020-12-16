@@ -9,9 +9,9 @@ namespace Geometry_Vector_Graphics_Editor
 {
     class CircleFactory : IFigureFactory2points
     {
-        public IFigure2points CreateFigure(PointF rectLUPoint, PointF rectOppositePoint)
+        public IFigure2points CreateFigure()
         {
-            return (IFigure2points) new CircleFigure(rectLUPoint, rectOppositePoint);
+            return (IFigure2points) new CircleFigure();
         }
     }
 }

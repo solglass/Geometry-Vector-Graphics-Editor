@@ -10,9 +10,9 @@ namespace Geometry_Vector_Graphics_Editor
     class EllipseFactory : IFigureFactory2points
     {
         
-        public IFigure2points CreateFigure(PointF rectLUPoint, PointF rectOppositePoint)
+        public IFigure2points CreateFigure()
         {
-            return (IFigure2points) new EllipseFigure(rectLUPoint, rectOppositePoint);
+            return (IFigure2points) new EllipseFigure();
         }
     }
 }

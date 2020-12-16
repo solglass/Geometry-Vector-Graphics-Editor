@@ -125,7 +125,7 @@
             this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
             this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
             // 
-            // RectangularTriangleButton
+            // button1
             // 
             this.button1.Location = new System.Drawing.Point(12, 174);
             this.button1.Name = "button1";
@@ -133,8 +133,40 @@
             this.button1.TabIndex = 7;
             this.button1.Text = "Прямоуг. Треуг.";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(12, 203);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(99, 23);
+            this.button7.TabIndex = 8;
+            this.button7.Text = "Равнобедр. Треуг.";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
+            // Circle
+            // 
+            this.Circle.Location = new System.Drawing.Point(12, 277);
+            this.Circle.Name = "Circle";
+            this.Circle.Size = new System.Drawing.Size(99, 23);
+            this.Circle.TabIndex = 9;
+            this.Circle.Text = "Круг";
+            this.Circle.UseVisualStyleBackColor = true;
+            this.Circle.Click += new System.EventHandler(this.Circle_Click);
+            // 
+            // Ellipse
+            // 
+            this.Ellipse.Location = new System.Drawing.Point(12, 306);
+            this.Ellipse.Name = "Ellipse";
+            this.Ellipse.Size = new System.Drawing.Size(99, 23);
+            this.Ellipse.TabIndex = 10;
+            this.Ellipse.Text = "Эллипс";
+            this.Ellipse.UseVisualStyleBackColor = true;
+            this.Ellipse.Click += new System.EventHandler(this.Ellipse_Click);
+            // 
+            // RectangularTriangleButton
+            // 
             this.RectangularTriangleButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RectangularTriangleButton.Location = new System.Drawing.Point(16, 214);
+            this.RectangularTriangleButton.Location = new System.Drawing.Point(-9, 242);
             this.RectangularTriangleButton.Margin = new System.Windows.Forms.Padding(4);
             this.RectangularTriangleButton.Name = "RectangularTriangleButton";
             this.RectangularTriangleButton.Size = new System.Drawing.Size(132, 28);
@@ -145,13 +177,7 @@
             // 
             // IsoscelesTriangleButton
             // 
-            this.button7.Location = new System.Drawing.Point(12, 203);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(99, 23);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Равнобедр. Треуг.";
-            this.button7.UseVisualStyleBackColor = true;
-            this.IsoscelesTriangleButton.Location = new System.Drawing.Point(16, 250);
+            this.IsoscelesTriangleButton.Location = new System.Drawing.Point(-9, 336);
             this.IsoscelesTriangleButton.Margin = new System.Windows.Forms.Padding(4);
             this.IsoscelesTriangleButton.Name = "IsoscelesTriangleButton";
             this.IsoscelesTriangleButton.Size = new System.Drawing.Size(132, 28);
@@ -160,25 +186,19 @@
             this.IsoscelesTriangleButton.UseVisualStyleBackColor = true;
             this.IsoscelesTriangleButton.Click += new System.EventHandler(this.IsoscelesTriangleButton_Click);
             // 
-            // Circle
+            // button8
             // 
-            this.Circle.Location = new System.Drawing.Point(12, 232);
-            this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(99, 23);
-            this.Circle.TabIndex = 9;
-            this.Circle.Text = "Круг";
-            this.Circle.UseVisualStyleBackColor = true;
-            this.Circle.Click += new System.EventHandler(this.Circle_Click);
+            this.button8.Location = new System.Drawing.Point(0, 0);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(75, 23);
+            this.button8.TabIndex = 20;
             // 
-            // Ellipse
+            // button9
             // 
-            this.Ellipse.Location = new System.Drawing.Point(12, 261);
-            this.Ellipse.Name = "Ellipse";
-            this.Ellipse.Size = new System.Drawing.Size(99, 23);
-            this.Ellipse.TabIndex = 10;
-            this.Ellipse.Text = "Эллипс";
-            this.Ellipse.UseVisualStyleBackColor = true;
-            this.Ellipse.Click += new System.EventHandler(this.Ellipse_Click);
+            this.button9.Location = new System.Drawing.Point(0, 0);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(75, 23);
+            this.button9.TabIndex = 19;
             // 
             // numericUpDown1
             // 
@@ -250,7 +270,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(12, 290);
+            this.button10.Location = new System.Drawing.Point(12, 371);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(99, 23);
             this.button10.TabIndex = 15;
@@ -259,7 +279,7 @@
             // 
             // button11
             // 
-            this.button11.Location = new System.Drawing.Point(12, 319);
+            this.button11.Location = new System.Drawing.Point(12, 400);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(99, 23);
             this.button11.TabIndex = 16;
