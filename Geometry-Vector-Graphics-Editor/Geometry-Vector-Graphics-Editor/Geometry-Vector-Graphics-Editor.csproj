@@ -22,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -31,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
@@ -46,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ellipse\EllipseFigure.cs" />
-    <Compile Include="Ellipse\EllipseFactory.cs" />
+    <Compile Include="CircleFactory.cs" />
+    <Compile Include="CircleFigure.cs" />
+    <Compile Include="EllipseFigure.cs" />
+    <Compile Include="EllipseFactory.cs" />
     <Compile Include="IFigure2points.cs" />
     <Compile Include="IFigureFactory2points.cs" />
     <Compile Include="RectangleFactory.cs" />

@@ -217,7 +217,7 @@ namespace graphics
 
         private void Circle_Click(object sender, EventArgs e)
         {
-
+            factory2points = new CircleFactory();
         }
 
         private void Ellipse_Click(object sender, EventArgs e)
