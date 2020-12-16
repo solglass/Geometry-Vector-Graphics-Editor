@@ -147,9 +147,9 @@ namespace Geometry_Vector_Graphics_Editor_Tests
         }
 
         [Test, TestCaseSource(typeof(GetRectangularTriangleMock))]
-        public void CalculateRectangularTriangleCoordinatesByTwoPoints(Point p1, Point p2, Point[] expected)
+        public void CalculateRectangularTriangleCoordinatesByTwoPoints(PointF p1, PointF p2, PointF[] expected)
         {
-            Point[] actual;
+            PointF[] actual;
             actual = Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateRectangularTriangleCoordinatesByTwoPoints(p1, p2);
             Assert.AreEqual(expected, actual);
         }
