@@ -165,18 +165,18 @@ namespace Geometry_Vector_Graphics_Editor_Tests
 
         [Test, TestCaseSource(typeof(GetCicleBySquareMock))]
 
-        public void CalculateCirclePointBySquareTest(Point squareLUPoint, Point squareOppositePoint, Point[] expected)
+        public void CalculateCirclePointBySquareTest(PointF squareLUPoint, PointF squareOppositePoint, PointF[] expected)
         {
-            Point[] actual;
+            PointF[] actual;
             actual = Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateCirclePointBySquare(squareLUPoint, squareOppositePoint);
             Assert.AreEqual(expected, actual);
         }
 
         [Test, TestCaseSource(typeof(GetEllipseByRectangle))]
 
-        public void CalculateEllipsePointByRectangleTest(Point squareLUPoint, Point squareOppositePoint, Point[] expected)
+        public void CalculateEllipsePointByRectangleTest(PointF squareLUPoint, PointF squareOppositePoint, PointF[] expected)
         {
-            Point[] actual;
+            PointF[] actual;
             actual = Geometry_Vector_Graphics_Editor.CoordinateRoutines.CalculateEllipseByRectangle(squareLUPoint, squareOppositePoint);
             Assert.AreEqual(expected, actual);
         }

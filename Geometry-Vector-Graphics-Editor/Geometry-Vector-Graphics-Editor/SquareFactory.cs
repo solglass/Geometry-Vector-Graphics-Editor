@@ -16,16 +16,6 @@ namespace Geometry_Vector_Graphics_Editor
             return (IFigure2points) Square;
         }
 
-        public bool CheckInside(double x, double a, double b, double accuracy)
-        {
-            return CoordinateRoutines.CheckInside(x, a, b, accuracy);
-        }
-
-        public bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy)
-        {
-           return CoordinateRoutines.Contains(start, end, checkPoint, accuracy);
-        }
-
         public bool isCorrect(IFigure2points figure)
         {
             if (figure.Points == null)

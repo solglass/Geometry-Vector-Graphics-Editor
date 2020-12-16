@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    class RectangularTriangleFactory : IFigureFactory2points
+    class CircleFactory : IFigureFactory2points
     {
         public IFigure2points CreateFigure()
         {
-            return (IFigure2points)new RectangularTriangleFigure();
+            return (IFigure2points) new CircleFigure();
         }
     }
 }
