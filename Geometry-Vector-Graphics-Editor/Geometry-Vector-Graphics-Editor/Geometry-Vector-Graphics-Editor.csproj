@@ -48,15 +48,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CircleFactory.cs" />
+    <Compile Include="Actors\IMover.cs" />
+    <Compile Include="Actors\IRotator.cs" />
+    <Compile Include="Actors\PolygonDrawer.cs" />
+    <Compile Include="Canvas.cs" />
+    <Compile Include="Figure.cs" />
+    <Compile Include="FigureFactories\CircleFactory.cs" />
     <Compile Include="CircleFigure.cs" />
     <Compile Include="EllipseFigure.cs" />
-    <Compile Include="EllipseFactory.cs" />
+    <Compile Include="FigureFactories\EllipseFactory.cs" />
     <Compile Include="IFigure2points.cs" />
-    <Compile Include="IFigureFactory2points.cs" />
-    <Compile Include="IsoscelesTriangleFactory.cs" />
+    <Compile Include="FigureFactories\IFigureFactory2points.cs" />
+    <Compile Include="FigureFactories\IsoscelesTriangleFactory.cs" />
     <Compile Include="IsoscelesTriangleFigure.cs" />
-    <Compile Include="RectangleFactory.cs" />
+    <Compile Include="FigureFactories\RectangleFactory.cs" />
     <Compile Include="RectangleFigure.cs" />
     <Compile Include="RectangularTriangleFactory.cs" />
     <Compile Include="RectangularTriangleFigure.cs" />
@@ -68,12 +73,15 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="IFigure.cs" />
-    <Compile Include="IFigureFactory.cs" />
+    <Compile Include="AbstractFigure.cs" />
+    <Compile Include="FigureFactories\IFigureFactory.cs" />
     <Compile Include="LineFigure.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SquareFactory.cs" />
+    <Compile Include="FigureFactories\SquareFactory.cs" />
+    <Compile Include="Actors\IDrawer.cs" />
+    <Compile Include="Actors\IScaler.cs" />
+    <Compile Include="Actors\IUpdater.cs" />
     <Compile Include="ZigZagFigure.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
