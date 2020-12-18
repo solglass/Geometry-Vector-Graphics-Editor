@@ -82,6 +82,10 @@
     <Compile Include="Actors\IDrawer.cs" />
     <Compile Include="Actors\IScaler.cs" />
     <Compile Include="Actors\IUpdater.cs" />
+    <Compile Include="Updater\IsoscelesTriangleUpdater.cs" />
+    <Compile Include="Updater\RectangleUpdater.cs" />
+    <Compile Include="Updater\RectangularTriangleUpdater.cs" />
+    <Compile Include="Updater\SquareUpdater.cs" />
     <Compile Include="ZigZagFigure.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

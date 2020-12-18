@@ -1,12 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Drawing;
+using Geometry_Vector_Graphics_Editor.Actors;
 
 namespace Geometry_Vector_Graphics_Editor.Updater
 {
-    class RectangleUpdater
+    public class RectangleUpdater : IUpdater
     {
+        public void Update(List<PointF> points)
+        {
+            CoordinateRoutines.CalculateRectangleCoordinatesByTwoOppositePoints(points[0], points[1]);
+        }
     }
 }
