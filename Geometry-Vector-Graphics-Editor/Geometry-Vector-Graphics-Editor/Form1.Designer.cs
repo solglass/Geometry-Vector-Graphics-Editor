@@ -157,7 +157,7 @@
             this.buttonCircle.TabIndex = 9;
             this.buttonCircle.Text = "Круг";
             this.buttonCircle.UseVisualStyleBackColor = true;
-            this.buttonCircle.Click += new System.EventHandler(this.buttonCircle_Click);
+           // this.buttonCircle.Click += new System.EventHandler(this.buttonCircle_Click);
             // 
             // buttonEllipse
             // 
