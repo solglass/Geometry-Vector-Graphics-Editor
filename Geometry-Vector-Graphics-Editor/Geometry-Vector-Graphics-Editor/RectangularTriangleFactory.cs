@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    class RectangularTriangleFactory : IFigureFactory2points
+    class RectangularTriangleFactory : DELETEIFigureFactory2points
     {
         public IFigure2points CreateFigure()
         {

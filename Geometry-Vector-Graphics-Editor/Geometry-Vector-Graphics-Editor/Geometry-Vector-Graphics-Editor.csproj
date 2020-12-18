@@ -60,8 +60,12 @@
     <Compile Include="IFigure2points.cs" />
     <Compile Include="FigureFactories\IFigureFactory2points.cs" />
     <Compile Include="FigureFactories\IsoscelesTriangleFactory.cs" />
+    <Compile Include="IMouseHandler.cs" />
     <Compile Include="IsoscelesTriangleFigure.cs" />
     <Compile Include="FigureFactories\RectangleFactory.cs" />
+    <Compile Include="MouseHandlers\ButtonRectangleClick.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseDown.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseUp.cs" />
     <Compile Include="RectangleFigure.cs" />
     <Compile Include="RectangularTriangleFactory.cs" />
     <Compile Include="RectangularTriangleFigure.cs" />

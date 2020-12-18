@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    class RectangleFactory : IFigureFactory2points
+    class RectangleFactory : IFigureFactory
     {
        
-        public IFigure2points CreateFigure()
+        public AbstractFigure CreateFigure()
         {
            
-            return (IFigure2points) new RectangleFigure();
+            return new Figure();
         }
     }
 }

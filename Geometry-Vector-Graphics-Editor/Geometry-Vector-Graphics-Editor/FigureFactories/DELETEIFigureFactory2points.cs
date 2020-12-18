@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    interface IFigureFactory2points
+    interface DELETEIFigureFactory2points
     {
         IFigure2points CreateFigure();
     
