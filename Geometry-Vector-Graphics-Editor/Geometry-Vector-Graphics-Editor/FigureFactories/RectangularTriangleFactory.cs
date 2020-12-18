@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 using Geometry_Vector_Graphics_Editor.Actors;
 namespace Geometry_Vector_Graphics_Editor
 {
-    class RectangleFactory : IFigureFactory
+    class RectangularTriangleFactory : IFigureFactory
     {
 
         public Figure CreateFigure()
         {
             PolygonDrawer drawer = new PolygonDrawer();
-            RectangleUpdater updater = new RectangleUpdater();
+            RectangularTriangleUpdater updater = new RectangularTriangleUpdater();
             RegularMover mover = new RegularMover();
             RegularRotator rotator = new RegularRotator();
             RegularScaler scaler = new RegularScaler();
@@ -22,4 +22,5 @@ namespace Geometry_Vector_Graphics_Editor
             return figure;
         }
     }
+}
 }
