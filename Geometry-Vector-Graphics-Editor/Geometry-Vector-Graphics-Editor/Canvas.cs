@@ -10,27 +10,51 @@ namespace Geometry_Vector_Graphics_Editor
     {
         private static Canvas instance;
 
-        Bitmap mainBm;
-        Bitmap tmpBm;
-        Pen pen;
-        Graphics graphics;
-
+        Bitmap _mainBm;
+        Bitmap _tmpBm;
+        Pen _pen;
+        Graphics _graphics;
+        
+        
         public Bitmap Bitmap
         {
             get
             {
-                return mainBm;
+                return _mainBm;
             }
             private set
             {
 
             }
         }
+        public Color PenColor 
+        {
+            get
+            {
+                return _pen.Color;
+            }
+            set
+            {
+                _pen.Color = value;
+            }
+        }
+
+        public int PenWidth
+        {
+            get
+            {
+                return (int)_pen.Width;
+            }
+            set
+            {
+                _pen.Width = (int)value;
+            }
+        }
         private Canvas(int width, int height)
         {
-            mainBm = new Bitmap(width, height);
-            pen = new Pen(Color.Black, 1);
-            graphics = Graphics.FromImage(mainBm);
+            _mainBm = new Bitmap(width, height);
+            _pen = new Pen(Color.Black, 1);
+            _graphics = Graphics.FromImage(_mainBm);
         }
 
 

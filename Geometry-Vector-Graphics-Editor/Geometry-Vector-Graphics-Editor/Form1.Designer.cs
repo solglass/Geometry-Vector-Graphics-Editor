@@ -253,7 +253,7 @@
             this.buttonScale.Location = new System.Drawing.Point(791, 9);
             this.buttonScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonScale.Name = "buttonScale";
-            this.buttonScale.Size = new System.Drawing.Size(152, 35);
+            this.buttonScale.Size = new System.Drawing.Size(167, 35);
             this.buttonScale.TabIndex = 18;
             this.buttonScale.Text = "Масштабировать";
             this.buttonScale.UseVisualStyleBackColor = true;
@@ -283,7 +283,7 @@
             this.buttonFilling.Name = "buttonFilling";
             this.buttonFilling.Size = new System.Drawing.Size(112, 35);
             this.buttonFilling.TabIndex = 17;
-            this.buttonFilling.Text = "Заливка";
+            this.buttonFilling.Text = "Залить";
             this.buttonFilling.UseVisualStyleBackColor = true;
             // 
             // Form1
