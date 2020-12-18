@@ -5,11 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Geometry_Vector_Graphics_Editor
-{
-    interface IFigureFactory
-    {
-        IFigure CreateFigure();
 
+namespace Geometry_Vector_Graphics_Editor.Actors
+{
+   public interface IUpdater
+    {
+        void Update(List<PointF> points);
     }
 }
