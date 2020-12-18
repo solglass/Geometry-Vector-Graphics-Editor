@@ -1,16 +1,26 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
-namespace Geometry_Vector_Graphics_Editor.FigureFactories
+using Geometry_Vector_Graphics_Editor.Actors;
+namespace Geometry_Vector_Graphics_Editor
 {
-    class RectangularTriangle : IFigureFactory
+    class RectangularTriangleFactory : IFigureFactory
     {
-        public AbstractFigure CreateFigure()
+
+        public Figure CreateFigure()
         {
-            return new Figure();
+            PolygonDrawer drawer = new PolygonDrawer();
+            RectangularTriangleUpdater updater = new RectangularTriangleUpdater();
+            RegularMover mover = new RegularMover();
+            RegularRotator rotator = new RegularRotator();
+            RegularScaler scaler = new RegularScaler();
+            Figure figure = new Figure(drawer, scaler, updater, mover, rotator);
+
+            return figure;
         }
     }
+}
 }

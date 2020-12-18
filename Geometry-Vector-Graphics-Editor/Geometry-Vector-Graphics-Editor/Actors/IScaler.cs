@@ -8,7 +8,7 @@ namespace Geometry_Vector_Graphics_Editor.Actors
 {
    public interface IScaler
     {
-        void Scale(float dx, float dy);
+        void Scale(float dx, float dy, List<PointF> points);
 
     }
 }
