@@ -283,7 +283,7 @@
             this.buttonFilling.Name = "buttonFilling";
             this.buttonFilling.Size = new System.Drawing.Size(112, 35);
             this.buttonFilling.TabIndex = 17;
-            this.buttonFilling.Text = "Заливка";
+            this.buttonFilling.Text = "Залить";
             this.buttonFilling.UseVisualStyleBackColor = true;
             // 
             // Form1
