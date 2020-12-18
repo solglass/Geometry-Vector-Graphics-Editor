@@ -4,27 +4,24 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Geometry_Vector_Graphics_Editor.Actors;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    class SquareFactory : IFigureFactory2points
+    class SquareFactory : IFigureFactory
     {
 
-        public IFigure2points CreateFigure()
+        public Figure CreateFigure()
         {
-            SquareFigure Square = new SquareFigure();
-            return (IFigure2points) Square;
-        }
+            PolygonDrawer drawer = new PolygonDrawer();
+            SquareUpdater updater = new SquareUpdater();
+            RegularMover mover = new RegularMover();
+            RegularRotator rotator = new RegularRotator();
+            RegularScaler scaler = new RegularScaler();
+            Figure figure = new Figure(drawer, scaler, updater, mover, rotator);
 
-        public bool isCorrect(IFigure2points figure)
-        {
-            if (figure.Points == null)
-            {
-                return false;
-            }
-            return true;
+            return figure;
         }
-
 
 
 

@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    interface IFigureFactory
+  public  interface IFigureFactory
     {
-        AbstractFigure CreateFigure();
+        Figure CreateFigure();
 
     }
 }

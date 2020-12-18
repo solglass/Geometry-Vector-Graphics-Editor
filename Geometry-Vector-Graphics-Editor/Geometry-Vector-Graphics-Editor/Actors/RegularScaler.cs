@@ -7,8 +7,11 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
-  public interface IMover
+    public class RegularScaler:IScaler //2DO MORE REALIZATIONS WHEN IT WILL BE OKAY
     {
-        void Move(PointF delta, List<PointF> points);
+      public  void Scale(float dx, float dy, List<PointF> points)
+        {
+
+        }
     }
 }
