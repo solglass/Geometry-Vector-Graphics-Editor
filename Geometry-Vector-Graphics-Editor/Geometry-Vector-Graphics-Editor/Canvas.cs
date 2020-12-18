@@ -14,17 +14,17 @@ namespace Geometry_Vector_Graphics_Editor
         Bitmap _tmpBm;
         Pen _pen;
         Graphics _graphics;
-        
-        
+        List<Figure> _figures;
+        Figure _curFigure;
         public Bitmap Bitmap
         {
             get
             {
-                return _mainBm;
+                return _tmpBm;
             }
-            private set
+            set
             {
-
+                _mainBm = (Bitmap)value;
             }
         }
         public Color PenColor 
@@ -50,19 +50,32 @@ namespace Geometry_Vector_Graphics_Editor
                 _pen.Width = (int)value;
             }
         }
-        private Canvas(int width, int height)
+       
+        public static Canvas getInstance(int width, int height, Color color, int penWidth)
         {
-            _mainBm = new Bitmap(width, height);
-            _pen = new Pen(Color.Black, 1);
-            _graphics = Graphics.FromImage(_mainBm);
+            if (instance == null)
+                instance = new Canvas(width, height, color, penWidth);
+            return instance;
+        }
+
+        public void CloneTmpBitmapFromMain()
+        {
+            _tmpBm = (Bitmap)_mainBm.Clone();
+            _graphics = Graphics.FromImage(_tmpBm);
+        }
+
+        public void SetTmpBitmapToMain()
+        {
+            _mainBm = _tmpBm;
         }
 
 
-        public static Canvas getInstance(int width, int height)
+
+        private Canvas(int width, int height, Color color, int penWidth)
         {
-            if (instance == null)
-                instance = new Canvas(width, height);
-            return instance;
+            _mainBm = new Bitmap(width, height);
+            _pen = new Pen(color, penWidth);
+            _graphics = Graphics.FromImage(_mainBm);
         }
     }
 }
