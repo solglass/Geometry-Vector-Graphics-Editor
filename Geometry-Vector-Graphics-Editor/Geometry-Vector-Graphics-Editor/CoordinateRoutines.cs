@@ -148,15 +148,21 @@ namespace Geometry_Vector_Graphics_Editor
             return arrPoints;
         }
 
-
-        public static PointF[] CalculateCirclePointBySquare(PointF squareLUPoint, PointF squareOppositePoint)
+        public static PointF[] CalculateCicleBySquare(PointF rectLUPoint, PointF rectOppositePoint)
         {
+            PointF[] points = CalculateSquareCoordinatesByTwoOppositePoints(rectLUPoint, rectOppositePoint);
+            PointF LeftUpPt = points[0];
+            PointF RightUpPt = points[1];
+            PointF RightDownPt = points[2];
+            PointF LeftDownPt = points[3];
+            PointF UpCenterPt = new PointF((RightUpPt.X + LeftUpPt.X) / 2, RightUpPt.Y);
+            PointF DownCenterPt = new PointF((RightUpPt.X + LeftUpPt.X) / 2, RightDownPt.Y);
+            PointF LeftCenterPt = new PointF(LeftUpPt.X, (LeftDownPt.Y + LeftUpPt.Y) / 2);
+            PointF RightCenterPt = new PointF(RightUpPt.X, (RightDownPt.Y + RightUpPt.Y) / 2);
+            PointF CenterPt = new PointF((RightUpPt.X + LeftUpPt.X) / 2, (RightUpPt.Y + RightDownPt.Y) / 2);
 
-            PointF[] points = CalculateSquareCoordinatesByTwoOppositePoints(squareLUPoint, squareOppositePoint);
-
-            return points;
+            return new PointF[] { LeftUpPt, RightDownPt, RightUpPt, LeftDownPt, LeftCenterPt, RightCenterPt, CenterPt, DownCenterPt, UpCenterPt };
         }
-
         public static PointF[] CalculateEllipseByRectangle(PointF rectLUPoint, PointF rectOppositePoint)
         {
             PointF LeftUpPt = rectLUPoint;
@@ -167,8 +173,9 @@ namespace Geometry_Vector_Graphics_Editor
             PointF DownCenterPt = new PointF ((RightUpPt.X + LeftUpPt.X)/2, RightDownPt.Y);
             PointF LeftCenterPt = new PointF (LeftUpPt.X,(LeftDownPt.Y + LeftUpPt.Y)/2);
             PointF RightCenterPt = new PointF (RightUpPt.X,(RightDownPt.Y + RightUpPt.Y)/2);
+            PointF CenterPt = new PointF((RightUpPt.X + LeftUpPt.X) / 2, (RightUpPt.Y + RightDownPt.Y) / 2);
 
-            return new PointF[] {LeftUpPt,RightUpPt,RightDownPt,LeftDownPt, LeftCenterPt,UpCenterPt,DownCenterPt,RightCenterPt};
+            return new PointF[] {LeftUpPt, RightDownPt, RightUpPt,LeftDownPt, LeftCenterPt, RightCenterPt, CenterPt, DownCenterPt,UpCenterPt};
         }
 
         public static bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy)

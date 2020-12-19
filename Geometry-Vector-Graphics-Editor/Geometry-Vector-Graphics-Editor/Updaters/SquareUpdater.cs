@@ -8,7 +8,7 @@ namespace Geometry_Vector_Graphics_Editor.Updater
     {
         public void Update(int pointsAmount, List<PointF> points, Figure figure)
         {
-            CoordinateRoutines.CalculateSquareCoordinatesByTwoOppositePoints(points[0], points[1]);
+            throw new System.NotImplementedException();
         }
     }
 }

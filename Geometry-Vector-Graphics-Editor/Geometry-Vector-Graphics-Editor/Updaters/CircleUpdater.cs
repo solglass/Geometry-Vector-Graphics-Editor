@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Updater
 {
-   public class EllipseUpdater:IUpdater
+   public class CircleUpdater:IUpdater
     {
-        public void Update(int pointsAmount, List<PointF> points,Figure figure)
+        public void Update(int pointsAmount, List<PointF> points, Figure figure)
         {
-            figure.Points = new List<PointF>(CoordinateRoutines.CalculateEllipseByRectangle(points[0],points[1]));
+            figure.Points = new List<PointF>(CoordinateRoutines.CalculateCicleBySquare(points[0], points[1]));
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace Geometry_Vector_Graphics_Editor
 {
-    class Canvas
+    public class Canvas
     {
         private static Canvas instance;
 
@@ -24,7 +24,6 @@ namespace Geometry_Vector_Graphics_Editor
         {
             get; set;
         }
-
 
         public Bitmap Bitmap
         {
@@ -79,13 +78,12 @@ namespace Geometry_Vector_Graphics_Editor
             _mainBm = _tmpBm;
         }
 
-
-
         private Canvas(int width, int height, Color color, int penWidth)
         {
             _mainBm = new Bitmap(width, height);
             _pen = new Pen(color, penWidth);
             _graphics = Graphics.FromImage(_mainBm);
+            _figures = new List<Figure>();
         }
 
         public void DrawCurrentFigure()
@@ -94,6 +92,7 @@ namespace Geometry_Vector_Graphics_Editor
             {
                 CloneTmpBitmapFromMain();
                 CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
+                _figures.Add(CurFigure);
 
             }
         }

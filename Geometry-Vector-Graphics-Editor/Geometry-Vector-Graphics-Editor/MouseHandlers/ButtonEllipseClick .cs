@@ -9,7 +9,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class ButtonEllipseClick : IMouseHandler
     {
-        ButtonEllipseClick(object sender, EventArgs e, Canvas cnvs)
+       public ButtonEllipseClick(object sender, EventArgs e, Canvas cnvs)
         {   
             Canvas = cnvs;
             HandleEvent(sender, e);
@@ -19,6 +19,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent(object sender, EventArgs e)
         {
             ellipseFactory = new EllipseFactory();
+            Canvas.CurFigureFactory = ellipseFactory;
         }
     }
 }

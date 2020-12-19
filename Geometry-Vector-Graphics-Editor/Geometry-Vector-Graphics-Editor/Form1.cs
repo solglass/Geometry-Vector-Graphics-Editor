@@ -76,5 +76,15 @@ namespace graphics
         {
 
         }
+
+        private void buttonEllipse_Click(object sender, EventArgs e)
+        {
+            ButtonEllipseClick ellipseClick = new ButtonEllipseClick(sender, e, _canvas);
+        }
+
+        private void buttonCircle_Click_1(object sender, EventArgs e)
+        {
+            ButtonCircleClick circleClick = new ButtonCircleClick(sender, e, _canvas);
+        }
     }
 }
