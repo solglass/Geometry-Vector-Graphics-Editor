@@ -15,7 +15,16 @@ namespace Geometry_Vector_Graphics_Editor
         Pen _pen;
         Graphics _graphics;
         List<Figure> _figures;
-        Figure _curFigure;
+        public Figure CurFigure
+        {
+            get; set;
+        }
+        public IFigureFactory CurFigureFactory
+        {
+            get; set;
+        }
+
+
         public Bitmap Bitmap
         {
             get

@@ -14,10 +14,10 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             HandleEvent(sender, e);
         }
         public Canvas canvas { get; set; }
-        private IFigureFactory currentFigureFactory;
+        private IFigureFactory curFigureFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
-
+            curFigureFactory = canvas.CurFigureFactory;
         }
     }
 }
