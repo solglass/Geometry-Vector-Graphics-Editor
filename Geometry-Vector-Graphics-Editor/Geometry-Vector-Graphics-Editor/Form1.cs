@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Geometry_Vector_Graphics_Editor.MouseHandlers;
+
 namespace graphics
 {
     public partial class Form1 : Form
@@ -123,6 +123,21 @@ namespace graphics
             _canvas.Figures = new List<Figure>();
             _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
             pictureBox.Image = null;
+        }
+
+        private void buttonRectangularTriangle_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonRectangularTriangleClick(sender, e, _canvas);
+        }
+
+        private void buttonIsoscalesTriangle_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonIsoscelesTriangleClick (sender, e, _canvas);
+        }
+
+        private void buttonSquare_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonSquareClick(sender, e, _canvas);
         }
     }
 }

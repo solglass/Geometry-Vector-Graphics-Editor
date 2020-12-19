@@ -8,21 +8,19 @@ using System.Windows.Forms;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class ButtonRectangularTriangleClick : IMouseHandler
+   class ButtonIsoscelesTriangleClick : IMouseHandler
     {
-
-
-        public ButtonRectangularTriangleClick(object sender, EventArgs e, Canvas cnvs)
-        {
+        public ButtonIsoscelesTriangleClick(object sender, EventArgs e, Canvas cnvs)
+        {   
             Canvas = cnvs;
             HandleEvent(sender, e);
         }
         public Canvas Canvas { get; set; }
-        private RectangularTriangleFactory rectangularTriangleFactory;
+        IsoscelesTriangleFactory isoscelesTriangleFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
-            rectangularTriangleFactory = new RectangularTriangleFactory();
-            Canvas.CurFigureFactory = rectangularTriangleFactory;
+            isoscelesTriangleFactory = new IsoscelesTriangleFactory();
+            Canvas.CurFigureFactory = isoscelesTriangleFactory;
             MouseEventArgs eMouse = (MouseEventArgs)e;
             Canvas.Prevpoint = new PointF(eMouse.X, eMouse.Y);
         }
