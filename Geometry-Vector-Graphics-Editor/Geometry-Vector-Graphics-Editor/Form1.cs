@@ -40,6 +40,7 @@ namespace graphics
             if(colorDialog1.ShowDialog()!=System.Windows.Forms.DialogResult.Cancel)
             {
                 buttonColor.BackColor = colorDialog1.Color;
+                _canvas.PenColor = colorDialog1.Color;
             }
         }
 
@@ -105,6 +106,11 @@ namespace graphics
         private void buttonCircle_Click_1(object sender, EventArgs e)
         {
             ButtonCircleClick circleClick = new ButtonCircleClick(sender, e, _canvas);
+        }
+
+        private void trackBarWidth_Scroll(object sender, EventArgs e)
+        {
+            _canvas.PenWidth = trackBarWidth.Value;
         }
     }
 }
