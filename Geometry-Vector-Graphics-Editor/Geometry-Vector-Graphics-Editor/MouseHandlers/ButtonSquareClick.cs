@@ -9,12 +9,12 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class ButtonSquareClick : IMouseHandler
     {
-        ButtonSquareClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonSquareClick(object sender, EventArgs e, Canvas cnvs)
         {   
-            canvas = cnvs;
+            Canvas = cnvs;
             HandleEvent(sender, e);
         }
-        public Canvas canvas { get; set; }
+        public Canvas Canvas { get; set; }
         private SquareFactory squareFactory;
         public void HandleEvent(object sender, EventArgs e)
         {

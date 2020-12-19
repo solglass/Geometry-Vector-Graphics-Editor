@@ -6,9 +6,9 @@ namespace Geometry_Vector_Graphics_Editor.Updater
 {
     public class SquareUpdater : IUpdater
     {
-        public void Update(int pointsAmount, List<PointF> points)
+        public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            CoordinateRoutines.CalculateSquareCoordinatesByTwoOppositePoints(points[0], points[1]);
+            throw new System.NotImplementedException();
         }
     }
 }

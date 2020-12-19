@@ -5,6 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Geometry_Vector_Graphics_Editor.Actors;
+using Geometry_Vector_Graphics_Editor.Updater;
+
 namespace Geometry_Vector_Graphics_Editor
 {
     class RectangleFactory : IFigureFactory

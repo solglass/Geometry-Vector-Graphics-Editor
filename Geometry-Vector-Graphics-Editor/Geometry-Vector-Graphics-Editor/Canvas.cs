@@ -6,15 +6,16 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace Geometry_Vector_Graphics_Editor
 {
-    class Canvas
+    public class Canvas
     {
         private static Canvas instance;
 
         Bitmap _mainBm;
         Bitmap _tmpBm;
-        Pen _pen;
-        Graphics _graphics;
-        List<Figure> _figures;
+        private Pen _pen;
+        private Graphics _graphics;
+        public List<Figure> Figures { get; set; }
+        public PointF Prevpoint { get; set; }
         public Figure CurFigure
         {
             get; set;
@@ -23,7 +24,6 @@ namespace Geometry_Vector_Graphics_Editor
         {
             get; set;
         }
-
 
         public Bitmap Bitmap
         {
@@ -78,13 +78,42 @@ namespace Geometry_Vector_Graphics_Editor
             _mainBm = _tmpBm;
         }
 
-
-
         private Canvas(int width, int height, Color color, int penWidth)
         {
             _mainBm = new Bitmap(width, height);
             _pen = new Pen(color, penWidth);
             _graphics = Graphics.FromImage(_mainBm);
+           Figures= new List<Figure>();
         }
+
+        public void Update(int pointsAmount, List<PointF> points)
+        {
+            if (CurFigure != null)
+            {
+                CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
+
+            }
+        }
+
+        public void DrawCurrentFigure()
+        {
+            if (CurFigure != null && _mainBm !=null)
+            {
+                CloneTmpBitmapFromMain();
+                CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
+               // _figures.Add(CurFigure);
+
+            }
+        }
+
+        public void DrawAll()
+        {
+            foreach (var figure in Figures)
+            {
+                _pen.Color = figure.Color;
+                _pen.Width = figure.Width;
+                figure.Drawer.Draw(figure.Points,_pen,_graphics); }
+        }
+
     }
 }

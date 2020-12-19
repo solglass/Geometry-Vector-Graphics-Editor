@@ -48,20 +48,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Actors\CircleUpdater.cs" />
+    <Compile Include="Actors\CicleMover.cs" />
+    <Compile Include="Actors\CircleDrawer.cs" />
+    <Compile Include="Updaters\CircleUpdater.cs" />
     <Compile Include="Actors\EllipseDrawer.cs" />
     <Compile Include="Actors\EllipseMover.cs" />
     <Compile Include="Actors\EllipseRotator.cs" />
     <Compile Include="MouseHandlers\ButtonMoveClick.cs" />
     <Compile Include="MouseHandlers\ButtonRotateClick.cs" />
     <Compile Include="MouseHandlers\ButtonScaleClick.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseMoveDraw.cs" />
     <Compile Include="Updaters\EllipseUpdater.cs" />
     <Compile Include="Actors\IMover.cs" />
     <Compile Include="Actors\IRotator.cs" />
     <Compile Include="Actors\LineDrawer.cs" />
     <Compile Include="Actors\LineUpdater.cs" />
     <Compile Include="Actors\PolygonDrawer.cs" />
-    <Compile Include="Actors\RectangleUpdater.cs" />
     <Compile Include="Actors\RegularMover.cs" />
     <Compile Include="Actors\RegularRotator.cs" />
     <Compile Include="Actors\RegularScaler.cs" />
@@ -87,8 +89,8 @@
     <Compile Include="MouseHandlers\ButtonSquareClick.cs" />
     <Compile Include="MouseHandlers\ButtonRectangleClick.cs" />
     <Compile Include="MouseHandlers\ButtonDrawClick.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseDown.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseUp.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseDownDraw.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseUpDraw.cs" />
     <Compile Include="RectangleFigure.cs" />
     <Compile Include="RectangularTriangleFigure.cs" />
     <Compile Include="SquareFigure.cs" />

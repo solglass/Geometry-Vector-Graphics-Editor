@@ -1,24 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using Geometry_Vector_Graphics_Editor;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class PictureBoxMouseUp : IMouseHandler
+    class PictureBoxMouseUpDraw : IMouseHandler
     {
 
-        PictureBoxMouseUp(object sender, EventArgs e, Canvas cnvs)
+        public PictureBoxMouseUpDraw(object sender, EventArgs e, Canvas cnvs)
         {
-            canvas = cnvs;
+            Canvas = cnvs;
             HandleEvent(sender, e);
         }
-        public Canvas canvas { get; set; }
+        public Canvas Canvas { get; set; }
         public void HandleEvent(object sender, EventArgs e)
         {
-            
+            MouseEventArgs eMouse = (MouseEventArgs)e;
+            Canvas.Figures.Add(Canvas.CurFigure);
+ 
         }
     }
 }
