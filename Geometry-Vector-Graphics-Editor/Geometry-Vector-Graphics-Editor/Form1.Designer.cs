@@ -66,6 +66,7 @@
             this.buttonClear.TabIndex = 0;
             this.buttonClear.Text = "Очистить\r\n";
             this.buttonClear.UseVisualStyleBackColor = true;
+            this.buttonClear.Click += new System.EventHandler(this.buttonClear_Click);
             // 
             // buttonBrush
             // 
@@ -86,6 +87,7 @@
             this.buttonLine.TabIndex = 2;
             this.buttonLine.Text = "Линия";
             this.buttonLine.UseVisualStyleBackColor = true;
+            this.buttonLine.Click += new System.EventHandler(this.buttonLine_Click);
             // 
             // buttonSquare
             // 
