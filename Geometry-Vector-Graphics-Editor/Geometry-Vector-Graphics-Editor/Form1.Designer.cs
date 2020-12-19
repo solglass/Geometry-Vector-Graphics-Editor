@@ -28,318 +28,300 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Clear = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.SquareButton = new System.Windows.Forms.Button();
-            this.RectangleButton = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.Circle = new System.Windows.Forms.Button();
-            this.Ellipse = new System.Windows.Forms.Button();
-            this.RectangularTriangleButton = new System.Windows.Forms.Button();
-            this.IsoscelesTriangleButton = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
+            this.buttonClear = new System.Windows.Forms.Button();
+            this.buttonBrush = new System.Windows.Forms.Button();
+            this.buttonLine = new System.Windows.Forms.Button();
+            this.buttonSquare = new System.Windows.Forms.Button();
+            this.buttonRectangle = new System.Windows.Forms.Button();
+            this.buttonTriangle = new System.Windows.Forms.Button();
+            this.pictureBox = new System.Windows.Forms.PictureBox();
+            this.buttonRectangularTriangle = new System.Windows.Forms.Button();
+            this.buttonIsoscalesTriangle = new System.Windows.Forms.Button();
+            this.buttonCircle = new System.Windows.Forms.Button();
+            this.buttonEllipse = new System.Windows.Forms.Button();
+            this.buttonPoligon = new System.Windows.Forms.Button();
+            this.buttonZigzag = new System.Windows.Forms.Button();
             this.buttonDraw = new System.Windows.Forms.Button();
             this.buttonMove = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            this.buttonRegularPolygon = new System.Windows.Forms.Button();
+            this.buttonColor = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.trackBarWidth = new System.Windows.Forms.TrackBar();
+            this.buttonRotate = new System.Windows.Forms.Button();
+            this.buttonScale = new System.Windows.Forms.Button();
+            this.buttonBackColor = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.colorDialog2 = new System.Windows.Forms.ColorDialog();
+            this.buttonFilling = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarWidth)).BeginInit();
             this.SuspendLayout();
             // 
-            // Clear
+            // buttonClear
             // 
-            this.Clear.Location = new System.Drawing.Point(686, 6);
-            this.Clear.Name = "Clear";
-            this.Clear.Size = new System.Drawing.Size(75, 23);
-            this.Clear.TabIndex = 0;
-            this.Clear.Text = "Очистить\r\n";
-            this.Clear.UseVisualStyleBackColor = true;
-            this.Clear.Click += new System.EventHandler(this.Clear_Click);
+            this.buttonClear.Location = new System.Drawing.Point(1075, 9);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(112, 35);
+            this.buttonClear.TabIndex = 0;
+            this.buttonClear.Text = "Очистить\r\n";
+            this.buttonClear.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonBrush
             // 
-            this.button2.Location = new System.Drawing.Point(12, 28);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(99, 23);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Кисть";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonBrush.Location = new System.Drawing.Point(13, 54);
+            this.buttonBrush.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonBrush.Name = "buttonBrush";
+            this.buttonBrush.Size = new System.Drawing.Size(148, 35);
+            this.buttonBrush.TabIndex = 1;
+            this.buttonBrush.Text = "Кисть";
+            this.buttonBrush.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonLine
             // 
-            this.button3.Location = new System.Drawing.Point(12, 58);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(99, 23);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Линия";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonLine.Location = new System.Drawing.Point(13, 99);
+            this.buttonLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonLine.Name = "buttonLine";
+            this.buttonLine.Size = new System.Drawing.Size(148, 35);
+            this.buttonLine.TabIndex = 2;
+            this.buttonLine.Text = "Линия";
+            this.buttonLine.UseVisualStyleBackColor = true;
             // 
-            // SquareButton
+            // buttonSquare
             // 
-            this.SquareButton.Location = new System.Drawing.Point(12, 87);
-            this.SquareButton.Name = "SquareButton";
-            this.SquareButton.Size = new System.Drawing.Size(99, 23);
-            this.SquareButton.TabIndex = 3;
-            this.SquareButton.Text = "Квадрат";
-            this.SquareButton.UseVisualStyleBackColor = true;
-            this.SquareButton.Click += new System.EventHandler(this.SquareButton_Click);
+            this.buttonSquare.Location = new System.Drawing.Point(13, 157);
+            this.buttonSquare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonSquare.Name = "buttonSquare";
+            this.buttonSquare.Size = new System.Drawing.Size(148, 35);
+            this.buttonSquare.TabIndex = 3;
+            this.buttonSquare.Text = "Квадрат";
+            this.buttonSquare.UseVisualStyleBackColor = true;
             // 
-            // RectangleButton
+            // buttonRectangle
             // 
-            this.RectangleButton.Location = new System.Drawing.Point(12, 116);
-            this.RectangleButton.Name = "RectangleButton";
-            this.RectangleButton.Size = new System.Drawing.Size(99, 23);
-            this.RectangleButton.TabIndex = 4;
-            this.RectangleButton.Text = "Прямоугольник";
-            this.RectangleButton.UseVisualStyleBackColor = true;
-            this.RectangleButton.Click += new System.EventHandler(this.RectangleButton_Click);
+            this.buttonRectangle.Location = new System.Drawing.Point(13, 202);
+            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRectangle.Name = "buttonRectangle";
+            this.buttonRectangle.Size = new System.Drawing.Size(148, 35);
+            this.buttonRectangle.TabIndex = 4;
+            this.buttonRectangle.Text = "Прямоугольник";
+            this.buttonRectangle.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // buttonTriangle
             // 
-            this.button6.Location = new System.Drawing.Point(12, 145);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(99, 23);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "Треугольник";
-            this.button6.UseVisualStyleBackColor = true;
+            this.buttonTriangle.Location = new System.Drawing.Point(13, 259);
+            this.buttonTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonTriangle.Name = "buttonTriangle";
+            this.buttonTriangle.Size = new System.Drawing.Size(148, 35);
+            this.buttonTriangle.TabIndex = 5;
+            this.buttonTriangle.Text = "Треугольник";
+            this.buttonTriangle.UseVisualStyleBackColor = true;
             // 
-            // pictureBox1
+            // pictureBox
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(117, 35);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(644, 299);
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            this.pictureBox1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseDown);
-            this.pictureBox1.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseMove);
-            this.pictureBox1.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pictureBox1_MouseUp);
+            this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pictureBox.Location = new System.Drawing.Point(176, 54);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pictureBox.Name = "pictureBox";
+            this.pictureBox.Size = new System.Drawing.Size(1011, 789);
+            this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pictureBox.TabIndex = 6;
+            this.pictureBox.TabStop = false;
             // 
-            // button1
+            // buttonRectangularTriangle
             // 
-            this.button1.Location = new System.Drawing.Point(12, 174);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(99, 23);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "Прямоуг. Треуг.";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRectangularTriangle.Location = new System.Drawing.Point(13, 304);
+            this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRectangularTriangle.Name = "buttonRectangularTriangle";
+            this.buttonRectangularTriangle.Size = new System.Drawing.Size(148, 52);
+            this.buttonRectangularTriangle.TabIndex = 7;
+            this.buttonRectangularTriangle.Text = "Прямоугольный треугольник";
+            this.buttonRectangularTriangle.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // buttonIsoscalesTriangle
             // 
-            this.button7.Location = new System.Drawing.Point(12, 203);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(99, 23);
-            this.button7.TabIndex = 8;
-            this.button7.Text = "Равнобедр. Треуг.";
-            this.button7.UseVisualStyleBackColor = true;
+            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(13, 366);
+            this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonIsoscalesTriangle.Name = "buttonIsoscalesTriangle";
+            this.buttonIsoscalesTriangle.Size = new System.Drawing.Size(148, 54);
+            this.buttonIsoscalesTriangle.TabIndex = 8;
+            this.buttonIsoscalesTriangle.Text = "Равнобедренный треугольник";
+            this.buttonIsoscalesTriangle.UseVisualStyleBackColor = true;
             // 
-            // Circle
+            // buttonCircle
             // 
-            this.Circle.Location = new System.Drawing.Point(12, 277);
-            this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(99, 23);
-            this.Circle.TabIndex = 9;
-            this.Circle.Text = "Круг";
-            this.Circle.UseVisualStyleBackColor = true;
-            this.Circle.Click += new System.EventHandler(this.Circle_Click);
+            this.buttonCircle.Location = new System.Drawing.Point(13, 453);
+            this.buttonCircle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonCircle.Name = "buttonCircle";
+            this.buttonCircle.Size = new System.Drawing.Size(148, 35);
+            this.buttonCircle.TabIndex = 9;
+            this.buttonCircle.Text = "Круг";
+            this.buttonCircle.UseVisualStyleBackColor = true;
+           // this.buttonCircle.Click += new System.EventHandler(this.buttonCircle_Click);
             // 
-            // Ellipse
+            // buttonEllipse
             // 
-            this.Ellipse.Location = new System.Drawing.Point(12, 306);
-            this.Ellipse.Name = "Ellipse";
-            this.Ellipse.Size = new System.Drawing.Size(99, 23);
-            this.Ellipse.TabIndex = 10;
-            this.Ellipse.Text = "Эллипс";
-            this.Ellipse.UseVisualStyleBackColor = true;
-            this.Ellipse.Click += new System.EventHandler(this.Ellipse_Click);
+            this.buttonEllipse.Location = new System.Drawing.Point(14, 498);
+            this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonEllipse.Name = "buttonEllipse";
+            this.buttonEllipse.Size = new System.Drawing.Size(148, 35);
+            this.buttonEllipse.TabIndex = 10;
+            this.buttonEllipse.Text = "Эллипс";
+            this.buttonEllipse.UseVisualStyleBackColor = true;
             // 
-            // RectangularTriangleButton
+            // buttonPoligon
             // 
-            this.RectangularTriangleButton.Cursor = System.Windows.Forms.Cursors.Default;
-            this.RectangularTriangleButton.Location = new System.Drawing.Point(-9, 242);
-            this.RectangularTriangleButton.Margin = new System.Windows.Forms.Padding(4);
-            this.RectangularTriangleButton.Name = "RectangularTriangleButton";
-            this.RectangularTriangleButton.Size = new System.Drawing.Size(132, 28);
-            this.RectangularTriangleButton.TabIndex = 7;
-            this.RectangularTriangleButton.Text = "Прямоуг. Треуг.";
-            this.RectangularTriangleButton.UseVisualStyleBackColor = true;
-            this.RectangularTriangleButton.Click += new System.EventHandler(this.RectangularTriangleButton_Click);
+            this.buttonPoligon.Location = new System.Drawing.Point(14, 606);
+            this.buttonPoligon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonPoligon.Name = "buttonPoligon";
+            this.buttonPoligon.Size = new System.Drawing.Size(148, 35);
+            this.buttonPoligon.TabIndex = 15;
+            this.buttonPoligon.Text = "Многоугольник";
+            this.buttonPoligon.UseVisualStyleBackColor = true;
             // 
-            // IsoscelesTriangleButton
+            // buttonZigzag
             // 
-            this.IsoscelesTriangleButton.Location = new System.Drawing.Point(-9, 336);
-            this.IsoscelesTriangleButton.Margin = new System.Windows.Forms.Padding(4);
-            this.IsoscelesTriangleButton.Name = "IsoscelesTriangleButton";
-            this.IsoscelesTriangleButton.Size = new System.Drawing.Size(132, 28);
-            this.IsoscelesTriangleButton.TabIndex = 8;
-            this.IsoscelesTriangleButton.Text = "Равнобедр. Треуг.";
-            this.IsoscelesTriangleButton.UseVisualStyleBackColor = true;
-            this.IsoscelesTriangleButton.Click += new System.EventHandler(this.IsoscelesTriangleButton_Click);
-            // 
-            // button8
-            // 
-            this.button8.Location = new System.Drawing.Point(0, 0);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(75, 23);
-            this.button8.TabIndex = 20;
-            // 
-            // button9
-            // 
-            this.button9.Location = new System.Drawing.Point(0, 0);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(75, 23);
-            this.button9.TabIndex = 19;
-            // 
-            // numericUpDown1
-            // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown1.Location = new System.Drawing.Point(207, 3);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(36, 26);
-            this.numericUpDown1.TabIndex = 11;
-            this.numericUpDown1.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown1.ValueChanged += new System.EventHandler(this.numericUpDown1_ValueChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox1.Location = new System.Drawing.Point(126, 3);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(75, 26);
-            this.textBox1.TabIndex = 12;
-            this.textBox1.Text = "Толщина";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox2.Location = new System.Drawing.Point(271, 3);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(75, 26);
-            this.textBox2.TabIndex = 13;
-            this.textBox2.Text = "Цвет";
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // numericUpDown2
-            // 
-            this.numericUpDown2.BackColor = System.Drawing.SystemColors.Info;
-            this.numericUpDown2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.numericUpDown2.Location = new System.Drawing.Point(352, 3);
-            this.numericUpDown2.Maximum = new decimal(new int[] {
-            10,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(36, 26);
-            this.numericUpDown2.TabIndex = 14;
-            this.numericUpDown2.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
-            // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(12, 371);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(99, 23);
-            this.button10.TabIndex = 15;
-            this.button10.Text = "N угольник";
-            this.button10.UseVisualStyleBackColor = true;
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(12, 400);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(99, 23);
-            this.button11.TabIndex = 16;
-            this.button11.Text = "Ломанная";
-            this.button11.UseVisualStyleBackColor = true;
+            this.buttonZigzag.Location = new System.Drawing.Point(14, 561);
+            this.buttonZigzag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonZigzag.Name = "buttonZigzag";
+            this.buttonZigzag.Size = new System.Drawing.Size(148, 35);
+            this.buttonZigzag.TabIndex = 16;
+            this.buttonZigzag.Text = "Ломанная";
+            this.buttonZigzag.UseVisualStyleBackColor = true;
             // 
             // buttonDraw
             // 
-            this.buttonDraw.Location = new System.Drawing.Point(605, 6);
+            this.buttonDraw.Location = new System.Drawing.Point(311, 9);
+            this.buttonDraw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDraw.Name = "buttonDraw";
-            this.buttonDraw.Size = new System.Drawing.Size(75, 23);
+            this.buttonDraw.Size = new System.Drawing.Size(112, 35);
             this.buttonDraw.TabIndex = 17;
             this.buttonDraw.Text = "Рисовать";
             this.buttonDraw.UseVisualStyleBackColor = true;
-            this.buttonDraw.Click += new System.EventHandler(this.buttonDraw_Click);
             // 
             // buttonMove
             // 
-            this.buttonMove.Location = new System.Drawing.Point(524, 6);
+            this.buttonMove.Location = new System.Drawing.Point(551, 9);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMove.Name = "buttonMove";
-            this.buttonMove.Size = new System.Drawing.Size(75, 23);
+            this.buttonMove.Size = new System.Drawing.Size(112, 35);
             this.buttonMove.TabIndex = 18;
             this.buttonMove.Text = "Двигать";
             this.buttonMove.UseVisualStyleBackColor = true;
-            this.buttonMove.Click += new System.EventHandler(this.buttonMove_Click);
+            // 
+            // buttonRegularPolygon
+            // 
+            this.buttonRegularPolygon.Location = new System.Drawing.Point(14, 649);
+            this.buttonRegularPolygon.Name = "buttonRegularPolygon";
+            this.buttonRegularPolygon.Size = new System.Drawing.Size(148, 58);
+            this.buttonRegularPolygon.TabIndex = 19;
+            this.buttonRegularPolygon.Text = "Правильный многоугольник";
+            this.buttonRegularPolygon.UseVisualStyleBackColor = true;
+            // 
+            // buttonColor
+            // 
+            this.buttonColor.BackColor = System.Drawing.Color.Black;
+            this.buttonColor.Location = new System.Drawing.Point(13, 798);
+            this.buttonColor.Name = "buttonColor";
+            this.buttonColor.Size = new System.Drawing.Size(149, 45);
+            this.buttonColor.TabIndex = 20;
+            this.buttonColor.UseVisualStyleBackColor = false;
+            this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
+            // 
+            // trackBarWidth
+            // 
+            this.trackBarWidth.LargeChange = 1;
+            this.trackBarWidth.Location = new System.Drawing.Point(12, 723);
+            this.trackBarWidth.Minimum = 1;
+            this.trackBarWidth.Name = "trackBarWidth";
+            this.trackBarWidth.Size = new System.Drawing.Size(148, 69);
+            this.trackBarWidth.TabIndex = 21;
+            this.trackBarWidth.Value = 1;
+            // 
+            // buttonRotate
+            // 
+            this.buttonRotate.Location = new System.Drawing.Point(671, 9);
+            this.buttonRotate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonRotate.Name = "buttonRotate";
+            this.buttonRotate.Size = new System.Drawing.Size(112, 35);
+            this.buttonRotate.TabIndex = 18;
+            this.buttonRotate.Text = "Повернуть";
+            this.buttonRotate.UseVisualStyleBackColor = true;
+            // 
+            // buttonScale
+            // 
+            this.buttonScale.Location = new System.Drawing.Point(791, 9);
+            this.buttonScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonScale.Name = "buttonScale";
+            this.buttonScale.Size = new System.Drawing.Size(167, 35);
+            this.buttonScale.TabIndex = 18;
+            this.buttonScale.Text = "Масштабировать";
+            this.buttonScale.UseVisualStyleBackColor = true;
+            // 
+            // buttonBackColor
+            // 
+            this.buttonBackColor.Location = new System.Drawing.Point(219, 9);
+            this.buttonBackColor.Name = "buttonBackColor";
+            this.buttonBackColor.Size = new System.Drawing.Size(38, 35);
+            this.buttonBackColor.TabIndex = 22;
+            this.buttonBackColor.UseVisualStyleBackColor = true;
+            this.buttonBackColor.Click += new System.EventHandler(this.buttonBackColor_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(119, 16);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(94, 20);
+            this.label1.TabIndex = 23;
+            this.label1.Text = "Цвет фона";
+            // 
+            // buttonFilling
+            // 
+            this.buttonFilling.Location = new System.Drawing.Point(431, 9);
+            this.buttonFilling.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.buttonFilling.Name = "buttonFilling";
+            this.buttonFilling.Size = new System.Drawing.Size(112, 35);
+            this.buttonFilling.TabIndex = 17;
+            this.buttonFilling.Text = "Залить";
+            this.buttonFilling.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.AutoSize = true;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1200, 869);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.buttonBackColor);
+            this.Controls.Add(this.trackBarWidth);
+            this.Controls.Add(this.buttonColor);
+            this.Controls.Add(this.buttonRegularPolygon);
+            this.Controls.Add(this.buttonScale);
+            this.Controls.Add(this.buttonRotate);
             this.Controls.Add(this.buttonMove);
+            this.Controls.Add(this.buttonFilling);
             this.Controls.Add(this.buttonDraw);
-            this.Controls.Add(this.button11);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.Ellipse);
-            this.Controls.Add(this.Circle);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.IsoscelesTriangleButton);
-            this.Controls.Add(this.RectangularTriangleButton);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.RectangleButton);
-            this.Controls.Add(this.SquareButton);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.Clear);
+            this.Controls.Add(this.buttonZigzag);
+            this.Controls.Add(this.buttonPoligon);
+            this.Controls.Add(this.buttonEllipse);
+            this.Controls.Add(this.buttonCircle);
+            this.Controls.Add(this.buttonIsoscalesTriangle);
+            this.Controls.Add(this.buttonRectangularTriangle);
+            this.Controls.Add(this.pictureBox);
+            this.Controls.Add(this.buttonTriangle);
+            this.Controls.Add(this.buttonRectangle);
+            this.Controls.Add(this.buttonSquare);
+            this.Controls.Add(this.buttonLine);
+            this.Controls.Add(this.buttonBrush);
+            this.Controls.Add(this.buttonClear);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -347,29 +329,31 @@
 
         #endregion
 
-        private System.Windows.Forms.Button Clear;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button SquareButton;
-        private System.Windows.Forms.Button RectangleButton;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button Circle;
-        private System.Windows.Forms.Button Ellipse;
-        private System.Windows.Forms.Button RectangularTriangleButton;
-        private System.Windows.Forms.Button IsoscelesTriangleButton;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button buttonClear;
+        private System.Windows.Forms.Button buttonBrush;
+        private System.Windows.Forms.Button buttonLine;
+        private System.Windows.Forms.Button buttonSquare;
+        private System.Windows.Forms.Button buttonRectangle;
+        private System.Windows.Forms.Button buttonTriangle;
+        private System.Windows.Forms.PictureBox pictureBox;
+        private System.Windows.Forms.Button buttonRectangularTriangle;
+        private System.Windows.Forms.Button buttonIsoscalesTriangle;
+        private System.Windows.Forms.Button buttonCircle;
+        private System.Windows.Forms.Button buttonEllipse;
+        private System.Windows.Forms.Button buttonPoligon;
+        private System.Windows.Forms.Button buttonZigzag;
         private System.Windows.Forms.Button buttonDraw;
         private System.Windows.Forms.Button buttonMove;
+        private System.Windows.Forms.Button buttonRegularPolygon;
+        private System.Windows.Forms.Button buttonColor;
+        private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.TrackBar trackBarWidth;
+        private System.Windows.Forms.Button buttonRotate;
+        private System.Windows.Forms.Button buttonScale;
+        private System.Windows.Forms.Button buttonBackColor;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ColorDialog colorDialog2;
+        private System.Windows.Forms.Button buttonFilling;
     }
 }
 

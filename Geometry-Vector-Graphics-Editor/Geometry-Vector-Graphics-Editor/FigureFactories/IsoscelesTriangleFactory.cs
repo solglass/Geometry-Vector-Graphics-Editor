@@ -4,14 +4,24 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Geometry_Vector_Graphics_Editor.Actors;
+using Geometry_Vector_Graphics_Editor.Updater;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    class IsoscelesTriangleFactory : IFigureFactory2points
+    class IsoscelesTriangleFactory : IFigureFactory
     {
-        public IFigure2points CreateFigure()
+
+        public Figure CreateFigure()
         {
-            return (IFigure2points)new IsoscelesTriangleFigure();
+            PolygonDrawer drawer = new PolygonDrawer();
+            IsoscelesTriangleUpdater updater = new IsoscelesTriangleUpdater();
+            RegularMover mover = new RegularMover();
+            RegularRotator rotator = new RegularRotator();
+            RegularScaler scaler = new RegularScaler();
+            Figure figure = new Figure(drawer, scaler, updater, mover, rotator);
+
+            return figure;
         }
     }
 }

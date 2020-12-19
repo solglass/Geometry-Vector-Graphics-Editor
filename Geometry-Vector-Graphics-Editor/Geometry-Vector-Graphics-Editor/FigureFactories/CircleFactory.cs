@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Geometry_Vector_Graphics_Editor.Actors;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -7,11 +8,18 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-    class CircleFactory : IFigureFactory2points
+    class CircleFactory : IFigureFactory
     {
-        public IFigure2points CreateFigure()
+        public Figure CreateFigure()
         {
-            return (IFigure2points) new CircleFigure();
+            PolygonDrawer drawer = new PolygonDrawer();
+            CircleUpdater updater = new CircleUpdater();
+            RegularMover mover = new RegularMover();
+            RegularRotator rotator = new RegularRotator();
+            RegularScaler scaler = new RegularScaler();
+            Figure figure = new Figure(drawer, scaler, updater, mover, rotator);
+
+            return figure;
         }
     }
 }
