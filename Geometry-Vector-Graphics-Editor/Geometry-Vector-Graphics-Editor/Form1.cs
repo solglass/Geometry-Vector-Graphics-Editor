@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using Geometry_Vector_Graphics_Editor.MouseHandlers;
 namespace graphics
 {
     public partial class Form1 : Form
