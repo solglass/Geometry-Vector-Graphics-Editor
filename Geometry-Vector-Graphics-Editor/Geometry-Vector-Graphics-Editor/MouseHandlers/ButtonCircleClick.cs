@@ -15,7 +15,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             HandleEvent(sender, e);
         }
         public Canvas Canvas { get; set; }
-        private CircleFactory circleFactory{get; set;}
+        private CircleFactory circleFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
             circleFactory = new CircleFactory();

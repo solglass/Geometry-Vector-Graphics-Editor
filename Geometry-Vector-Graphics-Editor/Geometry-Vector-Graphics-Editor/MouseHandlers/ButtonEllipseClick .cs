@@ -19,6 +19,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent(object sender, EventArgs e)
         {
             ellipseFactory = new EllipseFactory();
+            Canvas.CurFigureFactory = ellipseFactory;
         }
     }
 }

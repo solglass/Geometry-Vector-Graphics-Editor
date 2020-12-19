@@ -40,11 +40,11 @@ namespace Geometry_Vector_Graphics_Editor
         {
             get
             {
-                return Pen.Color;
+                return _pen.Color;
             }
             set
             {
-                Pen.Color = value;
+                _pen.Color = value;
             }
         }
 
@@ -52,11 +52,11 @@ namespace Geometry_Vector_Graphics_Editor
         {
             get
             {
-                return (int)Pen.Width;
+                return (int)_pen.Width;
             }
             set
             {
-                Pen.Width = (int)value;
+                _pen.Width = (int)value;
             }
         }
        
@@ -70,7 +70,7 @@ namespace Geometry_Vector_Graphics_Editor
         public void CloneTmpBitmapFromMain()
         {
             _tmpBm = (Bitmap)_mainBm.Clone();
-            Graphics = Graphics.FromImage(_tmpBm);
+            _graphics = Graphics.FromImage(_tmpBm);
         }
 
         public void SetTmpBitmapToMain()
@@ -81,8 +81,9 @@ namespace Geometry_Vector_Graphics_Editor
         private Canvas(int width, int height, Color color, int penWidth)
         {
             _mainBm = new Bitmap(width, height);
-            Pen = new Pen(color, penWidth);
-            Graphics = Graphics.FromImage(_mainBm);
+            _pen = new Pen(color, penWidth);
+            _graphics = Graphics.FromImage(_mainBm);
+            _figures = new List<Figure>();
         }
 
         public void DrawCurrentFigure()
@@ -91,6 +92,7 @@ namespace Geometry_Vector_Graphics_Editor
             {
                 CloneTmpBitmapFromMain();
                 CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
+                _figures.Add(CurFigure);
 
             }
         }

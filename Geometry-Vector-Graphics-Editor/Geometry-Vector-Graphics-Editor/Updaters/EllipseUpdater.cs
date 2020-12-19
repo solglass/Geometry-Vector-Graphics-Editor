@@ -10,12 +10,9 @@ namespace Geometry_Vector_Graphics_Editor.Updater
 {
    public class EllipseUpdater:IUpdater
     {
-        public List<PointF> Update(int pointsAmount, List<PointF> points)
+        public void Update(int pointsAmount, List<PointF> points,Figure figure)
         {
-            PointF rectLUPoint = points[0];
-            PointF rectOppositePoint = points[2];
-            RectangleF rect = new RectangleF(rectLUPoint.X, rectLUPoint.Y, rectOppositePoint.X - rectLUPoint.X, rectOppositePoint.Y - rectLUPoint.Y);
-           return points = new List<PointF>(CoordinateRoutines.CalculateEllipseByRectangle(rectLUPoint, rectOppositePoint));
+            figure.Points = new List<PointF>(CoordinateRoutines.CalculateEllipseByRectangle(points[0],points[1]));
         }
     }
 }
