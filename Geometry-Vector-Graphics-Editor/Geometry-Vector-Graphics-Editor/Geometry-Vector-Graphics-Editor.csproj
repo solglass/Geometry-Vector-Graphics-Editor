@@ -55,7 +55,7 @@
     <Compile Include="MouseHandlers\ButtonMoveClick.cs" />
     <Compile Include="MouseHandlers\ButtonRotateClick.cs" />
     <Compile Include="MouseHandlers\ButtonScaleClick.cs" />
-    <Compile Include="Updater\EllipseUpdater.cs" />
+    <Compile Include="Updaters\EllipseUpdater.cs" />
     <Compile Include="Actors\IMover.cs" />
     <Compile Include="Actors\IRotator.cs" />
     <Compile Include="Actors\LineDrawer.cs" />
@@ -108,10 +108,10 @@
     <Compile Include="Actors\IDrawer.cs" />
     <Compile Include="Actors\IScaler.cs" />
     <Compile Include="Actors\IUpdater.cs" />
-    <Compile Include="Updater\IsoscelesTriangleUpdater.cs" />
-    <Compile Include="Updater\RectangleUpdater.cs" />
-    <Compile Include="Updater\RectangularTriangleUpdater.cs" />
-    <Compile Include="Updater\SquareUpdater.cs" />
+    <Compile Include="Updaters\IsoscelesTriangleUpdater.cs" />
+    <Compile Include="Updaters\RectangleUpdater.cs" />
+    <Compile Include="Updaters\RectangularTriangleUpdater.cs" />
+    <Compile Include="Updaters\SquareUpdater.cs" />
     <Compile Include="ZigZagFigure.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
