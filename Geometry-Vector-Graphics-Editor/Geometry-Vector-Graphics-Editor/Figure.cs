@@ -14,6 +14,11 @@ namespace Geometry_Vector_Graphics_Editor
         private IDrawer _drawer;
         private IMover _mover;
         private IRotator _rotator;
+
+        public Figure()
+        {
+        }
+
         public Figure(IDrawer drawer, IScaler scaler, IUpdater updater, IMover mover, IRotator rotator)
         {
             _updater = updater;
@@ -24,7 +29,7 @@ namespace Geometry_Vector_Graphics_Editor
         }
       public void Draw()
         {
-            _drawer.Draw(Points);
+          // _drawer.Draw(Points);
         }
     }
 }
