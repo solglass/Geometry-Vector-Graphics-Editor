@@ -11,7 +11,7 @@ namespace Geometry_Vector_Graphics_Editor.Actors
     {
         public void Draw(List<PointF> points, Pen pen, Graphics graphics)
         {
-
+            graphics.DrawPolygon(pen, points.ToArray());
         }
     }
 }

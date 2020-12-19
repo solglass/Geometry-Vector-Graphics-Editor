@@ -12,8 +12,9 @@ namespace Geometry_Vector_Graphics_Editor
 
         Bitmap _mainBm;
         Bitmap _tmpBm;
-        Pen _pen;
-        Graphics _graphics;
+        private Pen _pen;
+        private Graphics _graphics;
+
         List<Figure> _figures;
         public Figure CurFigure
         {
@@ -85,6 +86,16 @@ namespace Geometry_Vector_Graphics_Editor
             _mainBm = new Bitmap(width, height);
             _pen = new Pen(color, penWidth);
             _graphics = Graphics.FromImage(_mainBm);
+        }
+
+        public void DrawCurrentFigure()
+        {
+            if (CurFigure != null )
+            {
+                CloneTmpBitmapFromMain();
+                CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
+
+            }
         }
     }
 }

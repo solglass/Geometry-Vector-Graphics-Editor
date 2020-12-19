@@ -9,7 +9,7 @@ namespace Geometry_Vector_Graphics_Editor.Actors
 {
    public class CircleUpdater:IUpdater
     {
-        public void Update(int pointsAmount, List<PointF> points)
+        public void Update(int pointsAmount, List<PointF> points, Figure figure)
         {
 
         }

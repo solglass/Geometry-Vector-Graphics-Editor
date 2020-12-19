@@ -11,10 +11,10 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
     {
         ButtonEllipseClick(object sender, EventArgs e, Canvas cnvs)
         {   
-            canvas = cnvs;
+            Canvas = cnvs;
             HandleEvent(sender, e);
         }
-        public Canvas canvas { get; set; }
+        public Canvas Canvas { get; set; }
         private EllipseFactory ellipseFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
