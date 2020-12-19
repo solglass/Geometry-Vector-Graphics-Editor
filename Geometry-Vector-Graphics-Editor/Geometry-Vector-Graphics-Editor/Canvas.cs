@@ -100,6 +100,8 @@ namespace Geometry_Vector_Graphics_Editor
             if (CurFigure != null && _mainBm !=null)
             {
                 CloneTmpBitmapFromMain();
+                CurFigure.Color = _pen.Color;
+                CurFigure.Width =(int) _pen.Width;
                 CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
                // _figures.Add(CurFigure);
 
