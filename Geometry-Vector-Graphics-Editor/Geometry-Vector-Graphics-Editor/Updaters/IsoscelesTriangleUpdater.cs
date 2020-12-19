@@ -10,7 +10,8 @@ namespace Geometry_Vector_Graphics_Editor.Updater
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            throw new NotImplementedException();
+            return new List<PointF>(CoordinateRoutines.CalculateIsoscelesTriangleCoordinatesByTwoPoints(points[0], points[1]));
+
         }
     }
 }
