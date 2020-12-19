@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
-  public  class EllipseMover:IMover
+    class CicleMover : IMover
     {
         public void Move(PointF delta, List<PointF> points)
         {
@@ -18,7 +18,7 @@ namespace Geometry_Vector_Graphics_Editor.Actors
             }
             PointF rectLUPoint = points[0];
             PointF rectOppositePoint = points[2];
-            RectangleF rect = new RectangleF(rectLUPoint.X, rectLUPoint.Y, rectOppositePoint.X - rectLUPoint.X, rectOppositePoint.Y - rectLUPoint.Y);
+            RectangleF rect = new RectangleF(rectLUPoint.X, rectLUPoint.Y, rectOppositePoint.X - rectLUPoint.X, rectOppositePoint.X - rectLUPoint.X);
         }
     }
 }

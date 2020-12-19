@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
-   public class RectangleUpdater:IUpdater
+    public class RectangleUpdater : IUpdater
     {
-        public void Update(int pointsAmount, List<PointF> points)
+        public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-
+            throw new NotImplementedException();
         }
     }
 }

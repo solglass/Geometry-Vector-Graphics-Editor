@@ -1,4 +1,5 @@
 ﻿using Geometry_Vector_Graphics_Editor;
+using Geometry_Vector_Graphics_Editor.MouseHandlers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -46,6 +47,16 @@ namespace graphics
                 buttonBackColor.BackColor = colorDialog2.Color;
                 pictureBox.BackColor = colorDialog2.Color;
             }
+        }
+
+        private void buttonCircle_Click(object sender, EventArgs e)
+        {
+            ButtonCircleClick circleClick = new ButtonCircleClick(sender, e, _canvas);
+        }
+
+        private void buttonEllipse_Click(object sender, EventArgs e)
+        {
+            ButtonEllipseClick ellipseClick = new ButtonEllipseClick(sender, e, _canvas);
         }
     }
 }

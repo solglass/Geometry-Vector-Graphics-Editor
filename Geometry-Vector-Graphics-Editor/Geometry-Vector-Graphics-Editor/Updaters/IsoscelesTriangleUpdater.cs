@@ -8,9 +8,10 @@ namespace Geometry_Vector_Graphics_Editor.Updater
 
     public class IsoscelesTriangleUpdater : IUpdater
     {
-        public void Update(int pointsAmount, List<PointF> points)
-        {
 
+        List<PointF> IUpdater.Update(int pointsAmount, List<PointF> points)
+        {
+            throw new NotImplementedException();
         }
     }
 }

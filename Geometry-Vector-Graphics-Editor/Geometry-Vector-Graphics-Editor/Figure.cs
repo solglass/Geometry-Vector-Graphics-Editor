@@ -9,11 +9,11 @@ namespace Geometry_Vector_Graphics_Editor
 {
   public  class Figure:AbstractFigure
     {
-        private IUpdater _updater;
-        private IScaler __scaler;
-        private IDrawer _drawer;
-        private IMover _mover;
-        private IRotator _rotator;
+        public IUpdater Updater { get; private set;}
+        public IScaler Scaler { get; private set; }
+        public IDrawer Drawer { get; private set; }
+        public IMover Mover { get; private set; }
+        public IRotator Rotator { get; private set; }
 
         public Figure()
         {
@@ -21,15 +21,11 @@ namespace Geometry_Vector_Graphics_Editor
 
         public Figure(IDrawer drawer, IScaler scaler, IUpdater updater, IMover mover, IRotator rotator)
         {
-            _updater = updater;
-            __scaler = scaler;
-            _drawer = drawer;
-            _mover = mover;
-            _rotator = rotator;
-        }
-      public void Draw()
-        {
-          // _drawer.Draw(Points);
+            Updater = updater;
+            Scaler = scaler;
+            Drawer = drawer;
+            Mover = mover;
+            Rotator = rotator;
         }
     }
 }

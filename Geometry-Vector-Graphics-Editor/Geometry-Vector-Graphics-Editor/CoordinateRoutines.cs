@@ -167,8 +167,9 @@ namespace Geometry_Vector_Graphics_Editor
             PointF DownCenterPt = new PointF ((RightUpPt.X + LeftUpPt.X)/2, RightDownPt.Y);
             PointF LeftCenterPt = new PointF (LeftUpPt.X,(LeftDownPt.Y + LeftUpPt.Y)/2);
             PointF RightCenterPt = new PointF (RightUpPt.X,(RightDownPt.Y + RightUpPt.Y)/2);
+            PointF CenterPt = new PointF((RightUpPt.X + LeftUpPt.X) / 2, (RightUpPt.Y + RightDownPt.Y) / 2);
 
-            return new PointF[] {LeftUpPt,RightUpPt,RightDownPt,LeftDownPt, LeftCenterPt,UpCenterPt,DownCenterPt,RightCenterPt};
+            return new PointF[] {LeftUpPt,RightUpPt,RightDownPt,LeftDownPt, LeftCenterPt, RightCenterPt, CenterPt, DownCenterPt,UpCenterPt};
         }
 
         public static bool Contains(PointF start, PointF end, PointF checkPoint, double accuracy)

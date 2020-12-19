@@ -6,14 +6,14 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace Geometry_Vector_Graphics_Editor
 {
-    class Canvas
+    public class Canvas
     {
         private static Canvas instance;
 
         Bitmap _mainBm;
         Bitmap _tmpBm;
-        Pen _pen;
-        Graphics _graphics;
+        public Pen Pen { get; private set; }
+        public Graphics Graphics { get; private set; }
         List<Figure> _figures;
         public Figure CurFigure
         {
@@ -23,7 +23,6 @@ namespace Geometry_Vector_Graphics_Editor
         {
             get; set;
         }
-
 
         public Bitmap Bitmap
         {
@@ -40,11 +39,11 @@ namespace Geometry_Vector_Graphics_Editor
         {
             get
             {
-                return _pen.Color;
+                return Pen.Color;
             }
             set
             {
-                _pen.Color = value;
+                Pen.Color = value;
             }
         }
 
@@ -52,11 +51,11 @@ namespace Geometry_Vector_Graphics_Editor
         {
             get
             {
-                return (int)_pen.Width;
+                return (int)Pen.Width;
             }
             set
             {
-                _pen.Width = (int)value;
+                Pen.Width = (int)value;
             }
         }
        
@@ -70,7 +69,7 @@ namespace Geometry_Vector_Graphics_Editor
         public void CloneTmpBitmapFromMain()
         {
             _tmpBm = (Bitmap)_mainBm.Clone();
-            _graphics = Graphics.FromImage(_tmpBm);
+            Graphics = Graphics.FromImage(_tmpBm);
         }
 
         public void SetTmpBitmapToMain()
@@ -78,13 +77,17 @@ namespace Geometry_Vector_Graphics_Editor
             _mainBm = _tmpBm;
         }
 
-
-
         private Canvas(int width, int height, Color color, int penWidth)
         {
             _mainBm = new Bitmap(width, height);
-            _pen = new Pen(color, penWidth);
-            _graphics = Graphics.FromImage(_mainBm);
+            Pen = new Pen(color, penWidth);
+            Graphics = Graphics.FromImage(_mainBm);
+        }
+
+        public void DrawFigure()
+        {
+            CurFigure.Drawer.Draw(CurFigure.Points, Pen, Graphics);
+            _figures.Add(CurFigure);
         }
     }
 }

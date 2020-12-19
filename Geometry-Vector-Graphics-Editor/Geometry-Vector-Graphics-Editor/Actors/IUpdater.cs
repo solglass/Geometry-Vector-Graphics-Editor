@@ -10,6 +10,6 @@ namespace Geometry_Vector_Graphics_Editor.Actors
 {
    public interface IUpdater
     {
-        void Update(int pointsAmount, List<PointF> points);
+        List<PointF> Update(int pointsAmount, List<PointF> points);
     }
 }

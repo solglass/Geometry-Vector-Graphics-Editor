@@ -1,4 +1,5 @@
 ﻿using Geometry_Vector_Graphics_Editor.Actors;
+using Geometry_Vector_Graphics_Editor.Updater;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,9 +14,9 @@ namespace Geometry_Vector_Graphics_Editor
         
         public Figure CreateFigure()
         {
-            PolygonDrawer drawer = new PolygonDrawer();
+            EllipseDrawer drawer = new EllipseDrawer();
             EllipseUpdater updater = new EllipseUpdater();
-            RegularMover mover = new RegularMover();
+            EllipseMover mover = new EllipseMover();
             RegularRotator rotator = new RegularRotator();
             RegularScaler scaler = new RegularScaler();
             Figure figure = new Figure(drawer, scaler, updater, mover, rotator);
