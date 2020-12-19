@@ -9,7 +9,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class ButtonRectangularTriangleClick : IMouseHandler
     {
-        ButtonRectangularTriangleClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonRectangularTriangleClick(object sender, EventArgs e, Canvas cnvs)
         {   
             Canvas = cnvs;
             HandleEvent(sender, e);

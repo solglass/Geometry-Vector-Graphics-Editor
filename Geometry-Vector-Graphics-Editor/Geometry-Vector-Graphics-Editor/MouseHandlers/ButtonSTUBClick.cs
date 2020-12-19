@@ -9,7 +9,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class ButtonStubClick : IMouseHandler
     {
-        ButtonStubClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonStubClick(object sender, EventArgs e, Canvas cnvs)
         {   
             Canvas = cnvs;
             HandleEvent(sender, e);
