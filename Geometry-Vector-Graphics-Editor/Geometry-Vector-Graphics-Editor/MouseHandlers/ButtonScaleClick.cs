@@ -11,7 +11,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class ButtonScaleClick : IMouseHandler
     {
-        ButtonScaleClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonScaleClick(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             HandleEvent(sender, e);

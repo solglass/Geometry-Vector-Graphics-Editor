@@ -10,7 +10,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class ButtonRotateClick : IMouseHandler
     {
-        ButtonRotateClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonRotateClick(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             HandleEvent(sender, e);

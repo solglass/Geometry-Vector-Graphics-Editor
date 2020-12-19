@@ -15,6 +15,8 @@ namespace graphics
     public partial class Form1 : Form
     {
         private Canvas _canvas;
+        private PictureBoxMouseMoveDraw _pictureBoxMouseMove;
+        private bool md;
 
         public Form1()
         {
@@ -25,6 +27,9 @@ namespace graphics
         {
 
             _canvas = Canvas.getInstance(pictureBox.Width, pictureBox.Height, Color.Black, 1);
+            _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+
+            _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
         }
 
        
@@ -61,20 +66,35 @@ namespace graphics
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            
-            IMouseHandler buttonHandler = new PictureBoxMouseDown(sender, e, _canvas);
-            pictureBox.Image = _canvas.Bitmap;
+            md = true;
+            IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
+            if (pictureBox.Image != null)
+            { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
             GC.Collect();
         }
 
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            IMouseHandler buttonHandler = new PictureBoxMouseMove(sender, e, _canvas);
+            if (md)
+            {
+                _pictureBoxMouseMove.E = e;
+                _pictureBoxMouseMove.Sender = sender;
+                _pictureBoxMouseMove.Canvas = _canvas;
+                _pictureBoxMouseMove.HandleEvent();
+                pictureBox.Image = _canvas.Bitmap;
+                GC.Collect();
+            }
         }
 
         private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-
+            if (md)
+            {
+                PictureBoxMouseUpDraw pictureBoxMouseUpHandler = new PictureBoxMouseUpDraw(sender, e, _canvas);
+                pictureBox.Image = _canvas.Bitmap;
+                GC.Collect();
+            }
+            md = false;
         }
 
         private void buttonEllipse_Click(object sender, EventArgs e)

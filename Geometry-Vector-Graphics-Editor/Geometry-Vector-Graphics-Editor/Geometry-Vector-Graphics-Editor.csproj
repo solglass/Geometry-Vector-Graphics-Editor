@@ -57,7 +57,7 @@
     <Compile Include="MouseHandlers\ButtonMoveClick.cs" />
     <Compile Include="MouseHandlers\ButtonRotateClick.cs" />
     <Compile Include="MouseHandlers\ButtonScaleClick.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseMove.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseMoveDraw.cs" />
     <Compile Include="Updaters\EllipseUpdater.cs" />
     <Compile Include="Actors\IMover.cs" />
     <Compile Include="Actors\IRotator.cs" />
@@ -89,8 +89,8 @@
     <Compile Include="MouseHandlers\ButtonSquareClick.cs" />
     <Compile Include="MouseHandlers\ButtonRectangleClick.cs" />
     <Compile Include="MouseHandlers\ButtonDrawClick.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseDown.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseUp.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseDownDraw.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseUpDraw.cs" />
     <Compile Include="RectangleFigure.cs" />
     <Compile Include="RectangularTriangleFigure.cs" />
     <Compile Include="SquareFigure.cs" />
