@@ -11,28 +11,28 @@ namespace Geometry_Vector_Graphics_Editor
     public static class CoordinateRoutines
     {
         //For future use, not in currnet version
-        public static Point[] CalculateSquareCoordinatesByTwoAdjacentPoints(Point pt1, Point pt2)
+        public static PointF[] CalculateSquareCoordinatesByTwoAdjacentPoints(PointF pt1, PointF pt2)
         {
-            Point[] arrPoints = new Point[4];
-            Point pt3;
-            Point pt4;
+            PointF pt3;
+            PointF pt4;
+            PointF[] arrPoints;
             double side = Math.Pow(pt2.X - pt1.X, 2) + Math.Pow(pt2.Y - pt1.Y, 2);
 
-
-            int ae = pt2.Y - pt1.Y;
+            arrPoints = new PointF[4];
+            float ae = pt2.Y - pt1.Y;
             if (ae != 0)
             {
-                int be = pt1.X - pt2.X;
-                int ce = pt1.Y * pt2.X - pt1.X * pt2.Y;
+                float be = pt1.X - pt2.X;
+                float ce = pt1.Y * pt2.X - pt1.X * pt2.Y;
 
-                int xleftDown = (int)((ae * (side - ce - be * pt1.Y) + be * be * pt1.X) / (Math.Pow(ae, 2) + Math.Pow(be, 2)));
-                int yleftDown = (ae * pt1.Y - be * pt1.X + be * xleftDown) / ae;
-                int xrightDown = (int)((ae * (side - ce - be * pt2.Y) + be * be * pt2.X) / (Math.Pow(ae, 2) + Math.Pow(be, 2)));
-                int yrightDown = (ae * pt2.Y - be * pt2.X + be * xrightDown) / ae;
+                float xleftDown = (int)((ae * (side - ce - be * pt1.Y) + be * be * pt1.X) / (Math.Pow(ae, 2) + Math.Pow(be, 2)));
+                float yleftDown = (ae * pt1.Y - be * pt1.X + be * xleftDown) / ae;
+                float xrightDown = (int)((ae * (side - ce - be * pt2.Y) + be * be * pt2.X) / (Math.Pow(ae, 2) + Math.Pow(be, 2)));
+                float yrightDown = (ae * pt2.Y - be * pt2.X + be * xrightDown) / ae;
 
 
-                pt3 = new Point(xrightDown, yrightDown);
-                pt4 = new Point(xleftDown, yleftDown);
+                pt3 = new PointF(xrightDown, yrightDown);
+                pt4 = new PointF(xleftDown, yleftDown);
 
                 arrPoints[0] = pt1;
                 arrPoints[1] = pt2;
