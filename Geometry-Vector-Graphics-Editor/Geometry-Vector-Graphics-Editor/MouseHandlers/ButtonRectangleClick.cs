@@ -15,10 +15,10 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             HandleEvent(sender, e);
         }
         public Canvas canvas { get; set; }
-        RectangleFactory RectangleFactory{get; set;}
+        private RectangleFactory rectangleFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
-            RectangleFactory = new RectangleFactory();
+            rectangleFactory = new RectangleFactory();
         }
     }
 }

@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class ButtonIsoscelesTriangleClick : IMouseHandler
+    class ButtonEllipseClick : IMouseHandler
     {
-        ButtonIsoscelesTriangleClick(object sender, EventArgs e, Canvas cnvs)
+        ButtonEllipseClick(object sender, EventArgs e, Canvas cnvs)
         {   
             canvas = cnvs;
             HandleEvent(sender, e);
         }
         public Canvas canvas { get; set; }
-        IsoscelesTriangleFactory isoscelesTriangleFactory{get; set;}
+        private EllipseFactory ellipseFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
-            isoscelesTriangleFactory = new IsoscelesTriangleFactory();
+            ellipseFactory = new EllipseFactory();
         }
     }
 }

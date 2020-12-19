@@ -1,10 +1,10 @@
-﻿using System;
+﻿using Geometry_Vector_Graphics_Editor.Actors;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Geometry_Vector_Graphics_Editor.Actors;
 
 namespace Geometry_Vector_Graphics_Editor
 {
@@ -12,12 +12,12 @@ namespace Geometry_Vector_Graphics_Editor
     {
         public Figure CreateFigure()
         {
-            EllipseDrawer drawer = new EllipseDrawer();
+            PolygonDrawer drawer = new PolygonDrawer();
             CircleUpdater updater = new CircleUpdater();
-            EllipseMover mover = new EllipseMover();
-            EllipseRotator rotator = new EllipseRotator();
+            RegularMover mover = new RegularMover();
+            RegularRotator rotator = new RegularRotator();
             RegularScaler scaler = new RegularScaler();
-            Figure figure = new Figure(drawer,scaler,updater,mover,rotator);
+            Figure figure = new Figure(drawer, scaler, updater, mover, rotator);
 
             return figure;
         }
