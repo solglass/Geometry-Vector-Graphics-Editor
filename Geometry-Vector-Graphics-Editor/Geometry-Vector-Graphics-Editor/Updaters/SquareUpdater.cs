@@ -8,7 +8,8 @@ namespace Geometry_Vector_Graphics_Editor.Updater
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            throw new System.NotImplementedException();
+            return new List<PointF>(CoordinateRoutines.CalculateSquareCoordinatesByTwoOppositePoints(points[0], points[1]));
+
         }
     }
 }

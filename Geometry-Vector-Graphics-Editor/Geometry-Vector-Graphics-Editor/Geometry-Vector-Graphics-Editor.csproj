@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Actors\CicleMover.cs" />
     <Compile Include="Actors\CircleDrawer.cs" />
+    <Compile Include="MouseHandlers\ButtonIsoscelesTriangleClick.cs" />
     <Compile Include="Updaters\CircleUpdater.cs" />
     <Compile Include="Actors\EllipseDrawer.cs" />
     <Compile Include="Actors\EllipseMover.cs" />

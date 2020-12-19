@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
@@ -19,6 +20,9 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent(object sender, EventArgs e)
         {
             squareFactory = new SquareFactory();
+            Canvas.CurFigureFactory = squareFactory;
+            MouseEventArgs eMouse = (MouseEventArgs)e;
+            Canvas.Prevpoint = new PointF(eMouse.X, eMouse.Y);
         }
     }
 }

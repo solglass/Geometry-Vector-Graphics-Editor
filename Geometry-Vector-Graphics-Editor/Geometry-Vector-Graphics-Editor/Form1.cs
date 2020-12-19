@@ -112,5 +112,20 @@ namespace graphics
         {
             _canvas.PenWidth = trackBarWidth.Value;
         }
+
+        private void buttonRectangularTriangle_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonRectangularTriangleClick(sender, e, _canvas);
+        }
+
+        private void buttonIsoscalesTriangle_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonIsoscelesTriangleClick (sender, e, _canvas);
+        }
+
+        private void buttonSquare_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonSquareClick(sender, e, _canvas);
+        }
     }
 }
