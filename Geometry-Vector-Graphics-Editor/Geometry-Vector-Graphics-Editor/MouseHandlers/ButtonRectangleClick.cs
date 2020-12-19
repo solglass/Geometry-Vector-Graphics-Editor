@@ -9,7 +9,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class ButtonRectangleClick : IMouseHandler
     {
-        ButtonRectangleClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonRectangleClick(object sender, EventArgs e, Canvas cnvs)
         {   
             Canvas = cnvs;
             HandleEvent(sender, e);
@@ -19,6 +19,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent(object sender, EventArgs e)
         {
             rectangleFactory = new RectangleFactory();
+            Canvas.CurFigureFactory = rectangleFactory;
         }
     }
 }

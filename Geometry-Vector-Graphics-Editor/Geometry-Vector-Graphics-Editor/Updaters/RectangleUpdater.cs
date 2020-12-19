@@ -7,9 +7,9 @@ namespace Geometry_Vector_Graphics_Editor.Updater
 {
     public class RectangleUpdater : IUpdater
     {
-        public List<PointF> Update(int pointsAmount, List<PointF> points)
+        public void Update(int pointsAmount, List<PointF> points, Figure figure)
         {
-            throw new NotImplementedException();
+            figure.Points = new List<PointF>(CoordinateRoutines.CalculateRectangleCoordinatesByTwoOppositePoints(points[0], points[1]));
         }
     }
 }

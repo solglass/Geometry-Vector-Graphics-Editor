@@ -49,6 +49,34 @@ namespace graphics
             }
         }
 
+        private void buttonRectangle_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonRectangleClick(sender, e, _canvas);
+        }
+
+        private void pictureBox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void pictureBox_MouseDown(object sender, MouseEventArgs e)
+        {
+            
+            IMouseHandler buttonHandler = new PictureBoxMouseDown(sender, e, _canvas);
+            pictureBox.Image = _canvas.Bitmap;
+            GC.Collect();
+        }
+
+        private void pictureBox_MouseMove(object sender, MouseEventArgs e)
+        {
+            IMouseHandler buttonHandler = new PictureBoxMouseMove(sender, e, _canvas);
+        }
+
+        private void pictureBox_MouseUp(object sender, MouseEventArgs e)
+        {
+
+        }
+
         private void buttonCircle_Click(object sender, EventArgs e)
         {
             ButtonCircleClick circleClick = new ButtonCircleClick(sender, e, _canvas);

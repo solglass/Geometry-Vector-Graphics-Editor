@@ -9,7 +9,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
   public  class Figure:AbstractFigure
     {
-        public IUpdater Updater { get; private set;}
+        public IUpdater Updater { get; private set; }
         public IScaler Scaler { get; private set; }
         public IDrawer Drawer { get; private set; }
         public IMover Mover { get; private set; }
@@ -27,5 +27,6 @@ namespace Geometry_Vector_Graphics_Editor
             Mover = mover;
             Rotator = rotator;
         }
+
     }
 }

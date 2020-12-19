@@ -10,7 +10,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class PictureBoxMouseDown: IMouseHandler
     {
-        PictureBoxMouseDown(object sender, EventArgs e, Canvas cnvs)
+       public PictureBoxMouseDown(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             HandleEvent(sender, e);
@@ -19,12 +19,10 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         private IFigureFactory curFigureFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
-            curFigureFactory = Canvas.CurFigureFactory;
-            Canvas.CurFigure = curFigureFactory.CreateFigure();
-            MouseEventArgs eMouse = (MouseEventArgs)e;
-            List<PointF> listPoints = new List<PointF>(new PointF[2] { new PointF(0f, 0f), new PointF(eMouse.Location.X,eMouse.Location.Y)});
-            Canvas.CurFigure.Updater.Update(2, listPoints);
-            Canvas.CurFigure.Drawer.Draw(listPoints, Canvas.Pen, Canvas.Graphics);
+            if (Canvas.CurFigureFactory != null)
+            {
+                Canvas.CurFigure = Canvas.CurFigureFactory.CreateFigure();
+            }
         }
     }
 }

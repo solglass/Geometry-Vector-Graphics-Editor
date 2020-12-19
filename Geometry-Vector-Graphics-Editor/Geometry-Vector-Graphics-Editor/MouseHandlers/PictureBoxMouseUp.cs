@@ -18,7 +18,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public Canvas Canvas { get; set; }
         public void HandleEvent(object sender, EventArgs e)
         {
-            
+             
         }
     }
 }

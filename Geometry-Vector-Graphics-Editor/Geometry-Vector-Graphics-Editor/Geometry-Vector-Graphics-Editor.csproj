@@ -57,13 +57,13 @@
     <Compile Include="MouseHandlers\ButtonMoveClick.cs" />
     <Compile Include="MouseHandlers\ButtonRotateClick.cs" />
     <Compile Include="MouseHandlers\ButtonScaleClick.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseMove.cs" />
     <Compile Include="Updaters\EllipseUpdater.cs" />
     <Compile Include="Actors\IMover.cs" />
     <Compile Include="Actors\IRotator.cs" />
     <Compile Include="Actors\LineDrawer.cs" />
     <Compile Include="Actors\LineUpdater.cs" />
     <Compile Include="Actors\PolygonDrawer.cs" />
-    <Compile Include="Actors\RectangleUpdater.cs" />
     <Compile Include="Actors\RegularMover.cs" />
     <Compile Include="Actors\RegularRotator.cs" />
     <Compile Include="Actors\RegularScaler.cs" />
