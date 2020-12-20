@@ -96,7 +96,12 @@ namespace graphics
         {
             if (md)
             {
-                PictureBoxMouseUpDraw pictureBoxMouseUpHandler = new PictureBoxMouseUpDraw(sender, e, _canvas);
+                if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
+                {
+                    IMouseHandler buttonHandler = new PictureBoxMouseUpDraw(sender, e, _canvas);
+                }
+                else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
+                { IMouseHandler buttonHandler = new PictureBoxMouseUpRotate(sender, e, _canvas); }
                 pictureBox.Image = _canvas.Bitmap;
                 GC.Collect();
             }
@@ -152,7 +157,7 @@ namespace graphics
 
         private void buttonRotate_Click(object sender, EventArgs e)
         {
-            _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+            _pictureBoxMouseMove = new PictureBoxMouseMoveRotate();
         }
 
         private void buttonDraw_Click(object sender, EventArgs e)
