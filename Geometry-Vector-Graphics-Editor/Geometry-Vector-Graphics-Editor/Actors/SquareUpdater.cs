@@ -9,9 +9,10 @@ namespace Geometry_Vector_Graphics_Editor.Actors
 {
     public class SquareUpdater : IUpdater
     {
-        public void Update(int pointsAmount, List<PointF> points, Figure figure)
+        public List<PointF>  Update(int pointsAmount, List<PointF> points)
         {
-            throw new NotImplementedException();
+            return new List<PointF>(CoordinateRoutines.CalculateSquareCoordinatesByTwoOppositePoints(points[0], points[1]));
+
         }
     }
 }

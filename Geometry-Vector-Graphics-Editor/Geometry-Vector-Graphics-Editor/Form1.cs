@@ -15,6 +15,8 @@ namespace graphics
     public partial class Form1 : Form
     {
         private Canvas _canvas;
+        private IMouseHandler _pictureBoxMouseMove;
+        private bool md;
 
         public Form1()
         {
@@ -25,6 +27,9 @@ namespace graphics
         {
 
             _canvas = Canvas.getInstance(pictureBox.Width, pictureBox.Height, Color.Black, 1);
+            _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+
+            _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
         }
 
        
@@ -35,6 +40,7 @@ namespace graphics
             if(colorDialog1.ShowDialog()!=System.Windows.Forms.DialogResult.Cancel)
             {
                 buttonColor.BackColor = colorDialog1.Color;
+                _canvas.PenColor = colorDialog1.Color;
             }
         }
 
@@ -61,20 +67,45 @@ namespace graphics
 
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
-            
-            IMouseHandler buttonHandler = new PictureBoxMouseDown(sender, e, _canvas);
-            pictureBox.Image = _canvas.Bitmap;
+            md = true;
+            if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
+            {
+                IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
+            }
+            else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
+            { IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas); }
+            if (pictureBox.Image != null)
+            { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
             GC.Collect();
         }
 
         private void pictureBox_MouseMove(object sender, MouseEventArgs e)
         {
-            IMouseHandler buttonHandler = new PictureBoxMouseMove(sender, e, _canvas);
+            if (md)
+            {
+                _pictureBoxMouseMove.E = e;
+                _pictureBoxMouseMove.Sender = sender;
+                _pictureBoxMouseMove.Canvas = _canvas;
+                _pictureBoxMouseMove.HandleEvent();
+                pictureBox.Image = _canvas.Bitmap;
+                GC.Collect();
+            }
         }
 
         private void pictureBox_MouseUp(object sender, MouseEventArgs e)
         {
-
+            if (md)
+            {
+                if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
+                {
+                    IMouseHandler buttonHandler = new PictureBoxMouseUpDraw(sender, e, _canvas);
+                }
+                else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
+                { IMouseHandler buttonHandler = new PictureBoxMouseUpRotate(sender, e, _canvas); }
+                pictureBox.Image = _canvas.Bitmap;
+                GC.Collect();
+            }
+            md = false;
         }
 
         private void buttonEllipse_Click(object sender, EventArgs e)
@@ -85,6 +116,54 @@ namespace graphics
         private void buttonCircle_Click_1(object sender, EventArgs e)
         {
             ButtonCircleClick circleClick = new ButtonCircleClick(sender, e, _canvas);
+        }
+
+        private void trackBarWidth_Scroll(object sender, EventArgs e)
+        {
+            _canvas.PenWidth = trackBarWidth.Value;
+        }
+
+        private void buttonLine_Click(object sender, EventArgs e)
+        {
+            ButtonLineClick lineClick = new ButtonLineClick(sender, e, _canvas);
+        }
+
+        private void buttonClear_Click(object sender, EventArgs e)
+        {
+            _canvas.Figures = new List<Figure>();
+            _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+            pictureBox.Image = null;
+        }
+
+        private void buttonRectangularTriangle_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonRectangularTriangleClick(sender, e, _canvas);
+        }
+
+        private void buttonIsoscalesTriangle_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonIsoscelesTriangleClick (sender, e, _canvas);
+        }
+
+        private void buttonSquare_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonSquareClick(sender, e, _canvas);
+        }
+
+        private void buttonZigzag_Click(object sender, EventArgs e)
+        {
+            ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
+            buttonHandler.PointsAmount = trackBarPointsAmount.Value;
+        }
+
+        private void buttonRotate_Click(object sender, EventArgs e)
+        {
+            _pictureBoxMouseMove = new PictureBoxMouseMoveRotate();
+        }
+
+        private void buttonDraw_Click(object sender, EventArgs e)
+        {
+            _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
         }
     }
 }

@@ -7,9 +7,10 @@ namespace Geometry_Vector_Graphics_Editor.Updater
 {
     public class RectangularTriangleUpdater : IUpdater
     {
-        public void Update(int pointsAmount, List<PointF> points, Figure figure)
+        public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            throw new System.NotImplementedException();
+            return new List<PointF>(CoordinateRoutines.CalculateRectangularTriangleCoordinatesByTwoPoints(points[0], points[1]));
+
         }
     }
 }

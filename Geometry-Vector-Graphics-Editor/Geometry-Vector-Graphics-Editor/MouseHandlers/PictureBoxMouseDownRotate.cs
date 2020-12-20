@@ -8,10 +8,10 @@ using System.Windows.Forms;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class ButtonSquareClick : IMouseHandler
+    class PictureBoxMouseDownRotate: IMouseHandler
     {
-        public ButtonSquareClick(object sender, EventArgs e, Canvas cnvs)
-        {   
+       public PictureBoxMouseDownRotate(object sender, EventArgs e, Canvas cnvs)
+        {
             Canvas = cnvs;
             E = e;
             Sender = sender;
@@ -20,13 +20,14 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public object Sender { get; set; }
         public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
-        private SquareFactory squareFactory;
+        private IFigureFactory curFigureFactory;
         public void HandleEvent()
         {
-            squareFactory = new SquareFactory();
-            Canvas.CurFigureFactory = squareFactory;
-            MouseEventArgs eMouse = (MouseEventArgs)E;
-            Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
+            if (Canvas != null)
+            {
+                MouseEventArgs eMouse = (MouseEventArgs)E;
+                Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
+            }
         }
     }
 }

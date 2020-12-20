@@ -9,9 +9,9 @@ namespace Geometry_Vector_Graphics_Editor.Actors
 {
     public class LineUpdater : IUpdater
     {
-       public void Update(int pointsAmount, List<PointF> points, Figure figure)
+       public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            throw new NotImplementedException();
+            return points;
         }
     }
 }

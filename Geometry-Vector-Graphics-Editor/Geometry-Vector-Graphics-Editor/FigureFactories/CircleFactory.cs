@@ -11,6 +11,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     class CircleFactory : IFigureFactory
     {
+        public int PointAmount { get; set; }
         public Figure CreateFigure()
         {
             CircleDrawer drawer = new CircleDrawer();

@@ -11,7 +11,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     class EllipseFactory : IFigureFactory
     {
-        
+        public int PointAmount { get; set; }
         public Figure CreateFigure()
         {
             EllipseDrawer drawer = new EllipseDrawer();

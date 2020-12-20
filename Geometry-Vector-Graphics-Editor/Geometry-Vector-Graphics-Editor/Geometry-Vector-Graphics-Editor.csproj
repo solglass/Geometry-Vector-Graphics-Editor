@@ -50,6 +50,14 @@
   <ItemGroup>
     <Compile Include="Actors\CicleMover.cs" />
     <Compile Include="Actors\CircleDrawer.cs" />
+    <Compile Include="FigureFactories\ZigzagFactory.cs" />
+    <Compile Include="MouseHandlers\ButtonIsoscelesTriangleClick.cs" />
+    <Compile Include="FigureFactories\LineFactory.cs" />
+    <Compile Include="MouseHandlers\ButtonLineClick.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseDownRotate.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseMoveRotate.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseUpRotate.cs" />
+    <Compile Include="MouseHandlers\ButtonZigzagClick.cs" />
     <Compile Include="Updaters\CircleUpdater.cs" />
     <Compile Include="Actors\EllipseDrawer.cs" />
     <Compile Include="Actors\EllipseMover.cs" />
@@ -57,12 +65,12 @@
     <Compile Include="MouseHandlers\ButtonMoveClick.cs" />
     <Compile Include="MouseHandlers\ButtonRotateClick.cs" />
     <Compile Include="MouseHandlers\ButtonScaleClick.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseMove.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseMoveDraw.cs" />
     <Compile Include="Updaters\EllipseUpdater.cs" />
     <Compile Include="Actors\IMover.cs" />
     <Compile Include="Actors\IRotator.cs" />
     <Compile Include="Actors\LineDrawer.cs" />
-    <Compile Include="Actors\LineUpdater.cs" />
+    <Compile Include="Updaters\LineUpdater.cs" />
     <Compile Include="Actors\PolygonDrawer.cs" />
     <Compile Include="Actors\RegularMover.cs" />
     <Compile Include="Actors\RegularRotator.cs" />
@@ -89,8 +97,8 @@
     <Compile Include="MouseHandlers\ButtonSquareClick.cs" />
     <Compile Include="MouseHandlers\ButtonRectangleClick.cs" />
     <Compile Include="MouseHandlers\ButtonDrawClick.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseDown.cs" />
-    <Compile Include="MouseHandlers\PictureBoxMouseUp.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseDownDraw.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseUpDraw.cs" />
     <Compile Include="RectangleFigure.cs" />
     <Compile Include="RectangularTriangleFigure.cs" />
     <Compile Include="SquareFigure.cs" />
@@ -114,6 +122,7 @@
     <Compile Include="Updaters\RectangleUpdater.cs" />
     <Compile Include="Updaters\RectangularTriangleUpdater.cs" />
     <Compile Include="Updaters\SquareUpdater.cs" />
+    <Compile Include="Updaters\ZigzagUpdater.cs" />
     <Compile Include="ZigZagFigure.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class ButtonSquareClick : IMouseHandler
+   class ButtonIsoscelesTriangleClick : IMouseHandler
     {
-        public ButtonSquareClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonIsoscelesTriangleClick(object sender, EventArgs e, Canvas cnvs)
         {   
             Canvas = cnvs;
             E = e;
@@ -20,11 +20,11 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public object Sender { get; set; }
         public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
-        private SquareFactory squareFactory;
+        IsoscelesTriangleFactory isoscelesTriangleFactory;
         public void HandleEvent()
         {
-            squareFactory = new SquareFactory();
-            Canvas.CurFigureFactory = squareFactory;
+            isoscelesTriangleFactory = new IsoscelesTriangleFactory();
+            Canvas.CurFigureFactory = isoscelesTriangleFactory;
             MouseEventArgs eMouse = (MouseEventArgs)E;
             Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
         }
