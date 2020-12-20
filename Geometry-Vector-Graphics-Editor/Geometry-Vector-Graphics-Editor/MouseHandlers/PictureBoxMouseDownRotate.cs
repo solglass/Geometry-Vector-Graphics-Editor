@@ -13,15 +13,19 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
        public PictureBoxMouseDownRotate(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
-            HandleEvent(sender, e);
+            E = e;
+            Sender = sender;
+            HandleEvent();
         }
+        public object Sender { get; set; }
+        public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
         private IFigureFactory curFigureFactory;
-        public void HandleEvent(object sender, EventArgs e)
+        public void HandleEvent()
         {
             if (Canvas != null)
             {
-                MouseEventArgs eMouse = (MouseEventArgs)e;
+                MouseEventArgs eMouse = (MouseEventArgs)E;
                 Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
             }
         }

@@ -32,7 +32,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             if (Canvas.CurFigure != null)
             {
                 MouseEventArgs eMouse = (MouseEventArgs)E;
-                listPoints = new List<PointF>(new PointF[2] { Canvas.Prevpoint, new PointF(eMouse.Location.X, eMouse.Location.Y) });
+                listPoints = new List<PointF>(new PointF[2] { Canvas.PrevPoint, new PointF(eMouse.Location.X, eMouse.Location.Y) });
                 Canvas.Update(listPoints, 2);
                 Canvas.DrawCurrentFigure();
 
