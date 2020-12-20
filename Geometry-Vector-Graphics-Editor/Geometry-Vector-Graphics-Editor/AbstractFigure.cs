@@ -10,6 +10,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     public abstract class AbstractFigure
     {
+        public int PointsAmount { get; set; }
         public List<PointF> Points { get; set; }
         public Color Color { get;  set; }
         public int Width { get;  set; }

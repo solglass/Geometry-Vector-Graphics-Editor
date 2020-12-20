@@ -86,12 +86,28 @@ namespace Geometry_Vector_Graphics_Editor
            Figures= new List<Figure>();
         }
 
-        public void Update(int pointsAmount, List<PointF> points)
+        public void Update(List<PointF> points, int pointsAmount )
         {
             if (CurFigure != null)
             {
-                CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
-
+                if (CurFigure.PointsAmount == 0)
+                {
+                    CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
+                }
+                else
+                {
+                    if (CurFigure.Points == null)
+                    {
+                        CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
+                    }
+                    else
+                    {
+                        List<PointF> newList = new List<PointF>();
+                        newList.AddRange(CurFigure.Points);
+                        newList.Add(points.Last());
+                        CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, newList);
+                    }
+                }
             }
         }
 
