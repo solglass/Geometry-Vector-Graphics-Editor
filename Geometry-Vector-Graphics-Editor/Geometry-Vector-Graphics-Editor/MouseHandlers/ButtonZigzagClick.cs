@@ -17,13 +17,22 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             Sender = sender;
             HandleEvent();
         }
+        public ButtonZigzagClick(object sender, EventArgs e, Canvas cnvs, int pointsAmount)
+        {
+            Canvas = cnvs;
+            E = e;
+            Sender = sender;
+            PointsAmount = pointsAmount;
+            HandleEvent();
+        }
         public object Sender { get; set; }
         public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
         private ZigzagFactory zigzagFactory;
+        public int PointsAmount { get; set; }
         public void HandleEvent()
         {
-            zigzagFactory = new ZigzagFactory();
+            zigzagFactory = new ZigzagFactory(PointsAmount);
             Canvas.CurFigureFactory = zigzagFactory;
             MouseEventArgs eMouse = (MouseEventArgs)E;
             Canvas.PrevPoint = new System.Drawing.PointF(eMouse.X, eMouse.Y);

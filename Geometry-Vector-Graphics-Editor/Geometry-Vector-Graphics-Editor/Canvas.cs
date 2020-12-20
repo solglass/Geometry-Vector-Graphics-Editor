@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Geometry_Vector_Graphics_Editor.Actors;
+
 namespace Geometry_Vector_Graphics_Editor
 {
     public class Canvas
@@ -92,7 +94,11 @@ namespace Geometry_Vector_Graphics_Editor
             {
                 if (CurFigure.PointsAmount == 0)
                 {
-                    CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
+                    if (CurFigure.Updater is BrushUpdater && CurFigure.Points!=null)
+                    {
+                        CurFigure.Points.AddRange(CurFigure.Updater.Update(pointsAmount, points));
+                    }
+                    else CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
                 }
                 else
                 {
@@ -100,11 +106,20 @@ namespace Geometry_Vector_Graphics_Editor
                     {
                         CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
                     }
-                    else
+                    else if(CurFigure.PointsAmount==1000)
                     {
                         List<PointF> newList = new List<PointF>();
                         newList.AddRange(CurFigure.Points);
                         newList.Add(points.Last());
+                        CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, newList);
+                    }
+                    else
+                    {
+                        List<PointF> newList = new List<PointF>();
+                        newList.AddRange(CurFigure.Points);
+                        newList.RemoveAt(newList.Count() - 1);
+                        newList.Add(points.Last());
+                        
                         CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, newList);
                     }
                 }

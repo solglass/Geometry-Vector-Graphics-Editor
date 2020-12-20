@@ -25,8 +25,14 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent()
         {
             MouseEventArgs eMouse = (MouseEventArgs)E;
-            Canvas.Figures.Add(Canvas.CurFigure);
- 
+            if (Canvas.CurFigure.PointsAmount == 0 || Canvas.CurFigure.PointsAmount==1000 /*|| Canvas.CurFigure.PointsAmount == Canvas.CurFigure.Points.Count()*/)
+            {
+                Canvas.Figures.Add(Canvas.CurFigure);
+            }
+            else
+            {
+                Canvas.CurFigure.PointsAmount--;
+            }
         }
     }
 }

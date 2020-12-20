@@ -48,9 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Actors\BrushUpdater.cs" />
     <Compile Include="Actors\CicleMover.cs" />
     <Compile Include="Actors\CircleDrawer.cs" />
+    <Compile Include="FigureFactories\BrushFactory.cs" />
     <Compile Include="FigureFactories\ZigzagFactory.cs" />
+    <Compile Include="MouseHandlers\ButtonBrushClick.cs" />
     <Compile Include="MouseHandlers\ButtonIsoscelesTriangleClick.cs" />
     <Compile Include="FigureFactories\LineFactory.cs" />
     <Compile Include="MouseHandlers\ButtonLineClick.cs" />
