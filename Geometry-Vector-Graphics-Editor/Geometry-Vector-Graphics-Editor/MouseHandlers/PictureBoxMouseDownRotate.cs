@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class PictureBoxMouseDownDraw: IMouseHandler
+    class PictureBoxMouseDownRotate: IMouseHandler
     {
-       public PictureBoxMouseDownDraw(object sender, EventArgs e, Canvas cnvs)
+       public PictureBoxMouseDownRotate(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             HandleEvent(sender, e);
@@ -19,9 +19,8 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         private IFigureFactory curFigureFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
-            if (Canvas.CurFigureFactory != null)
+            if (Canvas != null)
             {
-                Canvas.CurFigure = Canvas.CurFigureFactory.CreateFigure();
                 MouseEventArgs eMouse = (MouseEventArgs)e;
                 Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
             }

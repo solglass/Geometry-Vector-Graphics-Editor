@@ -22,7 +22,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             isoscelesTriangleFactory = new IsoscelesTriangleFactory();
             Canvas.CurFigureFactory = isoscelesTriangleFactory;
             MouseEventArgs eMouse = (MouseEventArgs)e;
-            Canvas.Prevpoint = new PointF(eMouse.X, eMouse.Y);
+            Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
         }
     }
 }

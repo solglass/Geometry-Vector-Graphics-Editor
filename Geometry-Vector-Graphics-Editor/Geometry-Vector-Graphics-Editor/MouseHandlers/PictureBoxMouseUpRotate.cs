@@ -5,26 +5,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Geometry_Vector_Graphics_Editor;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class ButtonRectangularTriangleClick : IMouseHandler
+    class PictureBoxMouseUpRotate : IMouseHandler
     {
 
-
-        public ButtonRectangularTriangleClick(object sender, EventArgs e, Canvas cnvs)
+        public PictureBoxMouseUpRotate(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             HandleEvent(sender, e);
         }
         public Canvas Canvas { get; set; }
-        private RectangularTriangleFactory rectangularTriangleFactory;
         public void HandleEvent(object sender, EventArgs e)
         {
-            rectangularTriangleFactory = new RectangularTriangleFactory();
-            Canvas.CurFigureFactory = rectangularTriangleFactory;
             MouseEventArgs eMouse = (MouseEventArgs)e;
-            Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
+ 
         }
     }
 }

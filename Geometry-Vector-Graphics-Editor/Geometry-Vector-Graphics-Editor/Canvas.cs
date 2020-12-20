@@ -15,7 +15,7 @@ namespace Geometry_Vector_Graphics_Editor
         private Pen _pen;
         private Graphics _graphics;
         public List<Figure> Figures { get; set; }
-        public PointF Prevpoint { get; set; }
+        public PointF PrevPoint { get; set; }
         public Figure CurFigure
         {
             get; set;
@@ -95,6 +95,16 @@ namespace Geometry_Vector_Graphics_Editor
             }
         }
 
+
+        public void Rotate(PointF currentPoint)
+        {
+            if (CurFigure != null && PrevPoint != null)
+            {
+                CurFigure.Rotator.Rotate(PrevPoint, currentPoint, CurFigure.Points);
+
+            }
+        }
+
         public void DrawCurrentFigure()
         {
             if (CurFigure != null && _mainBm !=null)
@@ -103,7 +113,6 @@ namespace Geometry_Vector_Graphics_Editor
                 CurFigure.Color = _pen.Color;
                 CurFigure.Width =(int) _pen.Width;
                 CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
-               // _figures.Add(CurFigure);
 
             }
         }

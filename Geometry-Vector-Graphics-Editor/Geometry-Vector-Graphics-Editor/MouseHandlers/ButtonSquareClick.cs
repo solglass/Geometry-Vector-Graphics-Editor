@@ -22,7 +22,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             squareFactory = new SquareFactory();
             Canvas.CurFigureFactory = squareFactory;
             MouseEventArgs eMouse = (MouseEventArgs)e;
-            Canvas.Prevpoint = new PointF(eMouse.X, eMouse.Y);
+            Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
         }
     }
 }
