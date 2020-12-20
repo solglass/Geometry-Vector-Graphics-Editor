@@ -8,16 +8,16 @@ using System.Windows.Forms;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-   public class ButtonZigzagClick : IMouseHandler
+    class ButtonRegularPolygonClick:IMouseHandler
     {
-        public ButtonZigzagClick(object sender, EventArgs e, Canvas cnvs)
+        public ButtonRegularPolygonClick(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             E = e;
             Sender = sender;
             HandleEvent();
         }
-        public ButtonZigzagClick(object sender, EventArgs e, Canvas cnvs, int pointsAmount)
+        public ButtonRegularPolygonClick(object sender, EventArgs e, Canvas cnvs, int pointsAmount)
         {
             Canvas = cnvs;
             E = e;
@@ -28,12 +28,12 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public object Sender { get; set; }
         public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
-        private ZigzagFactory zigzagFactory;
+        private RegularPolygonFactory polygonFactory;
         public int PointsAmount { get; set; }
         public void HandleEvent()
         {
-            zigzagFactory = new ZigzagFactory(PointsAmount);
-            Canvas.CurFigureFactory = zigzagFactory;
+            polygonFactory = new RegularPolygonFactory(PointsAmount);
+            Canvas.CurFigureFactory = polygonFactory;
             Canvas.CurFigure = null;
             MouseEventArgs eMouse = (MouseEventArgs)E;
             Canvas.PrevPoint = new System.Drawing.PointF(eMouse.X, eMouse.Y);
