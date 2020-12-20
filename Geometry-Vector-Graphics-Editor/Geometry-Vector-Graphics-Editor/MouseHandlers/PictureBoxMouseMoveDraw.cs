@@ -33,8 +33,9 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             {
                 MouseEventArgs eMouse = (MouseEventArgs)E;
                 listPoints = new List<PointF>(new PointF[2] { Canvas.Prevpoint, new PointF(eMouse.Location.X, eMouse.Location.Y) });
-                Canvas.Update(2, listPoints);
+                Canvas.Update(listPoints, 2);
                 Canvas.DrawCurrentFigure();
+
             }
       }
 
