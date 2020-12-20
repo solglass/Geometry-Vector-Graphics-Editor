@@ -1,5 +1,6 @@
 ﻿using Geometry_Vector_Graphics_Editor;
 using Geometry_Vector_Graphics_Editor.MouseHandlers;
+using Geometry_Vector_Graphics_Editor.Serialization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,14 @@ namespace graphics
         {
 
             _canvas = Canvas.getInstance(pictureBox.Width, pictureBox.Height, Color.Black, 1);
+            SerializationFile sf = new SerializationFile();
+            sf.LoadFile(_canvas);
             _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+            if (_canvas.Figures.Count > 0)
+            {
+                _canvas.DrawAll();
+            }
         }
 
        
@@ -163,6 +169,12 @@ namespace graphics
         private void buttonDraw_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SerializationFile sf = new SerializationFile();
+            sf.SaveFile(_canvas);
         }
     }
 }

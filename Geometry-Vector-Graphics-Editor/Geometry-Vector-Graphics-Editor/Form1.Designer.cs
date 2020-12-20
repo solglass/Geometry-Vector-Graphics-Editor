@@ -65,7 +65,7 @@
             // buttonClear
             // 
             this.buttonClear.Location = new System.Drawing.Point(956, 7);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(100, 28);
             this.buttonClear.TabIndex = 0;
@@ -76,7 +76,7 @@
             // buttonBrush
             // 
             this.buttonBrush.Location = new System.Drawing.Point(12, 43);
-            this.buttonBrush.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBrush.Margin = new System.Windows.Forms.Padding(4);
             this.buttonBrush.Name = "buttonBrush";
             this.buttonBrush.Size = new System.Drawing.Size(132, 28);
             this.buttonBrush.TabIndex = 1;
@@ -86,7 +86,7 @@
             // buttonLine
             // 
             this.buttonLine.Location = new System.Drawing.Point(12, 78);
-            this.buttonLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLine.Margin = new System.Windows.Forms.Padding(4);
             this.buttonLine.Name = "buttonLine";
             this.buttonLine.Size = new System.Drawing.Size(132, 28);
             this.buttonLine.TabIndex = 2;
@@ -97,7 +97,7 @@
             // buttonSquare
             // 
             this.buttonSquare.Location = new System.Drawing.Point(12, 126);
-            this.buttonSquare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSquare.Margin = new System.Windows.Forms.Padding(4);
             this.buttonSquare.Name = "buttonSquare";
             this.buttonSquare.Size = new System.Drawing.Size(132, 28);
             this.buttonSquare.TabIndex = 3;
@@ -108,7 +108,7 @@
             // buttonRectangle
             // 
             this.buttonRectangle.Location = new System.Drawing.Point(12, 162);
-            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRectangle.Name = "buttonRectangle";
             this.buttonRectangle.Size = new System.Drawing.Size(132, 28);
             this.buttonRectangle.TabIndex = 4;
@@ -119,7 +119,7 @@
             // buttonTriangle
             // 
             this.buttonTriangle.Location = new System.Drawing.Point(12, 206);
-            this.buttonTriangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonTriangle.Margin = new System.Windows.Forms.Padding(4);
             this.buttonTriangle.Name = "buttonTriangle";
             this.buttonTriangle.Size = new System.Drawing.Size(132, 28);
             this.buttonTriangle.TabIndex = 5;
@@ -130,7 +130,7 @@
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Location = new System.Drawing.Point(156, 43);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(900, 719);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
@@ -144,7 +144,7 @@
             // buttonRectangularTriangle
             // 
             this.buttonRectangularTriangle.Location = new System.Drawing.Point(12, 242);
-            this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRectangularTriangle.Name = "buttonRectangularTriangle";
             this.buttonRectangularTriangle.Size = new System.Drawing.Size(132, 42);
             this.buttonRectangularTriangle.TabIndex = 7;
@@ -155,7 +155,7 @@
             // buttonIsoscalesTriangle
             // 
             this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(12, 293);
-            this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4);
             this.buttonIsoscalesTriangle.Name = "buttonIsoscalesTriangle";
             this.buttonIsoscalesTriangle.Size = new System.Drawing.Size(132, 43);
             this.buttonIsoscalesTriangle.TabIndex = 8;
@@ -166,7 +166,7 @@
             // buttonCircle
             // 
             this.buttonCircle.Location = new System.Drawing.Point(12, 362);
-            this.buttonCircle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCircle.Margin = new System.Windows.Forms.Padding(4);
             this.buttonCircle.Name = "buttonCircle";
             this.buttonCircle.Size = new System.Drawing.Size(132, 28);
             this.buttonCircle.TabIndex = 9;
@@ -177,7 +177,7 @@
             // buttonEllipse
             // 
             this.buttonEllipse.Location = new System.Drawing.Point(12, 398);
-            this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4);
             this.buttonEllipse.Name = "buttonEllipse";
             this.buttonEllipse.Size = new System.Drawing.Size(132, 28);
             this.buttonEllipse.TabIndex = 10;
@@ -188,7 +188,7 @@
             // buttonPoligon
             // 
             this.buttonPoligon.Location = new System.Drawing.Point(12, 485);
-            this.buttonPoligon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonPoligon.Margin = new System.Windows.Forms.Padding(4);
             this.buttonPoligon.Name = "buttonPoligon";
             this.buttonPoligon.Size = new System.Drawing.Size(132, 28);
             this.buttonPoligon.TabIndex = 15;
@@ -198,7 +198,7 @@
             // buttonZigzag
             // 
             this.buttonZigzag.Location = new System.Drawing.Point(12, 450);
-            this.buttonZigzag.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonZigzag.Margin = new System.Windows.Forms.Padding(4);
             this.buttonZigzag.Name = "buttonZigzag";
             this.buttonZigzag.Size = new System.Drawing.Size(132, 28);
             this.buttonZigzag.TabIndex = 16;
@@ -209,7 +209,7 @@
             // buttonDraw
             // 
             this.buttonDraw.Location = new System.Drawing.Point(276, 7);
-            this.buttonDraw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDraw.Margin = new System.Windows.Forms.Padding(4);
             this.buttonDraw.Name = "buttonDraw";
             this.buttonDraw.Size = new System.Drawing.Size(100, 28);
             this.buttonDraw.TabIndex = 17;
@@ -220,7 +220,7 @@
             // buttonMove
             // 
             this.buttonMove.Location = new System.Drawing.Point(491, 7);
-            this.buttonMove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(4);
             this.buttonMove.Name = "buttonMove";
             this.buttonMove.Size = new System.Drawing.Size(100, 28);
             this.buttonMove.TabIndex = 18;
@@ -263,7 +263,7 @@
             // buttonRotate
             // 
             this.buttonRotate.Location = new System.Drawing.Point(596, 7);
-            this.buttonRotate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRotate.Margin = new System.Windows.Forms.Padding(4);
             this.buttonRotate.Name = "buttonRotate";
             this.buttonRotate.Size = new System.Drawing.Size(100, 28);
             this.buttonRotate.TabIndex = 18;
@@ -274,7 +274,7 @@
             // buttonScale
             // 
             this.buttonScale.Location = new System.Drawing.Point(702, 7);
-            this.buttonScale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonScale.Margin = new System.Windows.Forms.Padding(4);
             this.buttonScale.Name = "buttonScale";
             this.buttonScale.Size = new System.Drawing.Size(148, 28);
             this.buttonScale.TabIndex = 18;
@@ -303,7 +303,7 @@
             // buttonFilling
             // 
             this.buttonFilling.Location = new System.Drawing.Point(382, 7);
-            this.buttonFilling.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFilling.Margin = new System.Windows.Forms.Padding(4);
             this.buttonFilling.Name = "buttonFilling";
             this.buttonFilling.Size = new System.Drawing.Size(100, 28);
             this.buttonFilling.TabIndex = 17;
@@ -374,9 +374,10 @@
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.trackBarPointsAmount);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarWidth)).EndInit();

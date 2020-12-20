@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Updaters
 {
+    [Serializable]
     class ZigzagUpdater : IUpdater
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)

@@ -58,6 +58,7 @@
     <Compile Include="MouseHandlers\PictureBoxMouseMoveRotate.cs" />
     <Compile Include="MouseHandlers\PictureBoxMouseUpRotate.cs" />
     <Compile Include="MouseHandlers\ButtonZigzagClick.cs" />
+    <Compile Include="Serialization\SerializationFile.cs" />
     <Compile Include="Updaters\CircleUpdater.cs" />
     <Compile Include="Actors\EllipseDrawer.cs" />
     <Compile Include="Actors\EllipseMover.cs" />

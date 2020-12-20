@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Drawing;
 namespace Geometry_Vector_Graphics_Editor
 {
+    [Serializable]
     public class Canvas
     {
         private static Canvas instance;
@@ -135,11 +136,19 @@ namespace Geometry_Vector_Graphics_Editor
 
         public void DrawAll()
         {
+            
             foreach (var figure in Figures)
             {
-                _pen.Color = figure.Color;
-                _pen.Width = figure.Width;
-                figure.Drawer.Draw(figure.Points,_pen,_graphics); }
+                if (figure != null &&figure.Points != null)
+                {
+                    CloneTmpBitmapFromMain();
+                    _pen.Color = figure.Color;
+                    _pen.Width = (int) figure.Width;
+                    figure.Drawer.Draw(figure.Points, _pen, _graphics);
+                    SetTmpBitmapToMain();
+                }
+            }
+            
         }
 
     }

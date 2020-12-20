@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Updater
 {
-   public class EllipseUpdater:IUpdater
+    [Serializable]
+    public class EllipseUpdater:IUpdater
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {

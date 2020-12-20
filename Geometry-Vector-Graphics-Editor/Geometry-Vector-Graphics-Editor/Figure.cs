@@ -8,7 +8,8 @@ using Geometry_Vector_Graphics_Editor.Actors;
 
 namespace Geometry_Vector_Graphics_Editor
 {
-  public  class Figure:AbstractFigure
+  [Serializable]
+    public  class Figure:AbstractFigure
     {
         public IUpdater Updater { get; private set; }
         public IScaler Scaler { get; private set; }
