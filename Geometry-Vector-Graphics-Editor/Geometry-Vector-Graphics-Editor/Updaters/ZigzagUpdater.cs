@@ -12,10 +12,10 @@ namespace Geometry_Vector_Graphics_Editor.Updaters
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            if (points.Count() > 2)
-            {
-                points.RemoveAt(points.Count - 2);
-            }
+            //if (points.Count() > 2)
+            //{
+            //    points.RemoveAt(points.Count - 2);
+            //}
             //if(pointsAmount<points.Count())
             //{
             //    for(int i= points.Count-pointsAmount; i>0;)

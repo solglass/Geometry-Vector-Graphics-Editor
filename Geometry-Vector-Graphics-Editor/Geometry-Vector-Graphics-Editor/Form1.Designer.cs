@@ -237,6 +237,7 @@
             this.buttonRegularPolygon.TabIndex = 19;
             this.buttonRegularPolygon.Text = "Правильный многоугольник";
             this.buttonRegularPolygon.UseVisualStyleBackColor = true;
+            this.buttonRegularPolygon.Click += new System.EventHandler(this.buttonRegularPolygon_Click);
             // 
             // buttonColor
             // 

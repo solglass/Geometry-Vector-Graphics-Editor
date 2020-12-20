@@ -25,27 +25,11 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 
         public void HandleEvent()
         {
-            if (Canvas.CurFigureFactory != null)
+            if (Canvas.CurFigureFactory != null && Canvas.CurFigure!=null)
             {
-                if (Canvas.CurFigureFactory.PointAmount!=0 && Canvas.CurFigure!=null)
-                {
-                    if(Canvas.CurFigure.Points!=null&& Canvas.CurFigure.Points.Count()>0)
-                    {
-                        Canvas.PrevPoint = Canvas.CurFigure.Points.Last();
-                    }
-                    else
-                    {
-                        MouseEventArgs eMouse = (MouseEventArgs)E;
-                        Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
-                    }
-
-                }
-                else
-                {
                     Canvas.CurFigure = Canvas.CurFigureFactory.CreateFigure();
                     MouseEventArgs eMouse = (MouseEventArgs)E;
                     Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
-                }
             }
         }
     }

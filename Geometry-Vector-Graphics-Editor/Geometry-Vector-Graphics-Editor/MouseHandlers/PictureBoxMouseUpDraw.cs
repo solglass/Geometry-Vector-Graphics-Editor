@@ -11,7 +11,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
     class PictureBoxMouseUpDraw : IMouseHandler
     {
-
+       
         public PictureBoxMouseUpDraw(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
@@ -25,13 +25,12 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent()
         {
             MouseEventArgs eMouse = (MouseEventArgs)E;
-            if (Canvas.CurFigure.PointsAmount == 0 || Canvas.CurFigure.PointsAmount==1000 /*|| Canvas.CurFigure.PointsAmount == Canvas.CurFigure.Points.Count()*/)
+           
+            if (Canvas.CurFigure.PointsAmount == 0 || Canvas.CurFigure.PointsAmount == 1000)
             {
                 Canvas.Figures.Add(Canvas.CurFigure);
-            }
-            else
-            {
-                Canvas.CurFigure.PointsAmount--;
+                Canvas.CurFigure = null;
+                Canvas.check = false;
             }
         }
     }

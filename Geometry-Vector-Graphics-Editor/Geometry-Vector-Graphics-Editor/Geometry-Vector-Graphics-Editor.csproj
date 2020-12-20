@@ -51,12 +51,15 @@
     <Compile Include="Actors\BrushUpdater.cs" />
     <Compile Include="Actors\CicleMover.cs" />
     <Compile Include="Actors\CircleDrawer.cs" />
+    <Compile Include="Actors\RegularPolygonDrawer.cs" />
     <Compile Include="FigureFactories\BrushFactory.cs" />
+    <Compile Include="FigureFactories\RegularPolygonFactory.cs" />
     <Compile Include="FigureFactories\ZigzagFactory.cs" />
     <Compile Include="MouseHandlers\ButtonBrushClick.cs" />
     <Compile Include="MouseHandlers\ButtonIsoscelesTriangleClick.cs" />
     <Compile Include="FigureFactories\LineFactory.cs" />
     <Compile Include="MouseHandlers\ButtonLineClick.cs" />
+    <Compile Include="MouseHandlers\ButtonRegularPolygonClick.cs" />
     <Compile Include="MouseHandlers\PictureBoxMouseDownRotate.cs" />
     <Compile Include="MouseHandlers\PictureBoxMouseMoveRotate.cs" />
     <Compile Include="MouseHandlers\PictureBoxMouseUpRotate.cs" />
@@ -124,6 +127,7 @@
     <Compile Include="Updaters\IsoscelesTriangleUpdater.cs" />
     <Compile Include="Updaters\RectangleUpdater.cs" />
     <Compile Include="Updaters\RectangularTriangleUpdater.cs" />
+    <Compile Include="Updaters\RegularPolygonUpdater.cs" />
     <Compile Include="Updaters\SquareUpdater.cs" />
     <Compile Include="Updaters\ZigzagUpdater.cs" />
     <Compile Include="ZigZagFigure.cs" />
