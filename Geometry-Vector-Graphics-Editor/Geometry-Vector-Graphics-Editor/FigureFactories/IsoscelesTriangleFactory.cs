@@ -11,7 +11,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     class IsoscelesTriangleFactory : IFigureFactory
     {
-
+        public int PointAmount { get; set; }
         public Figure CreateFigure()
         {
             PolygonDrawer drawer = new PolygonDrawer();

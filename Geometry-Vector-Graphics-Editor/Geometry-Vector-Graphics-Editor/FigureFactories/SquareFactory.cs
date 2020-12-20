@@ -10,7 +10,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     class SquareFactory : IFigureFactory
     {
-
+        public int PointAmount { get; set; }
         public Figure CreateFigure()
         {
             PolygonDrawer drawer = new PolygonDrawer();

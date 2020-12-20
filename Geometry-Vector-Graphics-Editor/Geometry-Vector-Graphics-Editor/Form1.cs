@@ -147,7 +147,8 @@ namespace graphics
 
         private void buttonZigzag_Click(object sender, EventArgs e)
         {
-            IMouseHandler buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
+            ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
+            buttonHandler.PointsAmount = trackBarPointsAmount.Value;
         }
 
         private void buttonRotate_Click(object sender, EventArgs e)
