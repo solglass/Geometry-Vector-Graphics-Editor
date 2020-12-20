@@ -9,10 +9,10 @@ using Geometry_Vector_Graphics_Editor;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class PictureBoxMouseUpDraw : IMouseHandler
+    class PictureBoxMouseUpRotate : IMouseHandler
     {
 
-        public PictureBoxMouseUpDraw(object sender, EventArgs e, Canvas cnvs)
+        public PictureBoxMouseUpRotate(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             E = e;
@@ -25,7 +25,6 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent()
         {
             MouseEventArgs eMouse = (MouseEventArgs)E;
-            Canvas.Figures.Add(Canvas.CurFigure);
  
         }
     }

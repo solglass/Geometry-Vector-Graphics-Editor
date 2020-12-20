@@ -13,11 +13,15 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public ButtonRotateClick(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
-            HandleEvent(sender, e);
+            E = e;
+            Sender = sender;
+            HandleEvent();
         }
+        public object Sender { get; set; }
+        public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
         private IRotator currentRotator;
-        public void HandleEvent(object sender, EventArgs e)
+        public void HandleEvent()
         {
 
         }

@@ -5,14 +5,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Geometry_Vector_Graphics_Editor;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class PictureBoxMouseUpDraw : IMouseHandler
+    class PictureBoxMouseDownRotate: IMouseHandler
     {
-
-        public PictureBoxMouseUpDraw(object sender, EventArgs e, Canvas cnvs)
+       public PictureBoxMouseDownRotate(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             E = e;
@@ -22,11 +20,14 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public object Sender { get; set; }
         public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
+        private IFigureFactory curFigureFactory;
         public void HandleEvent()
         {
-            MouseEventArgs eMouse = (MouseEventArgs)E;
-            Canvas.Figures.Add(Canvas.CurFigure);
- 
+            if (Canvas != null)
+            {
+                MouseEventArgs eMouse = (MouseEventArgs)E;
+                Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
+            }
         }
     }
 }

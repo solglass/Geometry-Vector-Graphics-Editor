@@ -15,7 +15,7 @@ namespace graphics
     public partial class Form1 : Form
     {
         private Canvas _canvas;
-        private PictureBoxMouseMoveDraw _pictureBoxMouseMove;
+        private IMouseHandler _pictureBoxMouseMove;
         private bool md;
 
         public Form1()
@@ -68,7 +68,12 @@ namespace graphics
         private void pictureBox_MouseDown(object sender, MouseEventArgs e)
         {
             md = true;
-            IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
+            if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
+            {
+                IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
+            }
+            else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
+            { IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas); }
             if (pictureBox.Image != null)
             { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
             GC.Collect();
@@ -143,6 +148,16 @@ namespace graphics
         private void buttonZigzag_Click(object sender, EventArgs e)
         {
             IMouseHandler buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
+        }
+
+        private void buttonRotate_Click(object sender, EventArgs e)
+        {
+            _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+        }
+
+        private void buttonDraw_Click(object sender, EventArgs e)
+        {
+            _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
         }
     }
 }

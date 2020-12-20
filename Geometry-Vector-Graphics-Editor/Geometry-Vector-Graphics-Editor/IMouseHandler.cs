@@ -9,6 +9,8 @@ namespace Geometry_Vector_Graphics_Editor
     interface IMouseHandler
     {     
      public Canvas Canvas { get; set; }
-      void HandleEvent( object sender, EventArgs e);
+     public object Sender { get; set; }
+     public EventArgs E { get; set; }
+      void HandleEvent();
     }
 }
