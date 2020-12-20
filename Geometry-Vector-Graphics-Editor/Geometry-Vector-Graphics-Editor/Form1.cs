@@ -139,5 +139,10 @@ namespace graphics
         {
             IMouseHandler buttonHandler = new ButtonSquareClick(sender, e, _canvas);
         }
+
+        private void buttonZigzag_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
+        }
     }
 }
