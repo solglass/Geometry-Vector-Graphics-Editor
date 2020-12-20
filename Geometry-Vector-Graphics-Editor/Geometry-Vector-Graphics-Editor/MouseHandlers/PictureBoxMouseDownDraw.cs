@@ -25,7 +25,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 
         public void HandleEvent()
         {
-            if (Canvas.CurFigureFactory != null && Canvas.CurFigure!=null)
+            if (Canvas.CurFigureFactory != null)
             {
                     Canvas.CurFigure = Canvas.CurFigureFactory.CreateFigure();
                     MouseEventArgs eMouse = (MouseEventArgs)E;

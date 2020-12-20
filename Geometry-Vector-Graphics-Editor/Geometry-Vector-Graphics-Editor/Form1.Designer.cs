@@ -33,14 +33,11 @@
             this.buttonLine = new System.Windows.Forms.Button();
             this.buttonSquare = new System.Windows.Forms.Button();
             this.buttonRectangle = new System.Windows.Forms.Button();
-            this.buttonTriangle = new System.Windows.Forms.Button();
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.buttonRectangularTriangle = new System.Windows.Forms.Button();
             this.buttonIsoscalesTriangle = new System.Windows.Forms.Button();
             this.buttonCircle = new System.Windows.Forms.Button();
             this.buttonEllipse = new System.Windows.Forms.Button();
-            this.buttonPoligon = new System.Windows.Forms.Button();
-            this.buttonZigzag = new System.Windows.Forms.Button();
             this.buttonDraw = new System.Windows.Forms.Button();
             this.buttonMove = new System.Windows.Forms.Button();
             this.buttonRegularPolygon = new System.Windows.Forms.Button();
@@ -64,7 +61,7 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(1076, 9);
+            this.buttonClear.Location = new System.Drawing.Point(1470, 9);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(112, 35);
@@ -117,23 +114,13 @@
             this.buttonRectangle.UseVisualStyleBackColor = true;
             this.buttonRectangle.Click += new System.EventHandler(this.buttonRectangle_Click);
             // 
-            // buttonTriangle
-            // 
-            this.buttonTriangle.Location = new System.Drawing.Point(14, 258);
-            this.buttonTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonTriangle.Name = "buttonTriangle";
-            this.buttonTriangle.Size = new System.Drawing.Size(148, 35);
-            this.buttonTriangle.TabIndex = 5;
-            this.buttonTriangle.Text = "Треугольник";
-            this.buttonTriangle.UseVisualStyleBackColor = true;
-            // 
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox.Location = new System.Drawing.Point(176, 54);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1012, 898);
+            this.pictureBox.Size = new System.Drawing.Size(1406, 810);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 6;
             this.pictureBox.TabStop = false;
@@ -144,7 +131,7 @@
             // 
             // buttonRectangularTriangle
             // 
-            this.buttonRectangularTriangle.Location = new System.Drawing.Point(14, 302);
+            this.buttonRectangularTriangle.Location = new System.Drawing.Point(15, 266);
             this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRectangularTriangle.Name = "buttonRectangularTriangle";
             this.buttonRectangularTriangle.Size = new System.Drawing.Size(148, 52);
@@ -155,7 +142,7 @@
             // 
             // buttonIsoscalesTriangle
             // 
-            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(14, 366);
+            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(13, 328);
             this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonIsoscalesTriangle.Name = "buttonIsoscalesTriangle";
             this.buttonIsoscalesTriangle.Size = new System.Drawing.Size(148, 54);
@@ -166,7 +153,7 @@
             // 
             // buttonCircle
             // 
-            this.buttonCircle.Location = new System.Drawing.Point(14, 452);
+            this.buttonCircle.Location = new System.Drawing.Point(13, 410);
             this.buttonCircle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCircle.Name = "buttonCircle";
             this.buttonCircle.Size = new System.Drawing.Size(148, 35);
@@ -177,7 +164,7 @@
             // 
             // buttonEllipse
             // 
-            this.buttonEllipse.Location = new System.Drawing.Point(14, 498);
+            this.buttonEllipse.Location = new System.Drawing.Point(13, 455);
             this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEllipse.Name = "buttonEllipse";
             this.buttonEllipse.Size = new System.Drawing.Size(148, 35);
@@ -186,30 +173,9 @@
             this.buttonEllipse.UseVisualStyleBackColor = true;
             this.buttonEllipse.Click += new System.EventHandler(this.buttonEllipse_Click);
             // 
-            // buttonPoligon
-            // 
-            this.buttonPoligon.Location = new System.Drawing.Point(14, 606);
-            this.buttonPoligon.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonPoligon.Name = "buttonPoligon";
-            this.buttonPoligon.Size = new System.Drawing.Size(148, 35);
-            this.buttonPoligon.TabIndex = 15;
-            this.buttonPoligon.Text = "Многоугольник";
-            this.buttonPoligon.UseVisualStyleBackColor = true;
-            // 
-            // buttonZigzag
-            // 
-            this.buttonZigzag.Location = new System.Drawing.Point(14, 562);
-            this.buttonZigzag.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.buttonZigzag.Name = "buttonZigzag";
-            this.buttonZigzag.Size = new System.Drawing.Size(148, 35);
-            this.buttonZigzag.TabIndex = 16;
-            this.buttonZigzag.Text = "Ломанная";
-            this.buttonZigzag.UseVisualStyleBackColor = true;
-            this.buttonZigzag.Click += new System.EventHandler(this.buttonZigzag_Click);
-            // 
             // buttonDraw
             // 
-            this.buttonDraw.Location = new System.Drawing.Point(310, 9);
+            this.buttonDraw.Location = new System.Drawing.Point(704, 9);
             this.buttonDraw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDraw.Name = "buttonDraw";
             this.buttonDraw.Size = new System.Drawing.Size(112, 35);
@@ -220,7 +186,7 @@
             // 
             // buttonMove
             // 
-            this.buttonMove.Location = new System.Drawing.Point(552, 9);
+            this.buttonMove.Location = new System.Drawing.Point(946, 9);
             this.buttonMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMove.Name = "buttonMove";
             this.buttonMove.Size = new System.Drawing.Size(112, 35);
@@ -230,7 +196,7 @@
             // 
             // buttonRegularPolygon
             // 
-            this.buttonRegularPolygon.Location = new System.Drawing.Point(14, 649);
+            this.buttonRegularPolygon.Location = new System.Drawing.Point(12, 526);
             this.buttonRegularPolygon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRegularPolygon.Name = "buttonRegularPolygon";
             this.buttonRegularPolygon.Size = new System.Drawing.Size(148, 58);
@@ -264,7 +230,7 @@
             // 
             // buttonRotate
             // 
-            this.buttonRotate.Location = new System.Drawing.Point(670, 9);
+            this.buttonRotate.Location = new System.Drawing.Point(1064, 9);
             this.buttonRotate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRotate.Name = "buttonRotate";
             this.buttonRotate.Size = new System.Drawing.Size(112, 35);
@@ -275,7 +241,7 @@
             // 
             // buttonScale
             // 
-            this.buttonScale.Location = new System.Drawing.Point(790, 9);
+            this.buttonScale.Location = new System.Drawing.Point(1184, 9);
             this.buttonScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonScale.Name = "buttonScale";
             this.buttonScale.Size = new System.Drawing.Size(166, 35);
@@ -285,7 +251,7 @@
             // 
             // buttonBackColor
             // 
-            this.buttonBackColor.Location = new System.Drawing.Point(219, 9);
+            this.buttonBackColor.Location = new System.Drawing.Point(613, 9);
             this.buttonBackColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBackColor.Name = "buttonBackColor";
             this.buttonBackColor.Size = new System.Drawing.Size(39, 35);
@@ -296,7 +262,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(120, 18);
+            this.label1.Location = new System.Drawing.Point(514, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 23;
@@ -304,7 +270,7 @@
             // 
             // buttonFilling
             // 
-            this.buttonFilling.Location = new System.Drawing.Point(430, 9);
+            this.buttonFilling.Location = new System.Drawing.Point(824, 9);
             this.buttonFilling.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonFilling.Name = "buttonFilling";
             this.buttonFilling.Size = new System.Drawing.Size(112, 35);
@@ -314,7 +280,7 @@
             // 
             // trackBarPointsAmount
             // 
-            this.trackBarPointsAmount.Location = new System.Drawing.Point(14, 732);
+            this.trackBarPointsAmount.Location = new System.Drawing.Point(8, 617);
             this.trackBarPointsAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBarPointsAmount.Maximum = 15;
             this.trackBarPointsAmount.Minimum = 3;
@@ -326,7 +292,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 709);
+            this.label2.Location = new System.Drawing.Point(6, 595);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(162, 20);
             this.label2.TabIndex = 25;
@@ -336,7 +302,7 @@
             // 
             this.groupBox1.Controls.Add(this.buttonColor);
             this.groupBox1.Controls.Add(this.trackBarWidth);
-            this.groupBox1.Location = new System.Drawing.Point(14, 788);
+            this.groupBox1.Location = new System.Drawing.Point(12, 696);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -351,7 +317,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1200, 875);
+            this.ClientSize = new System.Drawing.Size(1595, 883);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBackColor);
@@ -361,14 +327,11 @@
             this.Controls.Add(this.buttonMove);
             this.Controls.Add(this.buttonFilling);
             this.Controls.Add(this.buttonDraw);
-            this.Controls.Add(this.buttonZigzag);
-            this.Controls.Add(this.buttonPoligon);
             this.Controls.Add(this.buttonEllipse);
             this.Controls.Add(this.buttonCircle);
             this.Controls.Add(this.buttonIsoscalesTriangle);
             this.Controls.Add(this.buttonRectangularTriangle);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.buttonTriangle);
             this.Controls.Add(this.buttonRectangle);
             this.Controls.Add(this.buttonSquare);
             this.Controls.Add(this.buttonLine);
@@ -397,14 +360,11 @@
         private System.Windows.Forms.Button buttonLine;
         private System.Windows.Forms.Button buttonSquare;
         private System.Windows.Forms.Button buttonRectangle;
-        private System.Windows.Forms.Button buttonTriangle;
         private System.Windows.Forms.PictureBox pictureBox;
         private System.Windows.Forms.Button buttonRectangularTriangle;
         private System.Windows.Forms.Button buttonIsoscalesTriangle;
         private System.Windows.Forms.Button buttonCircle;
         private System.Windows.Forms.Button buttonEllipse;
-        private System.Windows.Forms.Button buttonPoligon;
-        private System.Windows.Forms.Button buttonZigzag;
         private System.Windows.Forms.Button buttonDraw;
         private System.Windows.Forms.Button buttonMove;
         private System.Windows.Forms.Button buttonRegularPolygon;
