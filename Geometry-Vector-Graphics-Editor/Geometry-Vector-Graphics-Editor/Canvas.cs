@@ -119,6 +119,7 @@ namespace Geometry_Vector_Graphics_Editor
                 }
             }
         }
+       
 
 
         public void Rotate(PointF currentPoint)
