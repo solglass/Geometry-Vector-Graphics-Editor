@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
-  public  class EllipseMover:IMover
+    [Serializable]
+    public  class EllipseMover:IMover
     {
         public void Move(PointF delta, List<PointF> points)
         {
