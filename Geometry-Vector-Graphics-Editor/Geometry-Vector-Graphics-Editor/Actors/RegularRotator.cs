@@ -10,11 +10,11 @@ namespace Geometry_Vector_Graphics_Editor.Actors
     [Serializable]
     public class RegularRotator : IRotator
     {
-        public void Rotate(PointF prevPoint, PointF currentPoint, List<PointF> points)
+        public void Rotate(PointF prevPoint, PointF currentPoint, List<PointF> points, bool direction)
         {
 
             PointF figureCenter = FindFigureCenter(points);
-            double angle = FindRotateAngle(figureCenter, prevPoint, currentPoint);
+            double angle = FindRotateAngle(figureCenter, prevPoint, currentPoint, direction);
             for (int i = 0; i < points.Count(); i++)
             {
                 PointF point = points[i];
@@ -46,24 +46,17 @@ namespace Geometry_Vector_Graphics_Editor.Actors
             return figureCenter;
         }
 
-        public double FindRotateAngle(PointF center, PointF prevPoint, PointF currentPoint)
+            public double FindRotateAngle(PointF center, PointF prevPoint, PointF currentPoint, bool direction)
         {
-            double angle = 0;
-            /*double a = Math.Sqrt(Math.Pow(currentPoint.X - center.X, 2) + Math.Pow(currentPoint.Y - center.Y, 2));
+             double angle = 0;
+            double a = Math.Sqrt(Math.Pow(prevPoint.X - center.X, 2) + Math.Pow(prevPoint.Y - center.Y, 2));
             double b = Math.Sqrt(Math.Pow(currentPoint.X - center.X, 2) + Math.Pow(currentPoint.Y - center.Y, 2));
-            double c = Math.Sqrt(Math.Pow(currentPoint.X - currentPoint.X, 2) + Math.Pow(currentPoint.Y - currentPoint.Y, 2));
+            double c = Math.Sqrt(Math.Pow(currentPoint.X - prevPoint.X, 2) + Math.Pow(currentPoint.Y - prevPoint.Y, 2));
             angle = Math.Acos((a * a + b * b - c * c) / (2 * a * b)) * Math.PI / 180;
-            */
-            //&& currentPoint.X > prevPoint.X
-            if (currentPoint.Y > center.Y  )
-                angle = 0.034906585039887;
-            //&& currentPoint.X < prevPoint.X
-            else if (currentPoint.Y < center.Y  ) 
-            {
-                angle = -0.034906585039887;
-                 }
-            else angle = 0; 
+
+            if (direction)
             return angle;
+            else return -angle;
         }
     }
 }
