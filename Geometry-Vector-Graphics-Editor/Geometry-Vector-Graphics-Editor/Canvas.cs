@@ -163,7 +163,7 @@ namespace Geometry_Vector_Graphics_Editor
             foreach (var figure in Figures)
             {
 
-                if (figure != null && figure.Points != null)
+                if (figure != null && figure.IsCorrect())
                 {
                     _pen.Color = figure.Color;
                     _pen.Width = (int)figure.Width;
