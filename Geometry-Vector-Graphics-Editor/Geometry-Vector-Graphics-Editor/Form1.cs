@@ -31,11 +31,14 @@ namespace graphics
             SerializationFile sf = new SerializationFile();
             sf.LoadFile(_canvas);
             _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+            _canvas.PictureBoxHeight = pictureBox.Height;
+            _canvas.PictureBoxWidth= pictureBox.Width;
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
             if (_canvas.Figures.Count > 0)
             {
                 _canvas.DrawAll();
             }
+            pictureBox.Image = _canvas.Bitmap;
         }
 
        
@@ -77,11 +80,12 @@ namespace graphics
             if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
             {
                 IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
+                if (pictureBox.Image != null)
+                { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
             }
             else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
             { IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas); }
-            if (pictureBox.Image != null)
-            { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
+
             GC.Collect();
         }
 

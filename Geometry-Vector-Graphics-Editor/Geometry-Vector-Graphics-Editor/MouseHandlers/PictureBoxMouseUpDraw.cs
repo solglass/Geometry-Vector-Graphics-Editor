@@ -35,7 +35,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
                     Canvas.check = false;
                 }
             }
-            catch { }
+            catch { if (Canvas.Figures.Count > 0) { Canvas.CurFigure = Canvas.Figures[Canvas.Figures.Count - 1]; } }
         }
     }
 }
