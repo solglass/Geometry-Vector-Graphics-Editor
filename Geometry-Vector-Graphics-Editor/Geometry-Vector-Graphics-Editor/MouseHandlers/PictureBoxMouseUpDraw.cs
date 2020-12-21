@@ -25,13 +25,17 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent()
         {
             MouseEventArgs eMouse = (MouseEventArgs)E;
-           
-            if (Canvas.CurFigure.PointsAmount == 0 || Canvas.CurFigure.PointsAmount == 1000)
+
+            try
             {
-                Canvas.Figures.Add(Canvas.CurFigure);
-                Canvas.CurFigure = null;
-                Canvas.check = false;
+                if (Canvas.CurFigure != null && Canvas.CurFigure.PointsAmount == 0 || Canvas.CurFigure.PointsAmount == 1000)
+                {
+                    Canvas.Figures.Add(Canvas.CurFigure);
+                    Canvas.CurFigure = null;
+                    Canvas.check = false;
+                }
             }
+            catch { if (Canvas.Figures.Count > 0) { Canvas.CurFigure = Canvas.Figures[Canvas.Figures.Count - 1]; } }
         }
     }
 }

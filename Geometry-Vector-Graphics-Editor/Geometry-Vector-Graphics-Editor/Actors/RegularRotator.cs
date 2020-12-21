@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
+    [Serializable]
     public class RegularRotator : IRotator
     {
         public void Rotate(PointF prevPoint, PointF currentPoint, List<PointF> points)

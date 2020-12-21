@@ -25,7 +25,12 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent()
         {
             MouseEventArgs eMouse = (MouseEventArgs)E;
-            Canvas.Rotate(new PointF(eMouse.X, eMouse.Y));
+            if (Canvas.CurFigure != null && Canvas.CurFigure.IsCorrect())
+            {
+                Canvas.Figures.Add(Canvas.CurFigure);
+            }
+            Canvas.CurFigure = null;
+            // Canvas.Rotate(new PointF(eMouse.X, eMouse.Y));
         }
     }
 }

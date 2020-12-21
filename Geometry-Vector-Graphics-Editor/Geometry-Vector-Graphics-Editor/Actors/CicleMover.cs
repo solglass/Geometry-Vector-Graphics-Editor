@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
+    [Serializable]
     class CicleMover : IMover
     {
         public void Move(PointF delta, List<PointF> points)
