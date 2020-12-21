@@ -8,23 +8,25 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.FigureFactories
 {
-    public class ZigzagFactory : IFigureFactory
+    public class RegularPolygonFactory : IFigureFactory
     {
-        public int PointAmount { get; set; }
-        public ZigzagFactory(int pointsAmount)
+        public int PointAmount { get ; set ; }
+
+        public RegularPolygonFactory(int pointsAmount)
         {
             PointAmount = pointsAmount;
         }
         public Figure CreateFigure()
         {
-            ZigzagUpdater updater = new ZigzagUpdater();
-            LineDrawer drawer = new LineDrawer();
-            RegularMover mover = new RegularMover();
+            RegularPolygonUpdater updater = new RegularPolygonUpdater();
+            RegularPolygonDrawer drawer = new RegularPolygonDrawer();
             RegularRotator rotator = new RegularRotator();
             RegularScaler scaler = new RegularScaler();
+            RegularMover mover = new RegularMover();
             Figure figure = new Figure(drawer, scaler, updater, mover, rotator);
             figure.PointsAmount = PointAmount;
             return figure;
+
         }
     }
 }

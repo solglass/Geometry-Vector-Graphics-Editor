@@ -9,6 +9,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
     public class LineFactory : IFigureFactory
     {
+        public int PointAmount { get; set; }
         public Figure CreateFigure()
         {
             LineDrawer drawer = new LineDrawer();

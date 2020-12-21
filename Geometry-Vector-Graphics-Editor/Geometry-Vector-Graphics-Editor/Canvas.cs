@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Geometry_Vector_Graphics_Editor.Actors;
+
 namespace Geometry_Vector_Graphics_Editor
 {
     [Serializable]
@@ -17,6 +19,7 @@ namespace Geometry_Vector_Graphics_Editor
         private Graphics _graphics;
         public List<Figure> Figures { get; set; }
         public PointF PrevPoint { get; set; }
+        public bool check;
         public Figure CurFigure
         {
             get; set;
@@ -85,29 +88,31 @@ namespace Geometry_Vector_Graphics_Editor
             _pen = new Pen(color, penWidth);
             _graphics = Graphics.FromImage(_mainBm);
            Figures= new List<Figure>();
+            check = false;
         }
 
         public void Update(List<PointF> points, int pointsAmount )
         {
             if (CurFigure != null)
             {
-                if (CurFigure.PointsAmount == 0)
+                 if (CurFigure.PointsAmount == 0)
                 {
-                    CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
+                     CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
                 }
                 else
                 {
-                    if (CurFigure.Points == null)
+                   if (CurFigure.Points == null || CurFigure.PointsAmount<1000)
                     {
-                        CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
+                        CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, points);
                     }
-                    else
+                    else if(CurFigure.PointsAmount==1000)
                     {
                         List<PointF> newList = new List<PointF>();
                         newList.AddRange(CurFigure.Points);
                         newList.Add(points.Last());
                         CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, newList);
                     }
+                    
                 }
             }
         }

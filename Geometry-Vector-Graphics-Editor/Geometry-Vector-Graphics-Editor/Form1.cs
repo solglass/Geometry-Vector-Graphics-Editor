@@ -137,8 +137,9 @@ namespace graphics
         private void buttonClear_Click(object sender, EventArgs e)
         {
             _canvas.Figures = new List<Figure>();
-            _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
             pictureBox.Image = null;
+            _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+            
         }
 
         private void buttonRectangularTriangle_Click(object sender, EventArgs e)
@@ -158,7 +159,9 @@ namespace graphics
 
         private void buttonZigzag_Click(object sender, EventArgs e)
         {
-            IMouseHandler buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
+            ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas, trackBarPointsAmount.Value);
+
+            buttonHandler.PointsAmount = trackBarPointsAmount.Value;
         }
 
         private void buttonRotate_Click(object sender, EventArgs e)
@@ -175,6 +178,16 @@ namespace graphics
         {
             SerializationFile sf = new SerializationFile();
             sf.SaveFile(_canvas);
+        }
+
+        private void buttonBrush_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonBrushClick(sender, e, _canvas);
+        }
+
+        private void buttonRegularPolygon_Click(object sender, EventArgs e)
+        {
+            ButtonRegularPolygonClick buttonHandler = new ButtonRegularPolygonClick(sender, e, _canvas, trackBarPointsAmount.Value);
         }
     }
 }
