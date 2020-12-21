@@ -29,6 +29,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             {
                 Canvas.Figures.Add(Canvas.CurFigure);
             }
+            Canvas.CurFigure = null;
             // Canvas.Rotate(new PointF(eMouse.X, eMouse.Y));
         }
     }
