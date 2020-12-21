@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
+    [Serializable]
     public class RegularPolygonDrawer : IDrawer
     {
         public void Draw(List<PointF> points, Pen pen, Graphics graphics)
