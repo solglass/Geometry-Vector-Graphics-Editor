@@ -86,8 +86,18 @@ namespace graphics
                 if (pictureBox.Image != null)
                 { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
             }
+            else if(_pictureBoxMouseMove is MoveFiguresMouseMove)
+            {
+                IMouseHandler buttonHandler = new MoveFiguresMouseDown(sender, e, _canvas);
+            }
             else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
-            { IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas); }
+            {
+                IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas);
+            }
+            else if (_pictureBoxMouseMove is PictureBoxMouseMoveScale)
+            {
+                IMouseHandler buttonHandler = new PictureBoxMouseDownScale(sender, e, _canvas);
+            }
 
             GC.Collect();
         }
@@ -113,8 +123,18 @@ namespace graphics
                 {
                     IMouseHandler buttonHandler = new PictureBoxMouseUpDraw(sender, e, _canvas);
                 }
+                else if (_pictureBoxMouseMove is MoveFiguresMouseMove)
+                {
+                    IMouseHandler buttonHandler = new MoveFiguresMouseUp(sender, e, _canvas);
+                }
                 else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
-                { IMouseHandler buttonHandler = new PictureBoxMouseUpRotate(sender, e, _canvas); }
+                { 
+                    IMouseHandler buttonHandler = new PictureBoxMouseUpRotate(sender, e, _canvas);
+                }
+                else if(_pictureBoxMouseMove is PictureBoxMouseMoveScale)
+                {
+                    IMouseHandler buttonHandler = new PictureBoxMouseUpScale(sender, e, _canvas);
+                }
                 pictureBox.Image = _canvas.Bitmap;
                 GC.Collect();
             }
@@ -202,6 +222,16 @@ namespace graphics
         {
             clockwise = checkBoxClockwise.Checked;
             _canvas.Clockwise = clockwise;
+        }
+
+        private void buttonMove_Click(object sender, EventArgs e)
+        {
+            _pictureBoxMouseMove = new MoveFiguresMouseMove();
+        }
+
+        private void buttonScale_Click(object sender, EventArgs e)
+        {
+            _pictureBoxMouseMove = new PictureBoxMouseMoveScale(sender, e,_canvas);
         }
     }
 }

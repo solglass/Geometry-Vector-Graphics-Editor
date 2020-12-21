@@ -7,7 +7,8 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
-   public class BrushUpdater:IUpdater
+    [Serializable]
+    public class BrushUpdater:IUpdater
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {

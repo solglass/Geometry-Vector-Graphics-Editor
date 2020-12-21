@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Updaters
 {
-   public class RegularPolygonUpdater:IUpdater
+    [Serializable]
+    public class RegularPolygonUpdater:IUpdater
     {
         
         public List<PointF> Update(int pointsAmount, List<PointF> points)

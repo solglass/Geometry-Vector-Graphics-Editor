@@ -13,17 +13,14 @@ namespace Geometry_Vector_Graphics_Editor.Serialization
         public void SaveFile(Canvas canvas)
         {
             BinaryFormatter formatter = new BinaryFormatter();
-            try
+           try
             {
                 FileStream fileStreamFigures = new FileStream("Figures.dat", FileMode.Create, FileAccess.Write);
                 formatter.Serialize(fileStreamFigures, canvas.Figures);
                 fileStreamFigures.Close();
             }
             catch { }
-            /*FileStream fileStreamCanvas = new FileStream("Canvas.dat", FileMode.Create, FileAccess.Write);
-            formatter.Serialize(fileStreamCanvas, canvas);
-            fileStreamCanvas.Close();
-            */
+            
         }
 
         public void LoadFile(Canvas canvas)

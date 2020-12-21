@@ -1,18 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using Geometry_Vector_Graphics_Editor;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class PictureBoxMouseUpDraw : IMouseHandler
+    class PictureBoxMouseUpScale : IMouseHandler
     {
-       
-        public PictureBoxMouseUpDraw(object sender, EventArgs e, Canvas cnvs)
+
+        public PictureBoxMouseUpScale(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             E = e;
@@ -25,17 +23,11 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent()
         {
             MouseEventArgs eMouse = (MouseEventArgs)E;
-
-            try
+            if (Canvas.CurFigure != null && Canvas.CurFigure.IsCorrect())
             {
-                if (Canvas.CurFigure != null)
-                {
-                    Canvas.Figures.Add(Canvas.CurFigure);
-                    Canvas.CurFigure = null;
-                    Canvas.check = false;
-                }
+                Canvas.Figures.Add(Canvas.CurFigure);
             }
-            catch { if (Canvas.Figures.Count > 0) { Canvas.CurFigure = Canvas.Figures[Canvas.Figures.Count - 1]; } }
+            Canvas.CurFigure = null;
         }
     }
 }
