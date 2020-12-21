@@ -20,10 +20,7 @@ namespace Geometry_Vector_Graphics_Editor.Serialization
                 fileStreamFigures.Close();
             }
             catch { }
-            /*FileStream fileStreamCanvas = new FileStream("Canvas.dat", FileMode.Create, FileAccess.Write);
-            formatter.Serialize(fileStreamCanvas, canvas);
-            fileStreamCanvas.Close();
-            */
+            
         }
 
         public void LoadFile(Canvas canvas)

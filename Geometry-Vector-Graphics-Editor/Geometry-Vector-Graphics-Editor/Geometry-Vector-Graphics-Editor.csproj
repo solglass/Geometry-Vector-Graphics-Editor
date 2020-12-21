@@ -61,9 +61,12 @@
     <Compile Include="MouseHandlers\ButtonLineClick.cs" />
     <Compile Include="MouseHandlers\ButtonRegularPolygonClick.cs" />
     <Compile Include="MouseHandlers\PictureBoxMouseDownRotate.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseDownScale.cs" />
     <Compile Include="MouseHandlers\PictureBoxMouseMoveRotate.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseMoveScale.cs" />
     <Compile Include="MouseHandlers\PictureBoxMouseUpRotate.cs" />
     <Compile Include="MouseHandlers\ButtonZigzagClick.cs" />
+    <Compile Include="MouseHandlers\PictureBoxMouseUpScale.cs" />
     <Compile Include="Serialization\SerializationFile.cs" />
     <Compile Include="Updaters\CircleUpdater.cs" />
     <Compile Include="Actors\EllipseDrawer.cs" />

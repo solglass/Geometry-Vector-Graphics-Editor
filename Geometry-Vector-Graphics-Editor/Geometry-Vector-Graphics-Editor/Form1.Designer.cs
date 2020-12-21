@@ -62,10 +62,10 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(1307, 7);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonClear.Location = new System.Drawing.Point(1470, 9);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
-            this.buttonClear.Size = new System.Drawing.Size(100, 28);
+            this.buttonClear.Size = new System.Drawing.Size(112, 35);
             this.buttonClear.TabIndex = 0;
             this.buttonClear.Text = "Очистить\r\n";
             this.buttonClear.UseVisualStyleBackColor = true;
@@ -73,10 +73,10 @@
             // 
             // buttonBrush
             // 
-            this.buttonBrush.Location = new System.Drawing.Point(12, 43);
-            this.buttonBrush.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonBrush.Location = new System.Drawing.Point(14, 54);
+            this.buttonBrush.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonBrush.Name = "buttonBrush";
-            this.buttonBrush.Size = new System.Drawing.Size(132, 28);
+            this.buttonBrush.Size = new System.Drawing.Size(148, 35);
             this.buttonBrush.TabIndex = 1;
             this.buttonBrush.Text = "Кисть";
             this.buttonBrush.UseVisualStyleBackColor = true;
@@ -84,10 +84,10 @@
             // 
             // buttonLine
             // 
-            this.buttonLine.Location = new System.Drawing.Point(12, 78);
-            this.buttonLine.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonLine.Location = new System.Drawing.Point(14, 98);
+            this.buttonLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLine.Name = "buttonLine";
-            this.buttonLine.Size = new System.Drawing.Size(132, 28);
+            this.buttonLine.Size = new System.Drawing.Size(148, 35);
             this.buttonLine.TabIndex = 2;
             this.buttonLine.Text = "Линия";
             this.buttonLine.UseVisualStyleBackColor = true;
@@ -95,10 +95,10 @@
             // 
             // buttonSquare
             // 
-            this.buttonSquare.Location = new System.Drawing.Point(12, 126);
-            this.buttonSquare.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonSquare.Location = new System.Drawing.Point(14, 158);
+            this.buttonSquare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSquare.Name = "buttonSquare";
-            this.buttonSquare.Size = new System.Drawing.Size(132, 28);
+            this.buttonSquare.Size = new System.Drawing.Size(148, 35);
             this.buttonSquare.TabIndex = 3;
             this.buttonSquare.Text = "Квадрат";
             this.buttonSquare.UseVisualStyleBackColor = true;
@@ -106,10 +106,10 @@
             // 
             // buttonRectangle
             // 
-            this.buttonRectangle.Location = new System.Drawing.Point(12, 162);
-            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRectangle.Location = new System.Drawing.Point(14, 202);
+            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRectangle.Name = "buttonRectangle";
-            this.buttonRectangle.Size = new System.Drawing.Size(132, 28);
+            this.buttonRectangle.Size = new System.Drawing.Size(148, 35);
             this.buttonRectangle.TabIndex = 4;
             this.buttonRectangle.Text = "Прямоугольник";
             this.buttonRectangle.UseVisualStyleBackColor = true;
@@ -118,10 +118,10 @@
             // pictureBox
             // 
             this.pictureBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox.Location = new System.Drawing.Point(156, 43);
-            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.pictureBox.Location = new System.Drawing.Point(176, 54);
+            this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1250, 648);
+            this.pictureBox.Size = new System.Drawing.Size(1406, 810);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 6;
             this.pictureBox.TabStop = false;
@@ -132,10 +132,10 @@
             // 
             // buttonRectangularTriangle
             // 
-            this.buttonRectangularTriangle.Location = new System.Drawing.Point(13, 213);
-            this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRectangularTriangle.Location = new System.Drawing.Point(15, 266);
+            this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRectangularTriangle.Name = "buttonRectangularTriangle";
-            this.buttonRectangularTriangle.Size = new System.Drawing.Size(132, 42);
+            this.buttonRectangularTriangle.Size = new System.Drawing.Size(148, 52);
             this.buttonRectangularTriangle.TabIndex = 7;
             this.buttonRectangularTriangle.Text = "Прямоугольный треугольник";
             this.buttonRectangularTriangle.UseVisualStyleBackColor = true;
@@ -143,10 +143,10 @@
             // 
             // buttonIsoscalesTriangle
             // 
-            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(12, 262);
-            this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(14, 328);
+            this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonIsoscalesTriangle.Name = "buttonIsoscalesTriangle";
-            this.buttonIsoscalesTriangle.Size = new System.Drawing.Size(132, 43);
+            this.buttonIsoscalesTriangle.Size = new System.Drawing.Size(148, 54);
             this.buttonIsoscalesTriangle.TabIndex = 8;
             this.buttonIsoscalesTriangle.Text = "Равнобедренный треугольник";
             this.buttonIsoscalesTriangle.UseVisualStyleBackColor = true;
@@ -154,10 +154,10 @@
             // 
             // buttonCircle
             // 
-            this.buttonCircle.Location = new System.Drawing.Point(12, 328);
-            this.buttonCircle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonCircle.Location = new System.Drawing.Point(14, 410);
+            this.buttonCircle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCircle.Name = "buttonCircle";
-            this.buttonCircle.Size = new System.Drawing.Size(132, 28);
+            this.buttonCircle.Size = new System.Drawing.Size(148, 35);
             this.buttonCircle.TabIndex = 9;
             this.buttonCircle.Text = "Круг";
             this.buttonCircle.UseVisualStyleBackColor = true;
@@ -165,10 +165,10 @@
             // 
             // buttonEllipse
             // 
-            this.buttonEllipse.Location = new System.Drawing.Point(12, 364);
-            this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonEllipse.Location = new System.Drawing.Point(14, 455);
+            this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEllipse.Name = "buttonEllipse";
-            this.buttonEllipse.Size = new System.Drawing.Size(132, 28);
+            this.buttonEllipse.Size = new System.Drawing.Size(148, 35);
             this.buttonEllipse.TabIndex = 10;
             this.buttonEllipse.Text = "Эллипс";
             this.buttonEllipse.UseVisualStyleBackColor = true;
@@ -176,10 +176,10 @@
             // 
             // buttonDraw
             // 
-            this.buttonDraw.Location = new System.Drawing.Point(626, 7);
-            this.buttonDraw.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonDraw.Location = new System.Drawing.Point(704, 9);
+            this.buttonDraw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDraw.Name = "buttonDraw";
-            this.buttonDraw.Size = new System.Drawing.Size(100, 28);
+            this.buttonDraw.Size = new System.Drawing.Size(112, 35);
             this.buttonDraw.TabIndex = 17;
             this.buttonDraw.Text = "Рисовать";
             this.buttonDraw.UseVisualStyleBackColor = true;
@@ -187,20 +187,20 @@
             // 
             // buttonMove
             // 
-            this.buttonMove.Location = new System.Drawing.Point(841, 7);
-            this.buttonMove.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonMove.Location = new System.Drawing.Point(946, 9);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMove.Name = "buttonMove";
-            this.buttonMove.Size = new System.Drawing.Size(100, 28);
+            this.buttonMove.Size = new System.Drawing.Size(112, 35);
             this.buttonMove.TabIndex = 18;
             this.buttonMove.Text = "Двигать";
             this.buttonMove.UseVisualStyleBackColor = true;
             // 
             // buttonRegularPolygon
             // 
-            this.buttonRegularPolygon.Location = new System.Drawing.Point(11, 421);
+            this.buttonRegularPolygon.Location = new System.Drawing.Point(12, 526);
             this.buttonRegularPolygon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRegularPolygon.Name = "buttonRegularPolygon";
-            this.buttonRegularPolygon.Size = new System.Drawing.Size(132, 46);
+            this.buttonRegularPolygon.Size = new System.Drawing.Size(148, 58);
             this.buttonRegularPolygon.TabIndex = 19;
             this.buttonRegularPolygon.Text = "Правильный многоугольник";
             this.buttonRegularPolygon.UseVisualStyleBackColor = true;
@@ -209,10 +209,10 @@
             // buttonColor
             // 
             this.buttonColor.BackColor = System.Drawing.Color.Black;
-            this.buttonColor.Location = new System.Drawing.Point(8, 82);
+            this.buttonColor.Location = new System.Drawing.Point(9, 102);
             this.buttonColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonColor.Name = "buttonColor";
-            this.buttonColor.Size = new System.Drawing.Size(124, 36);
+            this.buttonColor.Size = new System.Drawing.Size(140, 45);
             this.buttonColor.TabIndex = 20;
             this.buttonColor.UseVisualStyleBackColor = false;
             this.buttonColor.Click += new System.EventHandler(this.buttonColor_Click);
@@ -220,21 +220,21 @@
             // trackBarWidth
             // 
             this.trackBarWidth.LargeChange = 1;
-            this.trackBarWidth.Location = new System.Drawing.Point(5, 40);
+            this.trackBarWidth.Location = new System.Drawing.Point(6, 50);
             this.trackBarWidth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBarWidth.Minimum = 1;
             this.trackBarWidth.Name = "trackBarWidth";
-            this.trackBarWidth.Size = new System.Drawing.Size(132, 56);
+            this.trackBarWidth.Size = new System.Drawing.Size(148, 69);
             this.trackBarWidth.TabIndex = 21;
             this.trackBarWidth.Value = 1;
             this.trackBarWidth.Scroll += new System.EventHandler(this.trackBarWidth_Scroll);
             // 
             // buttonRotate
             // 
-            this.buttonRotate.Location = new System.Drawing.Point(946, 7);
-            this.buttonRotate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonRotate.Location = new System.Drawing.Point(1064, 9);
+            this.buttonRotate.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRotate.Name = "buttonRotate";
-            this.buttonRotate.Size = new System.Drawing.Size(100, 28);
+            this.buttonRotate.Size = new System.Drawing.Size(112, 35);
             this.buttonRotate.TabIndex = 18;
             this.buttonRotate.Text = "Повернуть";
             this.buttonRotate.UseVisualStyleBackColor = true;
@@ -242,20 +242,21 @@
             // 
             // buttonScale
             // 
-            this.buttonScale.Location = new System.Drawing.Point(1052, 7);
-            this.buttonScale.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonScale.Location = new System.Drawing.Point(1184, 9);
+            this.buttonScale.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonScale.Name = "buttonScale";
-            this.buttonScale.Size = new System.Drawing.Size(148, 28);
+            this.buttonScale.Size = new System.Drawing.Size(166, 35);
             this.buttonScale.TabIndex = 18;
             this.buttonScale.Text = "Масштабировать";
             this.buttonScale.UseVisualStyleBackColor = true;
+            this.buttonScale.Click += new System.EventHandler(this.buttonScale_Click);
             // 
             // buttonBackColor
             // 
-            this.buttonBackColor.Location = new System.Drawing.Point(545, 7);
+            this.buttonBackColor.Location = new System.Drawing.Point(613, 9);
             this.buttonBackColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBackColor.Name = "buttonBackColor";
-            this.buttonBackColor.Size = new System.Drawing.Size(35, 28);
+            this.buttonBackColor.Size = new System.Drawing.Size(39, 35);
             this.buttonBackColor.TabIndex = 22;
             this.buttonBackColor.UseVisualStyleBackColor = true;
             this.buttonBackColor.Click += new System.EventHandler(this.buttonBackColor_Click);
@@ -263,39 +264,39 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(457, 14);
+            this.label1.Location = new System.Drawing.Point(514, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 17);
+            this.label1.Size = new System.Drawing.Size(94, 20);
             this.label1.TabIndex = 23;
             this.label1.Text = "Цвет фона";
             // 
             // buttonFilling
             // 
-            this.buttonFilling.Location = new System.Drawing.Point(732, 7);
-            this.buttonFilling.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonFilling.Location = new System.Drawing.Point(824, 9);
+            this.buttonFilling.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonFilling.Name = "buttonFilling";
-            this.buttonFilling.Size = new System.Drawing.Size(100, 28);
+            this.buttonFilling.Size = new System.Drawing.Size(112, 35);
             this.buttonFilling.TabIndex = 17;
             this.buttonFilling.Text = "Залить";
             this.buttonFilling.UseVisualStyleBackColor = true;
             // 
             // trackBarPointsAmount
             // 
-            this.trackBarPointsAmount.Location = new System.Drawing.Point(7, 494);
+            this.trackBarPointsAmount.Location = new System.Drawing.Point(8, 618);
             this.trackBarPointsAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBarPointsAmount.Maximum = 15;
             this.trackBarPointsAmount.Minimum = 3;
             this.trackBarPointsAmount.Name = "trackBarPointsAmount";
-            this.trackBarPointsAmount.Size = new System.Drawing.Size(138, 56);
+            this.trackBarPointsAmount.Size = new System.Drawing.Size(155, 69);
             this.trackBarPointsAmount.TabIndex = 24;
             this.trackBarPointsAmount.Value = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 476);
+            this.label2.Location = new System.Drawing.Point(6, 595);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(140, 17);
+            this.label2.Size = new System.Drawing.Size(162, 20);
             this.label2.TabIndex = 25;
             this.label2.Text = "Количество вершин";
             // 
@@ -303,11 +304,11 @@
             // 
             this.groupBox1.Controls.Add(this.buttonColor);
             this.groupBox1.Controls.Add(this.trackBarWidth);
-            this.groupBox1.Location = new System.Drawing.Point(11, 557);
+            this.groupBox1.Location = new System.Drawing.Point(12, 696);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(138, 134);
+            this.groupBox1.Size = new System.Drawing.Size(155, 168);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Параметры карандаша";
@@ -317,9 +318,10 @@
             this.checkBoxClockwise.AutoSize = true;
             this.checkBoxClockwise.Checked = true;
             this.checkBoxClockwise.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkBoxClockwise.Location = new System.Drawing.Point(252, 15);
+            this.checkBoxClockwise.Location = new System.Drawing.Point(284, 19);
+            this.checkBoxClockwise.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.checkBoxClockwise.Name = "checkBoxClockwise";
-            this.checkBoxClockwise.Size = new System.Drawing.Size(163, 21);
+            this.checkBoxClockwise.Size = new System.Drawing.Size(188, 24);
             this.checkBoxClockwise.TabIndex = 27;
             this.checkBoxClockwise.Text = "По часовой стрелке";
             this.checkBoxClockwise.UseVisualStyleBackColor = true;
@@ -327,11 +329,11 @@
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1418, 700);
+            this.ClientSize = new System.Drawing.Size(1595, 875);
             this.Controls.Add(this.checkBoxClockwise);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -354,7 +356,7 @@
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.trackBarPointsAmount);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
