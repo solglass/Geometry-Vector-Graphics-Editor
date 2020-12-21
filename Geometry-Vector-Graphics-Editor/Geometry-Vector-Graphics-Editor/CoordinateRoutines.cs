@@ -199,6 +199,33 @@ namespace Geometry_Vector_Graphics_Editor
             else return false;
         }
 
+        public static List<PointF> RotatePoint(int pointsAmount,PointF pointToRotate, PointF centerPoint/*, double angleInDegrees*/)
+        {
+            double angleInDegrees = 360 / (double)pointsAmount;
+            double angleInRadians = angleInDegrees * (Math.PI / 180);
+            double cosTheta = Math.Cos(angleInRadians);
+            double sinTheta = Math.Sin(angleInRadians);
+            List<PointF> points = new List<PointF>();
+            for (int i = 0; i < pointsAmount; i++)
+            {
+                PointF point = new PointF
+                {
+                    X =
+                        (float)
+                        (cosTheta * (pointToRotate.X - centerPoint.X) -
+                        sinTheta * (pointToRotate.Y - centerPoint.Y) + centerPoint.X),
+                    Y =
+                        (float)
+                        (sinTheta * (pointToRotate.X - centerPoint.X) +
+                        cosTheta * (pointToRotate.Y - centerPoint.Y) + centerPoint.Y)
+                };
+                points.Add(point);
+                pointToRotate = point;
+            }
+            points.Add(centerPoint);
+            return points;
+
+        }
     }
 
 }

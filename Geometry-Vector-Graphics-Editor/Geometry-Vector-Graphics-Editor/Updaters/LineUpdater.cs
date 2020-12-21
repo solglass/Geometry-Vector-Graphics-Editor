@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
+    [Serializable]
     public class LineUpdater : IUpdater
     {
        public List<PointF> Update(int pointsAmount, List<PointF> points)

@@ -7,11 +7,16 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
+    [Serializable]
     class LineDrawer: IDrawer
     {
         public void Draw(List<PointF> points, Pen pen, Graphics graphics)
         {
-            graphics.DrawLine(pen, points[0], points[1]);
+            for (int i=1;i<points.Count;i++)
+            {
+                graphics.DrawLine(pen, points[i-1], points[i]);
+            }
+            
         }
     }
 }

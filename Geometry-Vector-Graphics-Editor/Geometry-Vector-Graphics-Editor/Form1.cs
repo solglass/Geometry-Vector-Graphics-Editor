@@ -1,5 +1,6 @@
 ﻿using Geometry_Vector_Graphics_Editor;
 using Geometry_Vector_Graphics_Editor.MouseHandlers;
+using Geometry_Vector_Graphics_Editor.Serialization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +18,7 @@ namespace graphics
         private Canvas _canvas;
         private IMouseHandler _pictureBoxMouseMove;
         private bool md;
+        private bool clockwise;
 
         public Form1()
         {
@@ -27,9 +29,19 @@ namespace graphics
         {
 
             _canvas = Canvas.getInstance(pictureBox.Width, pictureBox.Height, Color.Black, 1);
+            SerializationFile sf = new SerializationFile();
+            sf.LoadFile(_canvas);
             _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-
+            _canvas.PictureBoxHeight = pictureBox.Height;
+            _canvas.PictureBoxWidth= pictureBox.Width;
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+            if (_canvas.Figures.Count > 0)
+            {
+                _canvas.DrawAll();
+            }
+            pictureBox.Image = _canvas.Bitmap;
+
+            _canvas.Clockwise = true;
         }
 
        
@@ -71,6 +83,8 @@ namespace graphics
             if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
             {
                 IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
+                if (pictureBox.Image != null)
+                { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
             }
             else if(_pictureBoxMouseMove is MoveFiguresMouseMove)
             {
@@ -78,8 +92,7 @@ namespace graphics
             }
             else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
             { IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas); }
-            if (pictureBox.Image != null)
-            { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
+
             GC.Collect();
         }
 
@@ -139,8 +152,10 @@ namespace graphics
         private void buttonClear_Click(object sender, EventArgs e)
         {
             _canvas.Figures = new List<Figure>();
-            _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
             pictureBox.Image = null;
+            _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
+            _canvas.CloneTmpBitmapFromMain();
+
         }
 
         private void buttonRectangularTriangle_Click(object sender, EventArgs e)
@@ -160,8 +175,9 @@ namespace graphics
 
         private void buttonZigzag_Click(object sender, EventArgs e)
         {
-            ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
-            //buttonHandler.PointsAmount = trackBarPointsAmount.Value;
+            ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas, trackBarPointsAmount.Value);
+
+            buttonHandler.PointsAmount = trackBarPointsAmount.Value;
         }
 
         private void buttonRotate_Click(object sender, EventArgs e)
@@ -172,6 +188,28 @@ namespace graphics
         private void buttonDraw_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SerializationFile sf = new SerializationFile();
+            sf.SaveFile(_canvas);
+        }
+
+        private void buttonBrush_Click(object sender, EventArgs e)
+        {
+            IMouseHandler buttonHandler = new ButtonBrushClick(sender, e, _canvas);
+        }
+
+        private void buttonRegularPolygon_Click(object sender, EventArgs e)
+        {
+            ButtonRegularPolygonClick buttonHandler = new ButtonRegularPolygonClick(sender, e, _canvas, trackBarPointsAmount.Value);
+        }
+
+        private void checkBoxClockwise_Click(object sender, EventArgs e)
+        {
+            clockwise = checkBoxClockwise.Checked;
+            _canvas.Clockwise = clockwise;
         }
 
         private void buttonMove_Click(object sender, EventArgs e)

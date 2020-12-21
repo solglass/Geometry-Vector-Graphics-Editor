@@ -21,6 +21,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             Canvas = cnvs;
             Sender = sender;
             E = e;
+            HandleEvent();
         }
         public PictureBoxMouseMoveRotate()
         {
@@ -32,8 +33,8 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             if (Canvas.CurFigure != null)
             {
                 MouseEventArgs eMouse = (MouseEventArgs)E;
-                Canvas.Rotate(new PointF(eMouse.Location.X, eMouse.Location.Y));
-                Canvas.DrawCurrentFigure();
+               Canvas.Rotate(new PointF(eMouse.Location.X, eMouse.Location.Y));
+               Canvas.DrawCurrentFigurePreservingSettings();
             }
       }
 

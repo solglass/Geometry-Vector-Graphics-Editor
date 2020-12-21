@@ -9,6 +9,7 @@ namespace Geometry_Vector_Graphics_Editor
 {
   public  interface IFigureFactory
     {
+        int PointAmount { get; set; }
         Figure CreateFigure();
 
     }

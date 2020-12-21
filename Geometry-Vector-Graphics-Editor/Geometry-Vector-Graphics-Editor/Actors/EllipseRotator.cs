@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
+    [Serializable]
     public class EllipseRotator : IRotator
     {
-        public void Rotate(PointF prevPoint, PointF currentPoint, List<PointF> points)
+        public void Rotate(PointF prevPoint, PointF currentPoint, List<PointF> points, bool direction)
         {
             throw new NotImplementedException();
         }

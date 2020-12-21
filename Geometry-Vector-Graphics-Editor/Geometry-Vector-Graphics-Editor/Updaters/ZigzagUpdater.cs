@@ -8,17 +8,22 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Updaters
 {
+    [Serializable]
     class ZigzagUpdater : IUpdater
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            if(/*pointsAmount*/5<points.Count())
-            {
-                for(int i= points.Count-pointsAmount; i>0;)
-                {
-                    points.RemoveAt(points.Count - 1);
-                }
-            }
+            //if (points.Count() > 2)
+            //{
+            //    points.RemoveAt(points.Count - 2);
+            //}
+            //if(pointsAmount<points.Count())
+            //{
+            //    for(int i= points.Count-pointsAmount; i>0;)
+            //    {
+            //        points.RemoveAt(points.Count - 1);
+            //    }
+            //}
             return points;
         }
     }

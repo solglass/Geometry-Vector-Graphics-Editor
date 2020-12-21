@@ -4,18 +4,27 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Drawing;
+using Geometry_Vector_Graphics_Editor.Actors;
+
 namespace Geometry_Vector_Graphics_Editor
 {
+    [Serializable]
     public class Canvas
     {
         private static Canvas instance;
 
+
+        public List<Figure> Figures { get; set; }
+        public PointF PrevPoint { get; set; }
+        public int PictureBoxWidth { get; set; }
+        public int PictureBoxHeight { get; set; }
+        public bool Clockwise { get; set; }
+        public bool check;
         Bitmap _mainBm;
         Bitmap _tmpBm;
         private Pen _pen;
         private Graphics _graphics;
-        public List<Figure> Figures { get; set; }
-        public PointF PrevPoint { get; set; }
+
         public Figure CurFigure
         {
             get; set;
@@ -36,7 +45,7 @@ namespace Geometry_Vector_Graphics_Editor
                 _mainBm = (Bitmap)value;
             }
         }
-        public Color PenColor 
+        public Color PenColor
         {
             get
             {
@@ -59,7 +68,7 @@ namespace Geometry_Vector_Graphics_Editor
                 _pen.Width = (int)value;
             }
         }
-       
+
         public static Canvas getInstance(int width, int height, Color color, int penWidth)
         {
             if (instance == null)
@@ -83,10 +92,11 @@ namespace Geometry_Vector_Graphics_Editor
             _mainBm = new Bitmap(width, height);
             _pen = new Pen(color, penWidth);
             _graphics = Graphics.FromImage(_mainBm);
-           Figures= new List<Figure>();
+            Figures = new List<Figure>();
+            check = false;
         }
 
-        public void Update(List<PointF> points, int pointsAmount )
+        public void Update(List<PointF> points, int pointsAmount)
         {
             if (CurFigure != null)
             {
@@ -96,37 +106,51 @@ namespace Geometry_Vector_Graphics_Editor
                 }
                 else
                 {
-                    if (CurFigure.Points == null)
+                    if (CurFigure.Points == null || CurFigure.PointsAmount < 1000)
                     {
-                        CurFigure.Points = CurFigure.Updater.Update(pointsAmount, points);
+                        CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, points);
                     }
-                    else
+                    else if (CurFigure.PointsAmount == 1000)
                     {
                         List<PointF> newList = new List<PointF>();
                         newList.AddRange(CurFigure.Points);
                         newList.Add(points.Last());
                         CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, newList);
                     }
+
                 }
             }
         }
+       
 
         public void Rotate(PointF currentPoint)
         {
             if (CurFigure != null && PrevPoint != null)
             {
-                CurFigure.Rotator.Rotate(PrevPoint, currentPoint, CurFigure.Points);
+                CurFigure.Rotator.Rotate(PrevPoint, currentPoint, CurFigure.Points, Clockwise);
 
             }
         }
 
         public void DrawCurrentFigure()
         {
-            if (CurFigure != null && _mainBm !=null)
+            if (CurFigure != null && _mainBm != null)
             {
                 CloneTmpBitmapFromMain();
                 CurFigure.Color = _pen.Color;
-                CurFigure.Width =(int) _pen.Width;
+                CurFigure.Width = (int)_pen.Width;
+                CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
+
+            }
+        }
+
+        public void DrawCurrentFigurePreservingSettings()
+        {
+            if (CurFigure != null && _mainBm != null)
+            {
+                CloneTmpBitmapFromMain();
+                _pen.Color = CurFigure.Color;
+                _pen.Width = (int)CurFigure.Width;
                 CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
 
             }
@@ -134,11 +158,23 @@ namespace Geometry_Vector_Graphics_Editor
 
         public void DrawAll()
         {
+            _tmpBm = new Bitmap(PictureBoxWidth, PictureBoxHeight);
+            _graphics = Graphics.FromImage(_tmpBm);
             foreach (var figure in Figures)
             {
-                _pen.Color = figure.Color;
-                _pen.Width = figure.Width;
-                figure.Drawer.Draw(figure.Points,_pen,_graphics); }
+
+                if (figure != null && figure.IsCorrect())
+                {
+                    _pen.Color = figure.Color;
+                    _pen.Width = (int)figure.Width;
+                    figure.Drawer.Draw(figure.Points, _pen, _graphics);
+                }
+            }
+            SetTmpBitmapToMain();
+            
+
+
+
         }
 
         public void ChoiseFigure(PointF point)

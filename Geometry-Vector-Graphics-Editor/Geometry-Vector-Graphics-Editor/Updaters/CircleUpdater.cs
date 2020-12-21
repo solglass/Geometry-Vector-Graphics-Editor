@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Updater
 {
-   public class CircleUpdater:IUpdater
+    [Serializable]
+    public class CircleUpdater:IUpdater
     {
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {

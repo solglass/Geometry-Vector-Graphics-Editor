@@ -6,14 +6,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Geometry_Vector_Graphics_Editor.Updater
+namespace Geometry_Vector_Graphics_Editor.Updaters
 {
     [Serializable]
-    public class EllipseUpdater:IUpdater
+    public class RegularPolygonUpdater:IUpdater
     {
+        
         public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            return new List<PointF>(CoordinateRoutines.CalculateEllipseByRectangle(points[0],points[1]));
+            List<PointF> points1 = CoordinateRoutines.RotatePoint(pointsAmount, points.Last(), points.First());
+            
+            return points1;
         }
     }
 }

@@ -8,11 +8,11 @@ using System.Threading.Tasks;
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
     [Serializable]
-    public class PolygonDrawer : IDrawer
+    public class BrushUpdater:IUpdater
     {
-        public void Draw(List<PointF> points, Pen pen, Graphics graphics)
+        public List<PointF> Update(int pointsAmount, List<PointF> points)
         {
-            graphics.DrawPolygon(pen, points.ToArray());
+            return points;
         }
     }
 }
