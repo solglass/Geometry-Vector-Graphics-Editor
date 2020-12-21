@@ -26,12 +26,15 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 
         public void HandleEvent()
         {
-            MouseEventArgs eMouse = (MouseEventArgs)E;
-            PointF prefPoint = Canvas.CurFigure.Points[0];
-            PointF delta = new PointF(eMouse.X-prefPoint.X, eMouse.Y - prefPoint.Y);
-            Canvas.Move(delta);
-            Canvas.DrawCurrentFigure();
-            prefPoint = eMouse.Location;
+            if (Canvas.CurFigure != null)
+            {
+                MouseEventArgs eMouse = (MouseEventArgs)E;
+                PointF prefPoint = Canvas.CurFigure.Points[0];
+                PointF delta = new PointF(eMouse.X - prefPoint.X, eMouse.Y - prefPoint.Y);
+                Canvas.Move(delta);
+                Canvas.DrawCurrentFigure();
+                prefPoint = eMouse.Location;
+            }
         }
     }
 }

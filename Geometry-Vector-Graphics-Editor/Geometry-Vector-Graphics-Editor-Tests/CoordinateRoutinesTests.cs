@@ -189,9 +189,15 @@ namespace Geometry_Vector_Graphics_Editor_Tests
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new object[] { new PointF(0, 0), new PointF(8, 10), new PointF[] { new PointF(4, 5), new PointF(0, 5), new PointF(4, 0) } };
-            yield return new object[] { new PointF(1, 1), new PointF(5, 11), new PointF[] { new PointF(3, 6), new PointF(1, 6), new PointF(3, 1) } };
-            yield return new object[] { new PointF(0, 0), new PointF(6, 6), new PointF[] { new PointF(3, 3), new PointF(0, 3), new PointF(3, 0) } };
+            yield return new object[] { new PointF(0, 0), new PointF(8, 10), 
+                new PointF[] { new PointF(0, 0), new PointF(8, 10), new PointF(8, 0), new PointF(0, 10),
+                new PointF(0, 5), new PointF(8, 5), new PointF(4, 5), new PointF(4, 10),new PointF(4, 0) } };
+            yield return new object[] { new PointF(1, 1), new PointF(5, 11), 
+                new PointF[] { new PointF(1, 1), new PointF(5,11), new PointF(5, 1), new PointF(1, 11),
+               new PointF(1, 6), new PointF(5,6), new PointF(3, 6),new PointF(3, 11), new PointF(3,1),} };
+            yield return new object[] { new PointF(0, 0), new PointF(6, 6), 
+            new PointF[] { new PointF(0, 0), new PointF(6,6), new PointF(6, 0), new PointF( 0,6 ), 
+                new PointF( 0, 3), new PointF ( 6, 3 ), new PointF(3, 3), new PointF(3, 6), new PointF(3, 0) } };
         }
 
     } 
@@ -200,9 +206,17 @@ namespace Geometry_Vector_Graphics_Editor_Tests
     {
         public IEnumerator GetEnumerator()
         {
-            yield return new object[] { new PointF(5, 5), new PointF(9, 9), new PointF[] { new PointF(7, 7), new PointF(7, 5) } };
-            yield return new object[] { new PointF(2, 2), new PointF(0, 0), new PointF[] { new PointF(1, 1), new PointF(1, 2) } };
-            yield return new object[] { new PointF(0, 0), new PointF(0, 0), new PointF[] { new PointF(0, 0), new PointF(0, 0) } };
+            yield return new object[] { new PointF(5, 5), new PointF(9, 9), 
+                new PointF[] { new PointF(5, 5), new PointF(9,9), new PointF(9, 5), new PointF(5,9),
+                new PointF(5, 7),new PointF(9, 7),new PointF(7, 7),new PointF(7, 9),new PointF(7, 5),} };
+            yield return new object[] { new PointF(2, 2), new PointF(0, 0), 
+                new PointF[] { new PointF(2, 2), new PointF(0,0), new PointF(0, 2), new PointF(2,0),
+                    new PointF(2, 1),new PointF(0, 1),new PointF(1, 1),new PointF(1, 0),new PointF(1, 2) } };
+
+
+            yield return new object[] { new PointF(0, 0), new PointF(0, 0),
+                new PointF[] { new PointF(0, 0), new PointF(0, 0),new PointF(0, 0), new PointF(0, 0), 
+                    new PointF(0, 0),new PointF(0, 0),new PointF(0, 0),new PointF(0, 0),new PointF(0, 0) } };
         }
 
     }

@@ -7,22 +7,22 @@ using System.Windows.Forms;
 
 namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 {
-    class MoveFiguresMouseUp : IMouseHandler
+    class PictureBoxMouseUpScale : IMouseHandler
     {
-        public MoveFiguresMouseUp(object sender, EventArgs e, Canvas cnvs)
+
+        public PictureBoxMouseUpScale(object sender, EventArgs e, Canvas cnvs)
         {
             Canvas = cnvs;
             E = e;
             Sender = sender;
             HandleEvent();
         }
-        public Canvas Canvas { get; set; }
         public object Sender { get; set; }
         public EventArgs E { get; set; }
-
+        public Canvas Canvas { get; set; }
         public void HandleEvent()
         {
-
+            MouseEventArgs eMouse = (MouseEventArgs)E;
             if (Canvas.CurFigure != null && Canvas.CurFigure.IsCorrect())
             {
                 Canvas.Figures.Add(Canvas.CurFigure);

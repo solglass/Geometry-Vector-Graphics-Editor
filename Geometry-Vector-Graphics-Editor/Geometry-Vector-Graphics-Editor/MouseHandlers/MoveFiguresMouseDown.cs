@@ -24,7 +24,17 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public void HandleEvent()
         {
             MouseEventArgs eMouse = (MouseEventArgs)E;
-            Canvas.ChoiseFigure(new PointF(eMouse.X, eMouse.Y));
+            Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
+            foreach (Figure figure in Canvas.Figures)
+            {
+                if (figure.IsCorrect() && figure.IsSelected(Canvas.PrevPoint, 50))
+                {
+                    Canvas.CurFigure = figure;
+                    Canvas.Figures.Remove(Canvas.CurFigure);
+                    Canvas.DrawAll();
+                    break;
+                }
+            }
         }
     }
 }
