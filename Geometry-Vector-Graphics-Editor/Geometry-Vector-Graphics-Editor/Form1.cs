@@ -18,6 +18,7 @@ namespace graphics
         private Canvas _canvas;
         private IMouseHandler _pictureBoxMouseMove;
         private bool md;
+        private bool clockwise;
 
         public Form1()
         {
@@ -39,6 +40,8 @@ namespace graphics
                 _canvas.DrawAll();
             }
             pictureBox.Image = _canvas.Bitmap;
+
+            _canvas.Clockwise = true;
         }
 
        
@@ -193,6 +196,12 @@ namespace graphics
         private void buttonRegularPolygon_Click(object sender, EventArgs e)
         {
             ButtonRegularPolygonClick buttonHandler = new ButtonRegularPolygonClick(sender, e, _canvas, trackBarPointsAmount.Value);
+        }
+
+        private void checkBoxClockwise_Click(object sender, EventArgs e)
+        {
+            clockwise = checkBoxClockwise.Checked;
+            _canvas.Clockwise = clockwise;
         }
     }
 }
