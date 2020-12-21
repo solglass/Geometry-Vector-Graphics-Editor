@@ -111,7 +111,6 @@ namespace Geometry_Vector_Graphics_Editor
             }
         }
 
-
         public void Rotate(PointF currentPoint)
         {
             if (CurFigure != null && PrevPoint != null)
@@ -140,6 +139,28 @@ namespace Geometry_Vector_Graphics_Editor
                 _pen.Color = figure.Color;
                 _pen.Width = figure.Width;
                 figure.Drawer.Draw(figure.Points,_pen,_graphics); }
+        }
+
+        public void ChoiseFigure(PointF point)
+        {
+            CurFigure = null;
+            PrevPoint = point;
+            foreach (Figure figure in Figures)
+            {
+                if (figure.IsSelected(point, 20))
+                {
+                    CurFigure = figure;
+                }
+                break;
+            }
+        }
+
+        public void Move(PointF point)
+        {
+            if (CurFigure != null)
+            {
+                CurFigure.Mover.Move(point, CurFigure.Points);
+            }
         }
 
     }

@@ -72,6 +72,10 @@ namespace graphics
             {
                 IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
             }
+            else if(_pictureBoxMouseMove is MoveFiguresMouseMove)
+            {
+                IMouseHandler buttonHandler = new MoveFiguresMouseDown(sender, e, _canvas);
+            }
             else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
             { IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas); }
             if (pictureBox.Image != null)
@@ -99,6 +103,10 @@ namespace graphics
                 if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
                 {
                     IMouseHandler buttonHandler = new PictureBoxMouseUpDraw(sender, e, _canvas);
+                }
+                else if (_pictureBoxMouseMove is MoveFiguresMouseMove)
+                {
+                    IMouseHandler buttonHandler = new MoveFiguresMouseUp(sender, e, _canvas);
                 }
                 else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
                 { IMouseHandler buttonHandler = new PictureBoxMouseUpRotate(sender, e, _canvas); }
@@ -153,7 +161,7 @@ namespace graphics
         private void buttonZigzag_Click(object sender, EventArgs e)
         {
             ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas);
-            buttonHandler.PointsAmount = trackBarPointsAmount.Value;
+            //buttonHandler.PointsAmount = trackBarPointsAmount.Value;
         }
 
         private void buttonRotate_Click(object sender, EventArgs e)
@@ -164,6 +172,11 @@ namespace graphics
         private void buttonDraw_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+        }
+
+        private void buttonMove_Click(object sender, EventArgs e)
+        {
+            _pictureBoxMouseMove = new MoveFiguresMouseMove();
         }
     }
 }

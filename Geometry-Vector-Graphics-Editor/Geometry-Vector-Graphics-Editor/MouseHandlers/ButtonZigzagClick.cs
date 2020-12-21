@@ -23,7 +23,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         private ZigzagFactory zigzagFactory;
         public void HandleEvent()
         {
-            zigzagFactory = new ZigzagFactory();
+           // zigzagFactory = new ZigzagFactory();
             Canvas.CurFigureFactory = zigzagFactory;
             MouseEventArgs eMouse = (MouseEventArgs)E;
             Canvas.PrevPoint = new System.Drawing.PointF(eMouse.X, eMouse.Y);

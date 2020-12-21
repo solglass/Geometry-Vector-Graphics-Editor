@@ -27,6 +27,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             {
                 MouseEventArgs eMouse = (MouseEventArgs)E;
                 Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
+                Canvas.ChoiseFigure(new PointF(eMouse.X, eMouse.Y));
             }
         }
     }
