@@ -8,6 +8,7 @@ using System.Drawing;
 
 namespace Geometry_Vector_Graphics_Editor
 {
+    [Serializable]
     public abstract class AbstractFigure
     {
         public int PointsAmount { get; set; }

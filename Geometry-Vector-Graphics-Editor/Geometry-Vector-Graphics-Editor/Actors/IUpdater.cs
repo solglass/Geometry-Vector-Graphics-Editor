@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Geometry_Vector_Graphics_Editor.Actors
 {
-   public interface IUpdater
+    public interface IUpdater
     {
         List<PointF> Update(int pointsAmount, List<PointF> points);
     }

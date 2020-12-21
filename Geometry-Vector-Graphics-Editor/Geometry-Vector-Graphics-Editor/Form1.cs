@@ -1,5 +1,6 @@
 ﻿using Geometry_Vector_Graphics_Editor;
 using Geometry_Vector_Graphics_Editor.MouseHandlers;
+using Geometry_Vector_Graphics_Editor.Serialization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,9 +28,17 @@ namespace graphics
         {
 
             _canvas = Canvas.getInstance(pictureBox.Width, pictureBox.Height, Color.Black, 1);
+            SerializationFile sf = new SerializationFile();
+            sf.LoadFile(_canvas);
             _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-
+            _canvas.PictureBoxHeight = pictureBox.Height;
+            _canvas.PictureBoxWidth= pictureBox.Width;
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+            if (_canvas.Figures.Count > 0)
+            {
+                _canvas.DrawAll();
+            }
+            pictureBox.Image = _canvas.Bitmap;
         }
 
        
@@ -71,11 +80,12 @@ namespace graphics
             if (_pictureBoxMouseMove is PictureBoxMouseMoveDraw)
             {
                 IMouseHandler buttonHandler = new PictureBoxMouseDownDraw(sender, e, _canvas);
+                if (pictureBox.Image != null)
+                { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
             }
             else if (_pictureBoxMouseMove is PictureBoxMouseMoveRotate)
             { IMouseHandler buttonHandler = new PictureBoxMouseDownRotate(sender, e, _canvas); }
-            if (pictureBox.Image != null)
-            { _canvas.Bitmap = (Bitmap)pictureBox.Image; }
+
             GC.Collect();
         }
 
@@ -133,7 +143,8 @@ namespace graphics
             _canvas.Figures = new List<Figure>();
             pictureBox.Image = null;
             _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-            
+            _canvas.CloneTmpBitmapFromMain();
+
         }
 
         private void buttonRectangularTriangle_Click(object sender, EventArgs e)
@@ -166,6 +177,12 @@ namespace graphics
         private void buttonDraw_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            SerializationFile sf = new SerializationFile();
+            sf.SaveFile(_canvas);
         }
 
         private void buttonBrush_Click(object sender, EventArgs e)

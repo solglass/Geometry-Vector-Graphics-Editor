@@ -20,13 +20,22 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
         public object Sender { get; set; }
         public EventArgs E { get; set; }
         public Canvas Canvas { get; set; }
-        private IFigureFactory curFigureFactory;
         public void HandleEvent()
         {
             if (Canvas != null)
             {
                 MouseEventArgs eMouse = (MouseEventArgs)E;
                 Canvas.PrevPoint = new PointF(eMouse.X, eMouse.Y);
+                foreach (Figure figure in Canvas.Figures)
+                {
+                    if (figure.IsCorrect() && figure.IsSelected(Canvas.PrevPoint, 50))
+                    {
+                        Canvas.CurFigure = figure;
+                        Canvas.Figures.Remove(Canvas.CurFigure);
+                        Canvas.DrawAll();
+                        break;
+                    }
+                }
             }
         }
     }
