@@ -143,7 +143,8 @@ namespace graphics
             _canvas.Figures = new List<Figure>();
             pictureBox.Image = null;
             _canvas.Bitmap = new Bitmap(pictureBox.Width, pictureBox.Height);
-            
+            _canvas.CloneTmpBitmapFromMain();
+
         }
 
         private void buttonRectangularTriangle_Click(object sender, EventArgs e)
