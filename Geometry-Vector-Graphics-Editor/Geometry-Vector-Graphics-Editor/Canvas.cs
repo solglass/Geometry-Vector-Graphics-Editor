@@ -18,11 +18,13 @@ namespace Geometry_Vector_Graphics_Editor
         public PointF PrevPoint { get; set; }
         public int PictureBoxWidth { get; set; }
         public int PictureBoxHeight { get; set; }
+        public bool Clockwise { get; set; }
         public bool check;
         Bitmap _mainBm;
         Bitmap _tmpBm;
         private Pen _pen;
         private Graphics _graphics;
+
         public Figure CurFigure
         {
             get; set;
@@ -125,7 +127,7 @@ namespace Geometry_Vector_Graphics_Editor
         {
             if (CurFigure != null && PrevPoint != null)
             {
-                CurFigure.Rotator.Rotate(PrevPoint, currentPoint, CurFigure.Points);
+                CurFigure.Rotator.Rotate(PrevPoint, currentPoint, CurFigure.Points, Clockwise);
 
             }
         }
@@ -137,6 +139,18 @@ namespace Geometry_Vector_Graphics_Editor
                 CloneTmpBitmapFromMain();
                 CurFigure.Color = _pen.Color;
                 CurFigure.Width = (int)_pen.Width;
+                CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
+
+            }
+        }
+
+        public void DrawCurrentFigurePreservingSettings()
+        {
+            if (CurFigure != null && _mainBm != null)
+            {
+                CloneTmpBitmapFromMain();
+                _pen.Color = CurFigure.Color;
+                _pen.Width = (int)CurFigure.Width;
                 CurFigure.Drawer.Draw(CurFigure.Points, _pen, _graphics);
 
             }

@@ -34,7 +34,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
             {
                 MouseEventArgs eMouse = (MouseEventArgs)E;
                Canvas.Rotate(new PointF(eMouse.Location.X, eMouse.Location.Y));
-               Canvas.DrawCurrentFigure();
+               Canvas.DrawCurrentFigurePreservingSettings();
             }
       }
 
