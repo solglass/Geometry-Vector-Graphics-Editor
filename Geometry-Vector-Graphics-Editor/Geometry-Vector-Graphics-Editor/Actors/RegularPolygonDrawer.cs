@@ -12,11 +12,11 @@ namespace Geometry_Vector_Graphics_Editor.Actors
     {
         public void Draw(List<PointF> points, Pen pen, Graphics graphics)
         {
-            PointF firstPoint = points.First();
-            for (int i=1;i<points.Count-1;i++)
+            PointF firstPoint = points[1];
+            for (int i=2;i<points.Count;i++)
             {
                 graphics.DrawLine(pen, points[i - 1], points[i]);
-                if(i==points.Count-2)
+                if(i==points.Count-1)
                 {
                     graphics.DrawLine(pen, points[i], firstPoint);
                 }

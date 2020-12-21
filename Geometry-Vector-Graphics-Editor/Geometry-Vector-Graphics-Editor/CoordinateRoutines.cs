@@ -206,6 +206,7 @@ namespace Geometry_Vector_Graphics_Editor
             double cosTheta = Math.Cos(angleInRadians);
             double sinTheta = Math.Sin(angleInRadians);
             List<PointF> points = new List<PointF>();
+            points.Add(centerPoint);
             for (int i = 0; i < pointsAmount; i++)
             {
                 PointF point = new PointF
@@ -222,7 +223,7 @@ namespace Geometry_Vector_Graphics_Editor
                 points.Add(point);
                 pointToRotate = point;
             }
-            points.Add(centerPoint);
+            
             return points;
 
         }
