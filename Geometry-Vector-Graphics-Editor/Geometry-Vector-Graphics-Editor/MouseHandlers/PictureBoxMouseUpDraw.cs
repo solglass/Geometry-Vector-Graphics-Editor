@@ -28,7 +28,7 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
 
             try
             {
-                if (Canvas.CurFigure != null && Canvas.CurFigure.PointsAmount == 0 || Canvas.CurFigure.PointsAmount == 1000)
+                if (Canvas.CurFigure != null)
                 {
                     Canvas.Figures.Add(Canvas.CurFigure);
                     Canvas.CurFigure = null;
