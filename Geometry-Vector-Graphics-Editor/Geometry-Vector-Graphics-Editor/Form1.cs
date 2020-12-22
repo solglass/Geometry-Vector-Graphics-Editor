@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -185,12 +187,6 @@ namespace graphics
             IMouseHandler buttonHandler = new ButtonSquareClick(sender, e, _canvas);
         }
 
-        private void buttonZigzag_Click(object sender, EventArgs e)
-        {
-            //ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas, trackBarPointsAmount.Value);
-
-           // buttonHandler.PointsAmount = trackBarPointsAmount.Value;
-        }
 
         private void buttonRotate_Click(object sender, EventArgs e)
         {
@@ -236,7 +232,31 @@ namespace graphics
 
         private void buttonSaveAs_Click(object sender, EventArgs e)
         {
+            SerializationFile sf = new SerializationFile();
+            sf.SaveFile(_canvas);
 
+        }
+
+        private void buttonUpload_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "файлы векторной графики|*.dat|Все файлы|*.*";
+            if (ofd.ShowDialog() != DialogResult.OK)
+                return;
+
+            BinaryFormatter formatter = new BinaryFormatter();
+            try
+             {
+            FileStream fileStream = new FileStream(ofd.FileName, FileMode.Open, FileAccess.Read);
+            _canvas.Figures = (List<Figure>)formatter.Deserialize(fileStream);
+            fileStream.Close();
+            if (_canvas.Figures.Count > 0)
+            {
+                _canvas.DrawAll();
+            }
+            pictureBox.Image = _canvas.Bitmap;
+             }
+            catch { }
         }
     }
 }
