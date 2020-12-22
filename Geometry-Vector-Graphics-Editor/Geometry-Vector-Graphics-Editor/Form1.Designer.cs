@@ -65,7 +65,7 @@
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(1792, 10);
+            this.buttonClear.Location = new System.Drawing.Point(1792, 8);
             this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(112, 35);
@@ -323,19 +323,19 @@
             // 
             // buttonSaveAs
             // 
-            this.buttonSaveAs.Image = global::Geometry_Vector_Graphics_Editor.Properties.Resources._22;
-            this.buttonSaveAs.Location = new System.Drawing.Point(1385, 7);
+            this.buttonSaveAs.Location = new System.Drawing.Point(1486, 8);
             this.buttonSaveAs.Name = "buttonSaveAs";
-            this.buttonSaveAs.Size = new System.Drawing.Size(57, 44);
+            this.buttonSaveAs.Size = new System.Drawing.Size(121, 35);
             this.buttonSaveAs.TabIndex = 28;
+            this.buttonSaveAs.Text = "Сохранить";
             this.buttonSaveAs.UseVisualStyleBackColor = true;
             this.buttonSaveAs.Click += new System.EventHandler(this.buttonSaveAs_Click);
             // 
             // buttonUpload
             // 
-            this.buttonUpload.Location = new System.Drawing.Point(1516, 8);
+            this.buttonUpload.Location = new System.Drawing.Point(1367, 8);
             this.buttonUpload.Name = "buttonUpload";
-            this.buttonUpload.Size = new System.Drawing.Size(153, 36);
+            this.buttonUpload.Size = new System.Drawing.Size(113, 36);
             this.buttonUpload.TabIndex = 28;
             this.buttonUpload.Text = "Открыть...";
             this.buttonUpload.UseVisualStyleBackColor = true;
