@@ -335,11 +335,11 @@
             // 
             this.buttonUpload.Location = new System.Drawing.Point(1367, 8);
             this.buttonUpload.Name = "buttonUpload";
-<<<<<<< HEAD
-            this.buttonUpload.Size = new System.Drawing.Size(136, 29);
-=======
+//<<<<<<< HEAD
+           // this.buttonUpload.Size = new System.Drawing.Size(136, 29);
+//=======
             this.buttonUpload.Size = new System.Drawing.Size(113, 36);
->>>>>>> canvasandfabrics
+//>>>>>>> canvasandfabrics
             this.buttonUpload.TabIndex = 28;
             this.buttonUpload.Text = "Открыть...";
             this.buttonUpload.UseVisualStyleBackColor = true;
