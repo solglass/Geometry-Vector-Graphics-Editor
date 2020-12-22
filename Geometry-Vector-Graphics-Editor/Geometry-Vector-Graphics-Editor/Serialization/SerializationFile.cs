@@ -15,7 +15,9 @@ namespace Geometry_Vector_Graphics_Editor.Serialization
             BinaryFormatter formatter = new BinaryFormatter();
            try
             {
-                FileStream fileStreamFigures = new FileStream("Figures.dat", FileMode.Create, FileAccess.Write);
+                string fileName = DateTime.Now.ToString() + ".dat";
+                fileName = fileName.Replace(':', '_');
+                FileStream fileStreamFigures = new FileStream(/*"Figures.dat"*/fileName, FileMode.Create, FileAccess.Write);
                 formatter.Serialize(fileStreamFigures, canvas.Figures);
                 fileStreamFigures.Close();
             }
