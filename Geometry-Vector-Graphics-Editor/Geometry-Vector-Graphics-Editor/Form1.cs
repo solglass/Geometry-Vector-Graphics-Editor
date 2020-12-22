@@ -187,9 +187,9 @@ namespace graphics
 
         private void buttonZigzag_Click(object sender, EventArgs e)
         {
-            ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas, trackBarPointsAmount.Value);
+            //ButtonZigzagClick buttonHandler = new ButtonZigzagClick(sender, e, _canvas, trackBarPointsAmount.Value);
 
-            buttonHandler.PointsAmount = trackBarPointsAmount.Value;
+           // buttonHandler.PointsAmount = trackBarPointsAmount.Value;
         }
 
         private void buttonRotate_Click(object sender, EventArgs e)
@@ -232,6 +232,11 @@ namespace graphics
         private void buttonScale_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveScale(sender, e,_canvas);
+        }
+
+        private void buttonSaveAs_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
