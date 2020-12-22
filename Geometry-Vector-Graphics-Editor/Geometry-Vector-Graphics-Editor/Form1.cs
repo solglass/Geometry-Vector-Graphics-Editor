@@ -50,7 +50,9 @@ namespace graphics
             buttonSquare,
             buttonRectangle,
             buttonRegularPolygon,
-            trackBarPointsAmount
+            trackBarPointsAmount,
+            trackBarWidth,
+            buttonColor
             };
 
             _figuresControls.ForEach(i => i.Enabled = false);
