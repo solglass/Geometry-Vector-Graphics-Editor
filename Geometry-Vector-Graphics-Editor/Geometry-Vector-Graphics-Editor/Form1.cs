@@ -221,7 +221,7 @@ namespace graphics
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             SerializationFile sf = new SerializationFile();
-            sf.SaveFile(_canvas);
+            sf.SaveFile(_canvas, "Figures.dat");
         }
 
         private void buttonBrush_Click(object sender, EventArgs e)
@@ -255,7 +255,9 @@ namespace graphics
         private void buttonSaveAs_Click(object sender, EventArgs e)
         {
             SerializationFile sf = new SerializationFile();
-            sf.SaveFile(_canvas);
+            string fileName = DateTime.Now.ToString() + ".dat";
+            fileName = fileName.Replace(':', '_');
+            sf.SaveFile(_canvas, fileName);
 
 
         }
