@@ -21,6 +21,7 @@ namespace graphics
         private IMouseHandler _pictureBoxMouseMove;
         private bool md;
         private bool clockwise;
+        private List<Control> _figuresControls;
 
         public Form1()
         {
@@ -37,6 +38,23 @@ namespace graphics
             _canvas.PictureBoxHeight = pictureBox.Height;
             _canvas.PictureBoxWidth= pictureBox.Width;
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+            _figuresControls = new List<Control>()
+            {
+            buttonBrush,
+            buttonLine,
+            buttonCircle,
+            buttonEllipse,
+            buttonIsoscalesTriangle,
+            buttonRectangularTriangle,
+            buttonSquare,
+            buttonRectangle,
+            buttonRegularPolygon,
+            trackBarPointsAmount
+            };
+
+            _figuresControls.ForEach(i => i.Enabled = false);
+
+
             if (_canvas.Figures.Count > 0)
             {
                 _canvas.DrawAll();
@@ -191,11 +209,13 @@ namespace graphics
         private void buttonRotate_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveRotate();
+            _figuresControls.ForEach(i => i.Enabled = false);
         }
 
         private void buttonDraw_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+            _figuresControls.ForEach(i => i.Enabled = true);
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -223,17 +243,20 @@ namespace graphics
         private void buttonMove_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new MoveFiguresMouseMove();
+            _figuresControls.ForEach(i => i.Enabled = false);
         }
 
         private void buttonScale_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveScale(sender, e,_canvas);
+            _figuresControls.ForEach(i => i.Enabled = false);
         }
 
         private void buttonSaveAs_Click(object sender, EventArgs e)
         {
             SerializationFile sf = new SerializationFile();
             sf.SaveFile(_canvas);
+
 
         }
 
