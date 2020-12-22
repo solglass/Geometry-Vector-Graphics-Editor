@@ -17,9 +17,6 @@ namespace Geometry_Vector_Graphics_Editor.Actors
                 PointF p = points[i];
                 points[i] = new PointF(p.X + delta.X, p.Y + delta.Y);
             }
-            PointF rectLUPoint = points[0];
-            PointF rectOppositePoint = points[2];
-            RectangleF rect = new RectangleF(rectLUPoint.X, rectLUPoint.Y, rectOppositePoint.X - rectLUPoint.X, rectOppositePoint.Y - rectLUPoint.Y);
         }
     }
 }
