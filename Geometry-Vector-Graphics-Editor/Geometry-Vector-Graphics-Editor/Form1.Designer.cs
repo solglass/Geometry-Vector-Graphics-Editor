@@ -124,7 +124,7 @@
             this.pictureBox.Location = new System.Drawing.Point(176, 54);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1944, 1197);
+            this.pictureBox.Size = new System.Drawing.Size(1944, 1136);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 6;
             this.pictureBox.TabStop = false;
@@ -146,7 +146,7 @@
             // 
             // buttonIsoscalesTriangle
             // 
-            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(7, 395);
+            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(7, 398);
             this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonIsoscalesTriangle.Name = "buttonIsoscalesTriangle";
             this.buttonIsoscalesTriangle.Size = new System.Drawing.Size(148, 54);
@@ -157,7 +157,7 @@
             // 
             // buttonCircle
             // 
-            this.buttonCircle.Location = new System.Drawing.Point(15, 631);
+            this.buttonCircle.Location = new System.Drawing.Point(9, 519);
             this.buttonCircle.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonCircle.Name = "buttonCircle";
             this.buttonCircle.Size = new System.Drawing.Size(148, 35);
@@ -168,7 +168,7 @@
             // 
             // buttonEllipse
             // 
-            this.buttonEllipse.Location = new System.Drawing.Point(4, 566);
+            this.buttonEllipse.Location = new System.Drawing.Point(9, 566);
             this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonEllipse.Name = "buttonEllipse";
             this.buttonEllipse.Size = new System.Drawing.Size(148, 35);
@@ -179,10 +179,10 @@
             // 
             // buttonDraw
             // 
-            this.buttonDraw.Location = new System.Drawing.Point(15, 67);
+            this.buttonDraw.Location = new System.Drawing.Point(17, 54);
             this.buttonDraw.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.buttonDraw.Name = "buttonDraw";
-            this.buttonDraw.Size = new System.Drawing.Size(153, 44);
+            this.buttonDraw.Size = new System.Drawing.Size(148, 35);
             this.buttonDraw.TabIndex = 17;
             this.buttonDraw.Text = "Рисовать";
             this.buttonDraw.UseVisualStyleBackColor = true;
@@ -201,7 +201,7 @@
             // 
             // buttonRegularPolygon
             // 
-            this.buttonRegularPolygon.Location = new System.Drawing.Point(12, 778);
+            this.buttonRegularPolygon.Location = new System.Drawing.Point(9, 665);
             this.buttonRegularPolygon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRegularPolygon.Name = "buttonRegularPolygon";
             this.buttonRegularPolygon.Size = new System.Drawing.Size(148, 58);
@@ -298,11 +298,11 @@
             // 
             this.groupBox1.Controls.Add(this.buttonColor);
             this.groupBox1.Controls.Add(this.trackBarWidth);
-            this.groupBox1.Location = new System.Drawing.Point(16, 1055);
+            this.groupBox1.Location = new System.Drawing.Point(8, 1022);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(154, 168);
+            this.groupBox1.Size = new System.Drawing.Size(162, 168);
             this.groupBox1.TabIndex = 26;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Параметры карандаша";
@@ -351,12 +351,14 @@
             this.groupBoxFigures.Controls.Add(this.buttonRectangle);
             this.groupBoxFigures.Controls.Add(this.buttonRectangularTriangle);
             this.groupBoxFigures.Controls.Add(this.buttonIsoscalesTriangle);
+            this.groupBoxFigures.Controls.Add(this.buttonRegularPolygon);
             this.groupBoxFigures.Controls.Add(this.buttonEllipse);
-            this.groupBoxFigures.Location = new System.Drawing.Point(8, 121);
+            this.groupBoxFigures.Controls.Add(this.buttonCircle);
+            this.groupBoxFigures.Location = new System.Drawing.Point(8, 99);
             this.groupBoxFigures.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.groupBoxFigures.Name = "groupBoxFigures";
             this.groupBoxFigures.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.groupBoxFigures.Size = new System.Drawing.Size(182, 882);
+            this.groupBoxFigures.Size = new System.Drawing.Size(162, 865);
             this.groupBoxFigures.TabIndex = 29;
             this.groupBoxFigures.TabStop = false;
             this.groupBoxFigures.Text = "Фигуры";
@@ -367,19 +369,17 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(2157, 1330);
+            this.ClientSize = new System.Drawing.Size(2135, 1209);
             this.Controls.Add(this.buttonUpload);
             this.Controls.Add(this.buttonSaveAs);
             this.Controls.Add(this.checkBoxClockwise);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonBackColor);
-            this.Controls.Add(this.buttonRegularPolygon);
             this.Controls.Add(this.buttonScale);
             this.Controls.Add(this.buttonRotate);
             this.Controls.Add(this.buttonMove);
             this.Controls.Add(this.buttonDraw);
-            this.Controls.Add(this.buttonCircle);
             this.Controls.Add(this.pictureBox);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.groupBox1);

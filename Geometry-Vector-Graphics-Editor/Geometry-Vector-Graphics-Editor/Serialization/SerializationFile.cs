@@ -10,14 +10,13 @@ namespace Geometry_Vector_Graphics_Editor.Serialization
 {
     public class SerializationFile
     {
-        public void SaveFile(Canvas canvas)
+        public void SaveFile(Canvas canvas, string fileName)
         {
             BinaryFormatter formatter = new BinaryFormatter();
            try
             {
-                string fileName = DateTime.Now.ToString() + ".dat";
-                fileName = fileName.Replace(':', '_');
-                FileStream fileStreamFigures = new FileStream(/*"Figures.dat"*/fileName, FileMode.Create, FileAccess.Write);
+                
+                FileStream fileStreamFigures = new FileStream(fileName, FileMode.Create, FileAccess.Write);
                 formatter.Serialize(fileStreamFigures, canvas.Figures);
                 fileStreamFigures.Close();
             }
