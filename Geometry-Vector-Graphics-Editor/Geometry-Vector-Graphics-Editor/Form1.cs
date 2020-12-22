@@ -38,6 +38,7 @@ namespace graphics
             _canvas.PictureBoxHeight = pictureBox.Height;
             _canvas.PictureBoxWidth= pictureBox.Width;
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
+            checkBoxClockwise.Enabled = false;
             _figuresControls = new List<Control>()
             {
             buttonBrush,
@@ -210,12 +211,14 @@ namespace graphics
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveRotate();
             _figuresControls.ForEach(i => i.Enabled = false);
+            checkBoxClockwise.Enabled = true;
         }
 
         private void buttonDraw_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveDraw();
             _figuresControls.ForEach(i => i.Enabled = true);
+            checkBoxClockwise.Enabled = false;
         }
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
@@ -244,12 +247,14 @@ namespace graphics
         {
             _pictureBoxMouseMove = new MoveFiguresMouseMove();
             _figuresControls.ForEach(i => i.Enabled = false);
+            checkBoxClockwise.Enabled = false;
         }
 
         private void buttonScale_Click(object sender, EventArgs e)
         {
             _pictureBoxMouseMove = new PictureBoxMouseMoveScale(sender, e,_canvas);
             _figuresControls.ForEach(i => i.Enabled = false);
+            checkBoxClockwise.Enabled = false;
         }
 
         private void buttonSaveAs_Click(object sender, EventArgs e)
