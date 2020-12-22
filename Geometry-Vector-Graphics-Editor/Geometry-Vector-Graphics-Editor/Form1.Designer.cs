@@ -55,16 +55,18 @@
             this.checkBoxClockwise = new System.Windows.Forms.CheckBox();
             this.buttonSaveAs = new System.Windows.Forms.Button();
             this.buttonUpload = new System.Windows.Forms.Button();
+            this.groupBoxFigures = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarWidth)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPointsAmount)).BeginInit();
             this.groupBox1.SuspendLayout();
+            this.groupBoxFigures.SuspendLayout();
             this.SuspendLayout();
             // 
             // buttonClear
             // 
-            this.buttonClear.Location = new System.Drawing.Point(1307, 7);
-            this.buttonClear.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonClear.Location = new System.Drawing.Point(1792, 10);
+            this.buttonClear.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonClear.Name = "buttonClear";
             this.buttonClear.Size = new System.Drawing.Size(100, 28);
             this.buttonClear.TabIndex = 0;
@@ -74,8 +76,8 @@
             // 
             // buttonBrush
             // 
-            this.buttonBrush.Location = new System.Drawing.Point(12, 43);
-            this.buttonBrush.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonBrush.Location = new System.Drawing.Point(8, 37);
+            this.buttonBrush.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonBrush.Name = "buttonBrush";
             this.buttonBrush.Size = new System.Drawing.Size(132, 28);
             this.buttonBrush.TabIndex = 1;
@@ -85,8 +87,8 @@
             // 
             // buttonLine
             // 
-            this.buttonLine.Location = new System.Drawing.Point(12, 78);
-            this.buttonLine.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonLine.Location = new System.Drawing.Point(6, 82);
+            this.buttonLine.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonLine.Name = "buttonLine";
             this.buttonLine.Size = new System.Drawing.Size(132, 28);
             this.buttonLine.TabIndex = 2;
@@ -96,8 +98,8 @@
             // 
             // buttonSquare
             // 
-            this.buttonSquare.Location = new System.Drawing.Point(12, 126);
-            this.buttonSquare.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonSquare.Location = new System.Drawing.Point(8, 145);
+            this.buttonSquare.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonSquare.Name = "buttonSquare";
             this.buttonSquare.Size = new System.Drawing.Size(132, 28);
             this.buttonSquare.TabIndex = 3;
@@ -107,8 +109,8 @@
             // 
             // buttonRectangle
             // 
-            this.buttonRectangle.Location = new System.Drawing.Point(12, 162);
-            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRectangle.Location = new System.Drawing.Point(6, 190);
+            this.buttonRectangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRectangle.Name = "buttonRectangle";
             this.buttonRectangle.Size = new System.Drawing.Size(132, 28);
             this.buttonRectangle.TabIndex = 4;
@@ -122,7 +124,7 @@
             this.pictureBox.Location = new System.Drawing.Point(156, 43);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(4);
             this.pictureBox.Name = "pictureBox";
-            this.pictureBox.Size = new System.Drawing.Size(1250, 648);
+            this.pictureBox.Size = new System.Drawing.Size(1728, 958);
             this.pictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox.TabIndex = 6;
             this.pictureBox.TabStop = false;
@@ -133,8 +135,8 @@
             // 
             // buttonRectangularTriangle
             // 
-            this.buttonRectangularTriangle.Location = new System.Drawing.Point(13, 213);
-            this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonRectangularTriangle.Location = new System.Drawing.Point(6, 254);
+            this.buttonRectangularTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonRectangularTriangle.Name = "buttonRectangularTriangle";
             this.buttonRectangularTriangle.Size = new System.Drawing.Size(132, 42);
             this.buttonRectangularTriangle.TabIndex = 7;
@@ -144,8 +146,8 @@
             // 
             // buttonIsoscalesTriangle
             // 
-            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(12, 262);
-            this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonIsoscalesTriangle.Location = new System.Drawing.Point(6, 316);
+            this.buttonIsoscalesTriangle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonIsoscalesTriangle.Name = "buttonIsoscalesTriangle";
             this.buttonIsoscalesTriangle.Size = new System.Drawing.Size(132, 43);
             this.buttonIsoscalesTriangle.TabIndex = 8;
@@ -155,8 +157,8 @@
             // 
             // buttonCircle
             // 
-            this.buttonCircle.Location = new System.Drawing.Point(12, 327);
-            this.buttonCircle.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonCircle.Location = new System.Drawing.Point(13, 505);
+            this.buttonCircle.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonCircle.Name = "buttonCircle";
             this.buttonCircle.Size = new System.Drawing.Size(132, 28);
             this.buttonCircle.TabIndex = 9;
@@ -166,8 +168,8 @@
             // 
             // buttonEllipse
             // 
-            this.buttonEllipse.Location = new System.Drawing.Point(12, 364);
-            this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonEllipse.Location = new System.Drawing.Point(4, 453);
+            this.buttonEllipse.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonEllipse.Name = "buttonEllipse";
             this.buttonEllipse.Size = new System.Drawing.Size(132, 28);
             this.buttonEllipse.TabIndex = 10;
@@ -177,10 +179,10 @@
             // 
             // buttonDraw
             // 
-            this.buttonDraw.Location = new System.Drawing.Point(31, 7);
-            this.buttonDraw.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonDraw.Location = new System.Drawing.Point(11, 54);
+            this.buttonDraw.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonDraw.Name = "buttonDraw";
-            this.buttonDraw.Size = new System.Drawing.Size(100, 28);
+            this.buttonDraw.Size = new System.Drawing.Size(112, 35);
             this.buttonDraw.TabIndex = 17;
             this.buttonDraw.Text = "Рисовать";
             this.buttonDraw.UseVisualStyleBackColor = true;
@@ -188,8 +190,8 @@
             // 
             // buttonMove
             // 
-            this.buttonMove.Location = new System.Drawing.Point(386, 7);
-            this.buttonMove.Margin = new System.Windows.Forms.Padding(4);
+            this.buttonMove.Location = new System.Drawing.Point(454, 9);
+            this.buttonMove.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.buttonMove.Name = "buttonMove";
             this.buttonMove.Size = new System.Drawing.Size(100, 28);
             this.buttonMove.TabIndex = 18;
@@ -199,7 +201,7 @@
             // 
             // buttonRegularPolygon
             // 
-            this.buttonRegularPolygon.Location = new System.Drawing.Point(11, 421);
+            this.buttonRegularPolygon.Location = new System.Drawing.Point(11, 622);
             this.buttonRegularPolygon.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonRegularPolygon.Name = "buttonRegularPolygon";
             this.buttonRegularPolygon.Size = new System.Drawing.Size(132, 46);
@@ -255,7 +257,7 @@
             // 
             // buttonBackColor
             // 
-            this.buttonBackColor.Location = new System.Drawing.Point(260, 7);
+            this.buttonBackColor.Location = new System.Drawing.Point(272, 8);
             this.buttonBackColor.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonBackColor.Name = "buttonBackColor";
             this.buttonBackColor.Size = new System.Drawing.Size(35, 28);
@@ -266,7 +268,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(172, 13);
+            this.label1.Location = new System.Drawing.Point(172, 15);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(80, 17);
             this.label1.TabIndex = 23;
@@ -274,7 +276,7 @@
             // 
             // trackBarPointsAmount
             // 
-            this.trackBarPointsAmount.Location = new System.Drawing.Point(7, 494);
+            this.trackBarPointsAmount.Location = new System.Drawing.Point(7, 714);
             this.trackBarPointsAmount.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.trackBarPointsAmount.Maximum = 15;
             this.trackBarPointsAmount.Minimum = 3;
@@ -286,7 +288,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(5, 476);
+            this.label2.Location = new System.Drawing.Point(5, 691);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(140, 17);
             this.label2.TabIndex = 25;
@@ -296,7 +298,7 @@
             // 
             this.groupBox1.Controls.Add(this.buttonColor);
             this.groupBox1.Controls.Add(this.trackBarWidth);
-            this.groupBox1.Location = new System.Drawing.Point(11, 556);
+            this.groupBox1.Location = new System.Drawing.Point(14, 844);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -321,19 +323,17 @@
             // 
             // buttonSaveAs
             // 
-            this.buttonSaveAs.Location = new System.Drawing.Point(1005, 6);
-            this.buttonSaveAs.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonSaveAs.Image = global::Geometry_Vector_Graphics_Editor.Properties.Resources._22;
+            this.buttonSaveAs.Location = new System.Drawing.Point(1385, 7);
             this.buttonSaveAs.Name = "buttonSaveAs";
-            this.buttonSaveAs.Size = new System.Drawing.Size(136, 29);
+            this.buttonSaveAs.Size = new System.Drawing.Size(57, 44);
             this.buttonSaveAs.TabIndex = 28;
-            this.buttonSaveAs.Text = "Сохранить";
             this.buttonSaveAs.UseVisualStyleBackColor = true;
             this.buttonSaveAs.Click += new System.EventHandler(this.buttonSaveAs_Click);
             // 
             // buttonUpload
             // 
-            this.buttonUpload.Location = new System.Drawing.Point(1147, 7);
-            this.buttonUpload.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonUpload.Location = new System.Drawing.Point(1516, 8);
             this.buttonUpload.Name = "buttonUpload";
             this.buttonUpload.Size = new System.Drawing.Size(136, 29);
             this.buttonUpload.TabIndex = 28;
@@ -341,13 +341,29 @@
             this.buttonUpload.UseVisualStyleBackColor = true;
             this.buttonUpload.Click += new System.EventHandler(this.buttonUpload_Click);
             // 
+            // groupBoxFigures
+            // 
+            this.groupBoxFigures.Controls.Add(this.buttonBrush);
+            this.groupBoxFigures.Controls.Add(this.buttonLine);
+            this.groupBoxFigures.Controls.Add(this.buttonSquare);
+            this.groupBoxFigures.Controls.Add(this.buttonRectangle);
+            this.groupBoxFigures.Controls.Add(this.buttonRectangularTriangle);
+            this.groupBoxFigures.Controls.Add(this.buttonIsoscalesTriangle);
+            this.groupBoxFigures.Controls.Add(this.buttonEllipse);
+            this.groupBoxFigures.Location = new System.Drawing.Point(7, 97);
+            this.groupBoxFigures.Name = "groupBoxFigures";
+            this.groupBoxFigures.Size = new System.Drawing.Size(162, 706);
+            this.groupBoxFigures.TabIndex = 29;
+            this.groupBoxFigures.TabStop = false;
+            this.groupBoxFigures.Text = "Фигуры";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(1417, 700);
+            this.ClientSize = new System.Drawing.Size(1917, 1064);
             this.Controls.Add(this.buttonUpload);
             this.Controls.Add(this.buttonSaveAs);
             this.Controls.Add(this.checkBoxClockwise);
@@ -359,21 +375,15 @@
             this.Controls.Add(this.buttonRotate);
             this.Controls.Add(this.buttonMove);
             this.Controls.Add(this.buttonDraw);
-            this.Controls.Add(this.buttonEllipse);
             this.Controls.Add(this.buttonCircle);
-            this.Controls.Add(this.buttonIsoscalesTriangle);
-            this.Controls.Add(this.buttonRectangularTriangle);
             this.Controls.Add(this.pictureBox);
-            this.Controls.Add(this.buttonRectangle);
-            this.Controls.Add(this.buttonSquare);
-            this.Controls.Add(this.buttonLine);
-            this.Controls.Add(this.buttonBrush);
             this.Controls.Add(this.buttonClear);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.trackBarPointsAmount);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Controls.Add(this.groupBoxFigures);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Meduza editor";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
@@ -381,6 +391,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.trackBarPointsAmount)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.groupBoxFigures.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -415,6 +426,7 @@
         private System.Windows.Forms.CheckBox checkBoxClockwise;
         private System.Windows.Forms.Button buttonSaveAs;
         private System.Windows.Forms.Button buttonUpload;
+        private System.Windows.Forms.GroupBox groupBoxFigures;
     }
 }
 
