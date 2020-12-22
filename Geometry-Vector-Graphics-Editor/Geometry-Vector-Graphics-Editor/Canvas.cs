@@ -117,7 +117,6 @@ namespace Geometry_Vector_Graphics_Editor
                         newList.Add(points.Last());
                         CurFigure.Points = CurFigure.Updater.Update(CurFigure.PointsAmount, newList);
                     }
-
                 }
             }
         }
@@ -128,7 +127,6 @@ namespace Geometry_Vector_Graphics_Editor
             if (CurFigure != null && PrevPoint != null)
             {
                 CurFigure.Rotator.Rotate(PrevPoint, currentPoint, CurFigure.Points, Clockwise);
-
             }
         }
 
