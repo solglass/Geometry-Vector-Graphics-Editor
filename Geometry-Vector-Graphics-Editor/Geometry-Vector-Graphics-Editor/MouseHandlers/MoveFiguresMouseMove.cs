@@ -32,7 +32,8 @@ namespace Geometry_Vector_Graphics_Editor.MouseHandlers
                 PointF prefPoint = Canvas.CurFigure.Points[0];
                 PointF delta = new PointF(eMouse.X - prefPoint.X, eMouse.Y - prefPoint.Y);
                 Canvas.Move(delta);
-                Canvas.DrawCurrentFigure();
+                // Canvas.DrawCurrentFigure();
+                Canvas.DrawCurrentFigurePreservingSettings();
                 prefPoint = eMouse.Location;
             }
         }
